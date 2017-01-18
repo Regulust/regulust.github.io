@@ -67,39 +67,18 @@
                         <nav id="sub-nav">
                             <div id="search-form-wrap">
 
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
-        <button type="submit" class="search-form-submit"></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
+    <form class="search-form" method="GET" action="https://www.baidu.com/s?">
+    <input name="wd" type="text" class="search-form-input" placeholder="搜索" />
+</form>
 <script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(未命名)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
+(function ($) {
+    $('.search-form').on('submit', function (e) {
+        var keyword = $('.search-form-input[name="wd"]').val();
+        window.location = 'https://www.baidu.com/s?wd=site:regulus.online ' + keyword;
+        return false;
+    });
+})(jQuery);
 </script>
-<script src="/js/insight.js"></script>
 
 </div>
                         </nav>
@@ -149,7 +128,7 @@
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
     
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="regulus.online/2017/01/18/我的第一篇Blog-post/">0</span>
+        <span class="ds-thread-count" data-thread-key="2017/01/18/我的第一篇Blog-post/">0</span>
     
 </span>
 
@@ -171,9 +150,8 @@
     
 
         <p class="article-excerpt">
-            #我的第一篇blog post
-这是我在github上的第一篇blog post，折腾了一天…
-从漫无目的的搜索，到又浏览了码云的code托管平台，再到选定Hexo（码云支持1000个库，并且可以设置为private，但可惜不能正常显示hexo输出的网页）；然后又图颜值，搜索好看的模板(之前本来图省事，一直想选定Anisina的，但是后来发现还不如这个Hueman使用方便，并其实Hueman搭好了
+            我的第一篇blog post这是我在github上的第一篇blog post，折腾了一天…
+从漫无目的的搜索，到又浏览了码云的code托管平台，再到选定Hexo（码云支持1000个库，并且可以设置为private，但可惜不能正常显示hexo输出的网页）；然后又图颜值，搜索好看的模板(之前本来图省事，一直想选定Anisina的，但是后来发现还不如这个Hueman使用方便，并其实Hueman搭好了会更
         </p>
     </div>
 </article>
@@ -196,7 +174,7 @@
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
     
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="regulus.online/2017/01/18/hello-world/">0</span>
+        <span class="ds-thread-count" data-thread-key="2017/01/18/hello-world/">0</span>
     
 </span>
 
@@ -416,16 +394,15 @@ Quick
 </footer>
         
     
-    <script>
-    var disqus_shortname = 'hexo-theme-hueman';
-    
-    
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'regulus'};
     (function() {
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
     </script>
 

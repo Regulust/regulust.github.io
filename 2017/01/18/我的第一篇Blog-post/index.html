@@ -8,22 +8,19 @@
     
         <meta name="keywords" content="日记,随笔" />
     
-    <meta name="description" content="#我的第一篇blog post
-这是我在github上的第一篇blog post，折腾了一天…
-从漫无目的的搜索，到又浏览了码云的code托管平台，再到选定Hexo（码云支持1000个库，并且可以设置为private，但可惜不能正常显示hexo输出的网页）；然后又图颜值，搜索好看的模板(之前本来图省事，一直想选定Anisina的，但是后来发现还不如这个Hueman使用方便，并其实Hueman搭好了">
+    <meta name="description" content="我的第一篇blog post这是我在github上的第一篇blog post，折腾了一天…
+从漫无目的的搜索，到又浏览了码云的code托管平台，再到选定Hexo（码云支持1000个库，并且可以设置为private，但可惜不能正常显示hexo输出的网页）；然后又图颜值，搜索好看的模板(之前本来图省事，一直想选定Anisina的，但是后来发现还不如这个Hueman使用方便，并其实Hueman搭好了会更">
 <meta property="og:type" content="article">
 <meta property="og:title" content="我的第一篇Blog post">
 <meta property="og:url" content="regulus.online/2017/01/18/我的第一篇Blog-post/index.html">
 <meta property="og:site_name" content="Regulus">
-<meta property="og:description" content="#我的第一篇blog post
-这是我在github上的第一篇blog post，折腾了一天…
-从漫无目的的搜索，到又浏览了码云的code托管平台，再到选定Hexo（码云支持1000个库，并且可以设置为private，但可惜不能正常显示hexo输出的网页）；然后又图颜值，搜索好看的模板(之前本来图省事，一直想选定Anisina的，但是后来发现还不如这个Hueman使用方便，并其实Hueman搭好了">
-<meta property="og:updated_time" content="2017-01-18T11:31:46.856Z">
+<meta property="og:description" content="我的第一篇blog post这是我在github上的第一篇blog post，折腾了一天…
+从漫无目的的搜索，到又浏览了码云的code托管平台，再到选定Hexo（码云支持1000个库，并且可以设置为private，但可惜不能正常显示hexo输出的网页）；然后又图颜值，搜索好看的模板(之前本来图省事，一直想选定Anisina的，但是后来发现还不如这个Hueman使用方便，并其实Hueman搭好了会更">
+<meta property="og:updated_time" content="2017-01-18T11:39:08.337Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我的第一篇Blog post">
-<meta name="twitter:description" content="#我的第一篇blog post
-这是我在github上的第一篇blog post，折腾了一天…
-从漫无目的的搜索，到又浏览了码云的code托管平台，再到选定Hexo（码云支持1000个库，并且可以设置为private，但可惜不能正常显示hexo输出的网页）；然后又图颜值，搜索好看的模板(之前本来图省事，一直想选定Anisina的，但是后来发现还不如这个Hueman使用方便，并其实Hueman搭好了">
+<meta name="twitter:description" content="我的第一篇blog post这是我在github上的第一篇blog post，折腾了一天…
+从漫无目的的搜索，到又浏览了码云的code托管平台，再到选定Hexo（码云支持1000个库，并且可以设置为private，但可惜不能正常显示hexo输出的网页）；然后又图颜值，搜索好看的模板(之前本来图省事，一直想选定Anisina的，但是后来发现还不如这个Hueman使用方便，并其实Hueman搭好了会更">
     
 
     
@@ -79,39 +76,18 @@
                         <nav id="sub-nav">
                             <div id="search-form-wrap">
 
-    <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
-        <button type="submit" class="search-form-submit"></button>
-    </form>
-    <div class="ins-search">
-    <div class="ins-search-mask"></div>
-    <div class="ins-search-container">
-        <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
-            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
-        </div>
-        <div class="ins-section-wrapper">
-            <div class="ins-section-container"></div>
-        </div>
-    </div>
-</div>
+    <form class="search-form" method="GET" action="https://www.baidu.com/s?">
+    <input name="wd" type="text" class="search-form-input" placeholder="搜索" />
+</form>
 <script>
-(function (window) {
-    var INSIGHT_CONFIG = {
-        TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(未命名)',
-        },
-        ROOT_URL: '/',
-        CONTENT_URL: '/content.json',
-    };
-    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
-})(window);
+(function ($) {
+    $('.search-form').on('submit', function (e) {
+        var keyword = $('.search-form-input[name="wd"]').val();
+        window.location = 'https://www.baidu.com/s?wd=site:regulus.online ' + keyword;
+        return false;
+    });
+})(jQuery);
 </script>
-<script src="/js/insight.js"></script>
 
 </div>
                         </nav>
@@ -157,8 +133,7 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>#我的第一篇blog post</p>
-<p>这是我在github上的第一篇blog post，折腾了一天…</p>
+            <h1 id="我的第一篇blog-post"><a href="#我的第一篇blog-post" class="headerlink" title="我的第一篇blog post"></a>我的第一篇blog post</h1><p>这是我在github上的第一篇blog post，折腾了一天…</p>
 <p>从漫无目的的搜索，到又浏览了码云的code托管平台，再到选定Hexo（码云支持1000个库，并且可以设置为private，但可惜不能正常显示hexo输出的网页）；然后又图颜值，搜索好看的模板(之前本来图省事，一直想选定Anisina的，但是后来发现还不如这个Hueman使用方便，并其实Hueman搭好了会更美观…)；然后又是git、Node、hexo的安装；加上调试git…</p>
 <p>当时想部署到github上，<code>hexo deploy</code>，总提示<code>\# ERROR Deployer not found: git</code>，除了要在”_config.yml”中更改type字段为<code>type: git</code>，还要执行<code>npm install hexo-deployer-git --save</code>，每次新建一个hexo”project”都需要执行一次，好像是到了v3.0版本才这样的…</p>
 <p>其中教程主要参考了“<a href="http://www.jianshu.com/p/e99ed60390a8" target="_blank" rel="external">20分钟教你使用hexo搭建github博客</a>”这篇简书，还是很有帮助的…以后估计也还会需要查阅…</p>
@@ -171,7 +146,7 @@
 
 
 
-    <a data-url="regulus.online/2017/01/18/我的第一篇Blog-post/" data-id="ciy2v9mk5000104wh5zhwwj9l" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="regulus.online/2017/01/18/我的第一篇Blog-post/" data-id="ciy2vlh0f0001mcwhyg67n7zt" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -238,9 +213,44 @@
     <section id="comments">
     
         
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
+    <div class="ds-thread" data-thread-key="2017/01/18/我的第一篇Blog-post/" data-title="我的第一篇Blog post" data-url="regulus.online/2017/01/18/我的第一篇Blog-post/"></div>
+    <style>
+        #ds-thread #ds-reset .ds-textarea-wrapper {
+            background: none;
+        }
+        #ds-reset .ds-avatar img {
+            box-shadow: none;
+        }
+        #ds-reset .ds-gradient-bg {
+            background: #f7f7f7;
+        }
+        #ds-thread #ds-reset li.ds-tab a {
+            border-radius: 3px;
+        }
+        #ds-thread #ds-reset .ds-post-button {
+            color: white;
+            border: none;
+            box-shadow: none;
+            background: #d32;
+            text-shadow: none;
+            font-weight: normal;
+            font-family: 'Microsoft Yahei';
+        }
+        #ds-thread #ds-reset .ds-post-button:hover {
+            color: white;
+            background: #DE594C;
+        }
+        #ds-thread #ds-reset .ds-post-button:active {
+            background: #d32;
+        }
+        #ds-smilies-tooltip ul.ds-smilies-tabs li a.ds-current {
+            color: white;
+            background: #d32;
+            box-shadow: none;
+            text-shadow: none;
+            font-weight: normal;
+        }
+    </style>
 
     
     </section>
@@ -443,18 +453,15 @@
 </footer>
         
     
-    <script>
-    var disqus_shortname = 'hexo-theme-hueman';
-    
-    
-    var disqus_url = 'regulus.online/2017/01/18/我的第一篇Blog-post/';
-    
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:'regulus'};
     (function() {
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0]
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
     })();
     </script>
 
