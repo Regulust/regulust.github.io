@@ -6,16 +6,16 @@
     <title>关于我，我就是我 | Regulus</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="这里是关于我的页面，我就是我，你想了解我些什么呢 ？想对我说的话，在下面给我留言吧～">
+    <meta name="description" content="这里是关于我的页面，我就是我，你想了解我些什么呢 ？有什么想对我说的话，在下面给我留言吧～">
 <meta property="og:type" content="website">
 <meta property="og:title" content="关于我，我就是我">
 <meta property="og:url" content="regulus.online/about/index.html">
 <meta property="og:site_name" content="Regulus">
-<meta property="og:description" content="这里是关于我的页面，我就是我，你想了解我些什么呢 ？想对我说的话，在下面给我留言吧～">
-<meta property="og:updated_time" content="2017-03-22T02:11:34.631Z">
+<meta property="og:description" content="这里是关于我的页面，我就是我，你想了解我些什么呢 ？有什么想对我说的话，在下面给我留言吧～">
+<meta property="og:updated_time" content="2017-03-22T03:10:59.753Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于我，我就是我">
-<meta name="twitter:description" content="这里是关于我的页面，我就是我，你想了解我些什么呢 ？想对我说的话，在下面给我留言吧～">
+<meta name="twitter:description" content="这里是关于我的页面，我就是我，你想了解我些什么呢 ？有什么想对我说的话，在下面给我留言吧～">
     
 
     
@@ -73,18 +73,39 @@
                         <nav id="sub-nav">
                             <div id="search-form-wrap">
 
-    <form class="search-form" method="GET" action="https://www.baidu.com/s?">
-    <input name="wd" type="text" class="search-form-input" placeholder="搜索" />
-</form>
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
 <script>
-(function ($) {
-    $('.search-form').on('submit', function (e) {
-        var keyword = $('.search-form-input[name="wd"]').val();
-        window.location = 'https://www.baidu.com/s?wd=site:regulus.online ' + keyword;
-        return false;
-    });
-})(jQuery);
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
 </script>
+<script src="/js/insight.js"></script>
 
 </div>
                         </nav>
@@ -121,7 +142,7 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>这里是关于我的页面，我就是我，你想了解我些什么呢 ？<br>想对我说的话，在下面给我留言吧～</p>
+            <p>这里是关于我的页面，我就是我，你想了解我些什么呢 ？<br>有什么想对我说的话，在下面给我留言吧～</p>
 
         </div>
         <footer class="article-footer">
