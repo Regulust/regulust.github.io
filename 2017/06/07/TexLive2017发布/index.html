@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Blog of Regulus">
 <meta property="og:description" content="TeX Live 2017 正式版已经于6月4日发布，各镜像站差不多已经同步完成，老版本需要重新安装（新旧可并存）。下载说明地址：http://www.tug.org/texlive/acquire.html中文版说明文档：http://www.tug.org/texlive/doc/texlive-zh-cn/texlive-zh-cn.pdf推荐使用”Downloading one huge">
 <meta property="og:image" content="regulus.online/images/texlive2017.png">
-<meta property="og:updated_time" content="2017-06-07T05:24:36.283Z">
+<meta property="og:updated_time" content="2017-09-20T11:46:03.740Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TeX Live 2017 发布">
 <meta name="twitter:description" content="TeX Live 2017 正式版已经于6月4日发布，各镜像站差不多已经同步完成，老版本需要重新安装（新旧可并存）。下载说明地址：http://www.tug.org/texlive/acquire.html中文版说明文档：http://www.tug.org/texlive/doc/texlive-zh-cn/texlive-zh-cn.pdf推荐使用”Downloading one huge">
@@ -184,7 +184,18 @@ var _hmt = _hmt || [];
         
         <div class="article-entry" itemprop="articleBody">
             <p>TeX Live 2017 正式版已经于6月4日发布，各镜像站差不多已经同步完成，老版本需要重新安装（新旧可并存）。<br>下载说明地址：<a href="http://www.tug.org/texlive/acquire.html" target="_blank" rel="external">http://www.tug.org/texlive/acquire.html</a><br>中文版说明文档：<a href="http://www.tug.org/texlive/doc/texlive-zh-cn/texlive-zh-cn.pdf" target="_blank" rel="external">http://www.tug.org/texlive/doc/texlive-zh-cn/texlive-zh-cn.pdf</a><br>推荐使用”Downloading one huge ISO file (typically to burn your own DVD).”的方式下载完整镜像文件安装的方式。</p>
-<p>TeX Live 2017更新说明节取：<br>LuaTEX: 更多 callback，更多排版控制，更多对内部机制的控制；在⼀些平台增加了⽤来动态载⼊<br>代码的 ffi 库。<br>pdfTEX: 去年的 SOURCE_DATE_EPOCH_TEX_PRIMITIVES 环境变量被改名为 FORCE_SOURCE_DATE，<br>没有功能改变。如果 \pdfpageattr token 列表包含了字符串 /MediaBox，则会忽略输出默认的<br>/MediaBox。<br>XeTEX: Unicode/OpenType 数学⽀持现在是基于 HarfBuzz 的 MATH table ⽀持实现的；还有⼀<br>些 bug 修正。<br>11 翻译说明 42<br>Dvips: 保证最后⼀次设置的 papersize special 是最后选中的纸张尺⼨，和 dvipdfmx 以及宏包希<br>望的效果⼀致；-L0 选项 (L0 配置⽂件设置) 可以⽤来恢复以前的⾏为，也就是第⼀次设置纸张尺⼨的<br>special 才有效。<br>epTEX, eupTEX: 来 ⾃ pdfTEX 新 的 原 ⽣ 命 令 \pdfuniformdeviate, \pdfnormaldeviate,<br>\pdfrandomseed, \pdfsetrandomseed, \pdfelapsedtime, \pdfresettimer。<br>MacTEX: 从这⼀年开始，MacTEX 只⽀持 Apple 还在发布安全更新的 Mac OS X 版本，使⽤的平台<br>名称是 x86_64-darwin，⽬前这包括 Yosemite, El Capitan, 和 Sierra (10.10 及以后的)。给更⽼版本的<br>Mac OS X ⽤的⼆进制程序不会包含在 MacTEX ⾥⾯，但 TEX Live ⾥还会提供 (x86_64-darwinlegacy,<br>i386-darwin, powerpc-darwin)。<br>基础架构: TEXMFLOCAL 树现在 (默认) 是在 TEXMFSYSCONFIG 和 TEXMFSYSVAR 之前搜索了；这是<br>为了更好地符合本地⽂件优先于系统⽂件的原则。另外，tlmgr 有⼀个新的 shell 模式，进⾏交互和<br>脚本使⽤，和⼀个新的 conf auxtrees 功能来⽅便添加和删除额外的⽬录树。<br>updmap 和 fmtutil: 这些脚本如果在没有明确指定是系统模式 (updmap-sys, fmtutil-sys, 或者<br>-sys 选项)，还是⽤户模式 (updmap-user, fmtutil-user, 或者 -user 选项) 的时候会给出警告。这是为<br>了减少常见的不⼩⼼启⽤⽤户模式⽽导致系统更新⽆法⽣效。细节请参见 <a href="http://tug.org/texlive/" target="_blank" rel="external">http://tug.org/texlive/</a><br>scripts-sys-user.html。<br>install-tl: Mac 下的个⼈路径现在默认设置为和 MacTEX ⼀样的 (~/Library/…)。增加了新<br>选项 -init-from-profile 来以特定 profile 启动安装；新命令 P 来直接保存⼀个 profile；新的 profile<br>变量名 (但先前的名字也还⽀持)。<br>SyncTEX: 临时⽂件现在被改为了 foo.synctex(busy)，⽽不是 foo.synctex.gz(busy) (不再<br>有 .gz)。需要删除临时⽂件的前端和编译系统因此需要调整。<br>其他⼯具: texosquery-jre8 是⼀个新的跨平台程序，⽤来在 TEX ⽂档中获取系统 locale 和其他<br>OS 信息；它已经包含在了 shell_escape_commands 中，可以在受限的 shell 环境中执⾏。(texosquery<br>也⽀持更⽼的 JRE 版本，但不能在受限模式下启⽤，因为 Oracle 由于安全问题不再⽀持那些版本了。)<br>平台：见上述的 MacTEX 条⽬。没有其他的变化。</p>
+<p>TeX Live 2017更新说明节取：<br>LuaTeX: 更多 callback，更多排版控制，更多对内部机制的控制；在一些平台增加了用<br>来动态载入代码的 ffi 库。 </p>
+<p>pdfTeX: 去年的 SOURCE_DATE_EPOCH_TEX_PRIMITIVES 环境变量被改名为<br>FORCE_SOURCE_DATE，没有功能改变。如果 \pdfpageattr token 列表包含了字符串<br>/MediaBox，则会忽略输出默认的 /MediaBox。 </p>
+<p>XeTeX: Unicode/OpenType 数学支持现在是基于 HarfBuzz 的 MATH table 支持实现的；<br>还有一些 bug 修正。 </p>
+<p>Dvips: 保证最后一次设置的 papersize special 是最后选中的纸张尺寸，和 dvipdfmx<br>以及宏包希望的效果一致；-L0 选项 (L0 配置文件设置) 可以用来恢复以前的行为，也<br>就是第一次设置纸张尺寸的 special 才有效。 </p>
+<p>epTeX, eupTeX: 来自 pdfTeX 新的原生命令 \pdfuniformdeviate, \pdfnormaldeviate,<br>\pdfrandomseed, \pdfsetrandomseed, \pdfelapsedtime, \pdfresettimer。 </p>
+<p>MacTeX: 从这一年开始，MacTeX 只支持 Apple 还在发布安全更新的 MacOSX 版本，使用<br>的平台名称是 x86_64-darwin，目前这包括 Yosemite, El Capitan, 和 Sierra (10.10<br>及以后的)。给更老版本的 MacOSX 用的二进制程序不会包含在 MacTeX 里面，但 TeX<br>Live 里还会提供 (x86_64-darwinlegacy, i386-darwin, powerpc-darwin)。 </p>
+<p>基础架构: TEXMFLOCAL 树现在 (默认) 是在 TEXMFSYSCONFIG 和 TEXMFSYSVAR 之前搜索<br>了；这是为了更好地符合本地文件优先于系统文件的原则。另外，tlmgr 有一个新的<br>shell 模式，进行交互和脚本使用，和一个新的 conf auxtrees 功能来方便添加和删除<br>额外的目录树。 </p>
+<p>updmap 和 fmtutil: 这些脚本如果在没有明确指定是系统模式 (updmap-sys,<br>fmtutil-sys, 或者 -sys 选项)，还是用户模式 (updmap-user, fmtutil-user, 或者<br>-user 选项) 的时候会给出警告。这是为了减少常见的不小心启用用户模式而导致系统更<br>新无法生效。细节请参见 <a href="http://tug.org/texlive/scripts-sys-user.html。" target="_blank" rel="external">http://tug.org/texlive/scripts-sys-user.html。</a> </p>
+<p>install-tl: Mac 下的个人路径现在默认设置为和 MacTeX 一样的 (~/Library/…)。增<br>加了新选项 -init-from-profile 来以特定 profile 启动安装；新命令 P 来直接保存一<br>个 profile；新的 profile 变量名 (但先前的名字也还支持)。 </p>
+<p>SyncTeX: 临时文件现在被改为了 foo.synctex(busy)，而不是 foo.synctex.gz(busy)<br>(不再有 .gz)。需要删除临时文件的前端和编译系统因此需要调整。 </p>
+<p>其他工具: texosquery-jre8 是一个新的跨平台程序，用来在 TeX 文档中获取系统<br>locale 和其他 OS 信息；它已经包含在了 shell_escape_commands 中，可以在受限的<br>shell 环境中执行。(texosquery 也支持更老的 JRE 版本，但不能在受限模式下启用，<br>因为 Oracle 由于安全问题不再支持那些版本了。) </p>
+<p>平台：见上述的 MacTeX 条目。没有其他的变化。 </p>
 <blockquote>
 <p>附：<br>latexstudio.net关于<a href="http://www.latexstudio.net/archives/10208" target="_blank" rel="external">TeX Live 下载及安装说明</a>，以及本站的历史文章<a href="http://www.regulus.online/2017/03/25/LaTex%E7%9A%84%E4%B8%80%E7%82%B9%E5%85%A5%E9%97%A8%E7%BB%8F%E9%AA%8C&amp;TexLive%E7%9A%84%E5%AE%89%E8%A3%85/" target="_blank" rel="external">LaTex的一点入门经验 &amp; TexLive安装</a></p>
 </blockquote>
@@ -265,6 +276,16 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
         
 <nav id="article-nav">
     
+        <a href="/2017/09/20/回归/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            回归
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
     
         <a href="/2017/05/30/Ubuntu 解压提取rar文件报错Parsing Filters is unsupppirted/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
@@ -283,6 +304,26 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
         <h3 class="widget-title">最新文章</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/09/20/回归/" class="thumbnail">
+    
+    
+        <span style="background-image:url(/images/huigui.jpg)" alt="回归" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/日常/">日常</a></p>
+                            <p class="item-title"><a href="/2017/09/20/回归/" class="title">回归</a></p>
+                            <p class="item-date"><time datetime="2017-09-20T12:35:26.000Z" itemprop="datePublished">2017-09-20</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -364,26 +405,6 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/04/17/系统在于折腾/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://res.cloudinary.com/regulus/image/upload/v1492424114/blog/zheteng.jpg)" alt="系统在于折腾" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/日常/">日常</a></p>
-                            <p class="item-title"><a href="/2017/04/17/系统在于折腾/" class="title">系统在于折腾</a></p>
-                            <p class="item-date"><time datetime="2017-04-17T08:32:24.000Z" itemprop="datePublished">2017-04-17</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -393,7 +414,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/News/">News</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/">Tips</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/Hexo/">Hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/ROOT/">ROOT</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/日常/">日常</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/转载/">转载</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/News/">News</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/">Tips</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/Hexo/">Hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/ROOT/">ROOT</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/日常/">日常</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/转载/">转载</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -403,7 +424,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -413,7 +434,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/News/">News</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tips/">Tips</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tips/">tips</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术/">技术</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日常/">日常</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日记/">日记</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂谈/">杂谈</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知识/">知识</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转载/">转载</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">2</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/News/">News</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tips/">Tips</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tips/">tips</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术/">技术</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日常/">日常</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日记/">日记</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂谈/">杂谈</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知识/">知识</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转载/">转载</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">2</span></li></ul>
         </div>
     </div>
 
