@@ -16,13 +16,13 @@
 <meta property="og:site_name" content="Blog of Regulus">
 <meta property="og:description" content="周一因为打错一行命令导致Ubuntu跪了，作为一个Linux菜鸟来说，实在无法挽救…恰逢最近Ubuntu更新17.10，带来不少易见的新特性，怎么能不尝试下（就是忍不住折腾）～这里记录下三天来装系统、折腾GNOME的一些事(坑)～
 系统安装我一直是使用UltraISO来制作系统安装盘的，操作简单，通吃Linux、Windows，制作启动盘几乎没出过问题[^1]，很久前下过一个绿色版的UltraI">
-<meta property="og:image" content="https://res.cloudinary.com/regulus/image/upload/v1509006546/gnome3.png">
-<meta property="og:updated_time" content="2017-10-26T08:35:14.304Z">
+<meta property="og:image" content="https://res.cloudinary.com/regulus/image/upload/v1509006546/blog/gnome3.png">
+<meta property="og:updated_time" content="2018-01-02T10:07:13.931Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="更新Ubuntu17.10与折腾Gnome">
 <meta name="twitter:description" content="周一因为打错一行命令导致Ubuntu跪了，作为一个Linux菜鸟来说，实在无法挽救…恰逢最近Ubuntu更新17.10，带来不少易见的新特性，怎么能不尝试下（就是忍不住折腾）～这里记录下三天来装系统、折腾GNOME的一些事(坑)～
 系统安装我一直是使用UltraISO来制作系统安装盘的，操作简单，通吃Linux、Windows，制作启动盘几乎没出过问题[^1]，很久前下过一个绿色版的UltraI">
-<meta name="twitter:image" content="https://res.cloudinary.com/regulus/image/upload/v1509006546/gnome3.png">
+<meta name="twitter:image" content="https://res.cloudinary.com/regulus/image/upload/v1509006546/blog/gnome3.png">
     
 
     
@@ -94,7 +94,7 @@ var _hmt = _hmt || [];
                                     <a class="main-nav-list-link" href="/">主页</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/News/">News</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Tips/">Tips</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Tips/Hexo/">Hexo</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Tips/ROOT/">ROOT</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/">技术</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/Hexo/">Hexo</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/日常/">日常</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/转载/">转载</a></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/News/">News</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Tips/">Tips</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/">技术</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/Hexo/">Hexo</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/ROOT/">ROOT</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/日常/">日常</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/转载/">转载</a></li></ul>
                                     
                                 <li class="main-nav-list-item" >
                                     <a class="main-nav-list-link" href="/inbox/Inbox.html">index.收集</a>
@@ -186,15 +186,15 @@ var _hmt = _hmt || [];
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p><img src="https://res.cloudinary.com/regulus/image/upload/v1509006546/gnome3.png" alt="Ubuntu+GNOME=满满的爱，o(∩∩)o...哈哈"></p>
+            <p><img src="https://res.cloudinary.com/regulus/image/upload/v1509006546/blog/gnome3.png" alt="Ubuntu+GNOME=满满的爱，o(∩∩)o...哈哈"></p>
 <p>周一因为打错一行命令导致Ubuntu跪了，作为一个Linux菜鸟来说，实在无法挽救…<br>恰逢最近Ubuntu更新17.10，带来不少易见的新特性，怎么能不尝试下（就是忍不住折腾）～<br>这里记录下三天来装系统、折腾GNOME的一些事(坑)～</p>
 <h3 id="系统安装"><a href="#系统安装" class="headerlink" title="系统安装"></a>系统安装</h3><p>我一直是使用UltraISO来制作系统安装盘的，操作简单，通吃Linux、Windows，制作启动盘几乎没出过问题[^1]，很久前下过一个绿色版的UltraISO我一直保留着。<br>Ubuntu启动盘的好处是，自己就是一个PE系统，可以通过Try Ubuntu选项进入一个几乎完整版的Ubuntu系统(如果连着有线，上网都没有问题，无线网卡可能有驱动问题)，然后我备份了原系统中的/home文件夹，包括以前下载保留的一些.deb包，以及一些文件夹结构，新安装完系统可以快速再次开展工作。</p>
 <p>[^1]: 不过近期有一次是制作Windows10 1709带创意者更新版本，其中更新文件大于4G，而UEFI只认FAT32的启动盘，制作启动盘时直接跳过了这个文件，也没有提示，安装系统时提示找不到xxx…呃，微软你在想什么…</p>
 <p>之前安装Ubuntu，我的分区方案一直是’\boot’ 512MB，swap留上4GB+，剩下的根目录 ‘\’与’\home’平分，说是这样重装可以保留用户文件，然而使用过程发现，因为一般都是双系统安装，给Ubuntu留下的空间也就几十GB，根目录与\home平分的方式不能最大化利用空间，别说Ubuntu用不了多少空间，装个MMA近10GB，TexLive套装几个GB，如果有人会用到Matlab，那又是近10GB，一些课程跑程序偶尔会跑出个几个GB(虽然现在不跑了，但是一旦需要空间时真的蛋疼)，如果分两个区，每个区都空几个GB，但程序装不上的事情可不想再出现了…</p>
-<p><img src="http://res.cloudinary.com/regulus/image/upload/v1508998970/ubuntu1710_01.png" alt="看来覆盖升级安装的方式貌似可能会影响到引导分区，还是选其它选项重新分区吧"></p>
+<p><img src="http://res.cloudinary.com/regulus/image/upload/v1508998970/blog/ubuntu1710_01.png" alt="看来覆盖升级安装的方式貌似可能会影响到引导分区，还是选其它选项重新分区吧"></p>
 <p>加上Ubuntu已经把“交换分区”的工作交给了“交换文件”，所以这次分区超级简单，一个\boot 2048MB(也别说\boot这么大用不到，就升级过几次内核，总给我说空间不足), 剩下的全给了根目录\ ,引导依然安装到\boot 目录下，不影响Windows的引导，切换系统时手动bios切换或者平时默认grub引导(如果Linux挂了，直接删Linux分区，我可不想影响到Windows)。</p>
-<p><img src="http://res.cloudinary.com/regulus/image/upload/v1508998969/ubuntu1710_02.png" alt="“机灵的土豚”，我来了"></p>
-<h3 id="折腾Gnome"><a href="#折腾Gnome" class="headerlink" title="折腾Gnome"></a>折腾Gnome</h3><p>最早用Ubuntu的时候曾经看过许多酷炫的Gnome美化，心想：Ubuntu用的这么酷…然而一直还是默认Unity一直用着，实用优先…<br><img src="http://res.cloudinary.com/regulus/image/upload/v1508998970/ubuntu1710_0.png" alt="Ubuntu17.10桌面"></p>
+<p><img src="http://res.cloudinary.com/regulus/image/upload/v1508998969/blog/ubuntu1710_02.png" alt="“机灵的土豚”，我来了"></p>
+<h3 id="折腾Gnome"><a href="#折腾Gnome" class="headerlink" title="折腾Gnome"></a>折腾Gnome</h3><p>最早用Ubuntu的时候曾经看过许多酷炫的Gnome美化，心想：Ubuntu用的这么酷…然而一直还是默认Unity一直用着，实用优先…<br><img src="http://res.cloudinary.com/regulus/image/upload/v1508998970/blog/ubuntu1710_0.png" alt="Ubuntu17.10桌面"></p>
 <p>这次好了，17.10直接默认Gnome了，一上手确实蛮美观的，然而慢慢开始Unity遗留的各种不适应：<br><strong>输入法：</strong>安装搜狗输入法，发现顶栏输入法图标不变为fcitx的小企鹅，设置切换也没用，但是输入框确实sogou的…在MMA输入不了中文了，然后设置里切不回来ibus输入法…呃，所以一直是一种，打字输入框是sogou的，顶栏图标是ibus的，然后设置输入法切换无效的奇葩状态…后来卸载重装ibus、fcitx几轮，现在是用着ibus，切换不了fcitx，输入法折腾这么久还是这么蛋疼，可能很多人会说“你就是不会用”，确实没错啊，就一个输入法你还要我花多大精力去调整啊，很基础的功能难道不是开箱即用的么（好吧，想起Ubuntu社区的一句话了：软件系统都是免费的，软件功能有问题轮不到你发脾气，开发者不欠你什么）…<br><strong>挂起按钮：</strong>用了Gnome，发现找不到挂起按钮了。这个功能我之前很常用，因为台式机，每天打开一堆窗口，关机开机还得再把它们打开，第二天难以无缝的继续前一天的工作，而挂起就可以快速、无缝的继续前一天的工作，而且省电、安全(保持内存上电的同时，现场也会存入硬盘，断电也不会丢失，只是再启动稍慢)。然而Gnome的挂起呢？我找了教程，可以终端键入<code>systemctl suspend</code>实现免sudo挂起，就算写了.sh双击运行还是太麻烦（我说我觉得这样不够优雅你信吗），安装了Gnome插件Suspend Button添加了挂起按钮，然而点击无反应…昨天看了“帮助”，才看到原来打开系统菜单，按住alt键或者长按关机按钮，关机按钮会变为挂起按钮[掩面]，作为一个长期unity党，我怎么会知道这样的“常识”，百度还百度不到…<br><strong>坚果云：</strong>坚果云是我在linux下最重要的工具之一了，真正的全平台支持，同步些文档、代码非常实用方便，速度也很快…然而，再17.10下，坚果云安装完成后，顶栏图标不出现…虽然同步还能正常进行，但无法进行设置…之后搜到<a href="https://imcn.me/html/y2017/31253.html" target="_blank" rel="external">IMCN博文-GNOME 3.26中的新功能</a>，才看到原来GNOME 3.26 去掉了旧式系统托盘，导致图标不能显示，通过安装TopIcons Plus扩展可以恢复托盘图标(邮件联系坚果云，回复说Linux工程师家里有事请假了…也是不容易啊，祝好吧)。</p>
 <p>…</p>
 <p>至少现在一切都可以正常使用了，该继续工作了～<br>转述一段社区看到的话：Linux对于多数人只是一个工具，怎么用取决于你自己，Linux也不是个玩具，留出更多的时间，用它创造出哪怕一点点的新东西来…</p>
@@ -333,6 +333,26 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2018/01/02/2018，新年快乐/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://res.cloudinary.com/regulus/image/upload/v1514890139/blog/Happy-New-Year-Images-2018-HD-1.jpg)" alt="2018，新年快乐" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/日常/">日常</a></p>
+                            <p class="item-title"><a href="/2018/01/02/2018，新年快乐/" class="title">2018，新年快乐</a></p>
+                            <p class="item-date"><time datetime="2018-01-02T10:02:24.000Z" itemprop="datePublished">2018-01-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2017/12/19/更换域名了/" class="thumbnail">
     
     
@@ -356,7 +376,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                             <a href="/2017/10/26/更新Ubuntu17-10与折腾Gnome/" class="thumbnail">
     
     
-        <span style="background-image:url(https://res.cloudinary.com/regulus/image/upload/v1509006546/gnome3.png)" alt="更新Ubuntu17.10与折腾Gnome" class="thumbnail-image"></span>
+        <span style="background-image:url(https://res.cloudinary.com/regulus/image/upload/v1509006546/blog/gnome3.png)" alt="更新Ubuntu17.10与折腾Gnome" class="thumbnail-image"></span>
     
     
 </a>
@@ -396,7 +416,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                             <a href="/2017/10/23/Ubuntu又得重装了/" class="thumbnail">
     
     
-        <span style="background-image:url(https://res.cloudinary.com/regulus/image/upload/v1508765965/ubuntu_failure_thumbnail.png)" alt="Ubuntu又得重装了" class="thumbnail-image"></span>
+        <span style="background-image:url(https://res.cloudinary.com/regulus/image/upload/v1508765965/blog/ubuntu_failure_thumbnail.png)" alt="Ubuntu又得重装了" class="thumbnail-image"></span>
     
     
 </a>
@@ -410,26 +430,6 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2017/10/20/Ubuntu发布17-10-桌面版不再支持32位/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://res.cloudinary.com/regulus/image/upload/v1508472342/ubuntu17.10.jpg)" alt="Ubuntu发布17.10,桌面版不再支持32位" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/News/">News</a></p>
-                            <p class="item-title"><a href="/2017/10/20/Ubuntu发布17-10-桌面版不再支持32位/" class="title">Ubuntu发布17.10,桌面版不再支持32位</a></p>
-                            <p class="item-date"><time datetime="2017-10-20T02:56:38.000Z" itemprop="datePublished">2017-10-20</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -439,7 +439,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">分类</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/News/">News</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/">Tips</a><span class="category-list-count">4</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/Hexo/">Hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/ROOT/">ROOT</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">6</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Hexo/">Hexo</a><span class="category-list-count">2</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/日常/">日常</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/转载/">转载</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/News/">News</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/">Tips</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Hexo/">Hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/ROOT/">ROOT</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/日常/">日常</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/转载/">转载</a><span class="category-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -449,7 +449,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -459,7 +459,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/News/">News</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tips/">Tips</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tips/">tips</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术/">技术</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日常/">日常</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂谈/">杂谈</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知识/">知识</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转载/">转载</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">5</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/News/">News</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tips/">Tips</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tips/">tips</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术/">技术</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日常/">日常</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂谈/">杂谈</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知识/">知识</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转载/">转载</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">5</span></li></ul>
         </div>
     </div>
 
@@ -469,7 +469,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/News/" style="font-size: 14px;">News</a> <a href="/tags/Tips/" style="font-size: 12px;">Tips</a> <a href="/tags/hexo/" style="font-size: 16px;">hexo</a> <a href="/tags/tips/" style="font-size: 18px;">tips</a> <a href="/tags/技术/" style="font-size: 20px;">技术</a> <a href="/tags/日常/" style="font-size: 16px;">日常</a> <a href="/tags/杂谈/" style="font-size: 12px;">杂谈</a> <a href="/tags/知识/" style="font-size: 10px;">知识</a> <a href="/tags/转载/" style="font-size: 10px;">转载</a> <a href="/tags/随笔/" style="font-size: 18px;">随笔</a>
+            <a href="/tags/News/" style="font-size: 14px;">News</a> <a href="/tags/Tips/" style="font-size: 12px;">Tips</a> <a href="/tags/hexo/" style="font-size: 16px;">hexo</a> <a href="/tags/tips/" style="font-size: 18px;">tips</a> <a href="/tags/技术/" style="font-size: 20px;">技术</a> <a href="/tags/日常/" style="font-size: 18px;">日常</a> <a href="/tags/杂谈/" style="font-size: 12px;">杂谈</a> <a href="/tags/知识/" style="font-size: 10px;">知识</a> <a href="/tags/转载/" style="font-size: 10px;">转载</a> <a href="/tags/随笔/" style="font-size: 18px;">随笔</a>
         </div>
     </div>
 
@@ -517,7 +517,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2017 regulus</p>
+                <p>&copy; 2018 regulus</p>
                 <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
             </div>
         </div>
