@@ -6,7 +6,7 @@
     <title>折腾TeXstudio&amp;拼写语法检查工具-LanguageTool | Blog of Regulus</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="技术,LaTex,Tips" />
+        <meta name="keywords" content="技术,Tips,LaTex" />
     
     <meta name="description" content="也用了蛮久的TeXstudio了(虽然还是很菜)，也记录下折腾TeXstudio的一点过程，以及最近在Ubuntu上搞定配置LanguageTool拼写语法检查插件。
 TeXstudioTeXstudio是一款专门用于写作LaTeX文档的编辑器，优势是使用简单方便，简单配置即可直接使用；对新手友好，优秀的代码高亮与补全功能；如果有更高要求，也有许多其它配置项可供自定义(具体特性可见TeXsudio">
@@ -17,7 +17,7 @@ TeXstudioTeXstudio是一款专门用于写作LaTeX文档的编辑器，优势是
 <meta property="og:description" content="也用了蛮久的TeXstudio了(虽然还是很菜)，也记录下折腾TeXstudio的一点过程，以及最近在Ubuntu上搞定配置LanguageTool拼写语法检查插件。
 TeXstudioTeXstudio是一款专门用于写作LaTeX文档的编辑器，优势是使用简单方便，简单配置即可直接使用；对新手友好，优秀的代码高亮与补全功能；如果有更高要求，也有许多其它配置项可供自定义(具体特性可见TeXsudio">
 <meta property="og:image" content="https://res.cloudinary.com/regulus/image/upload/v1517312736/blog/texstudio.jpg">
-<meta property="og:updated_time" content="2018-01-30T13:44:10.881Z">
+<meta property="og:updated_time" content="2018-01-30T13:52:20.651Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="折腾TeXstudio&拼写语法检查工具-LanguageTool">
 <meta name="twitter:description" content="也用了蛮久的TeXstudio了(虽然还是很菜)，也记录下折腾TeXstudio的一点过程，以及最近在Ubuntu上搞定配置LanguageTool拼写语法检查插件。
@@ -199,7 +199,7 @@ var _hmt = _hmt || [];
 <p>我这么强悍的<strong>TeXstudio</strong>怎么能没有拼写检查呢…<br>直接在配置选项-语言检查中就能看到拼写检查的相关选项了，主要需要自行设定的就是字典的路径，直接去设置中给出的跳转链接OpenOffice或者LibreOffice下载相关字典(我是参考了这篇<a href="http://blog.csdn.net/weixin_35653315/article/details/77851891" target="_blank" rel="external">CSDN博客</a>下载的词典文件)，把下载的文件路径填入即可实现简单的拼写检查功能，错误的单词会按照高亮设置进行下划线等提示，直接在单词右键就可以看到词典建议词。<br><img src="https://res.cloudinary.com/regulus/image/upload/v1517319691/blog/texstudio04.jpg" alt="拼写检查"></p>
 <p>但如果实现更高级的语法检查，就得用到大名鼎鼎的LanguageTool了…其实配置也还比较简单，前往<a href="(https://www.languagetool.org/">官网</a>)下载，再参考这篇<a href="http://blog.csdn.net/yinqingwang/article/details/54583541" target="_blank" rel="external">CSDN博文</a>可以很快在Windows下配置好，不过需要先安装java-JRE运行环境。</p>
 <p>参考同样的方法，我在Ubuntu中折腾许久，却没能让LanguageTool在TeXstudio中正常运行起来。</p>
-<p>终于我在官网发现了这么一句话：<em>The new release TeXstudio 2.12.6 is available (see changelog).<br>For Ubuntu 14.04 use Qt4 Version. LanguageTool &gt;=3.6 is only supported with Qt5.</em><br>原来，得使用Qt5编译的TeXstudio才能与高版本的LanguageTool4.0兼容…</p>
+<p>终于我在官网发现了这么一句话：<em>The new release TeXstudio 2.12.6 is available (see changelog).For Ubuntu 14.04 use Qt4 Version. LanguageTool &gt;=3.6 is only supported with Qt5.</em><br>原来，得使用Qt5编译的TeXstudio才能与高版本的LanguageTool4.0兼容…</p>
 <p>下载安装Qt5版本的TeXstudio(Qt5版本界面样式变少了，有些细节比起Qt4的感觉略丑)，然后配置。<br><img src="https://res.cloudinary.com/regulus/image/upload/v1517319692/blog/texstudio05.jpg" alt="LanguageTool配置"><br>Ubuntu17.10应该是默认安装java环境了，但运行LT时运行不了，所以手动<code>sudo apt install default-jdk</code>安装了一下java环境。但又一直java路径填写不正确，所以每次都得手动在LT文件夹下手动运行一下<code>java -jar languagetool.jar</code>，然后TeXStudio里面就可一正常看到LT给出的语法检查提示啦~简单的单复数、大小写、标点符号都能给出比较好的建议。</p>
 <p><img src="https://res.cloudinary.com/regulus/image/upload/v1517319691/blog/texstudio06.jpg" alt="为什么错误词语会变大？"></p>
 <p>有趣的是，刚成功的时候，错误的词语打着就会变大…后来一想，原来是高亮的锅，语法高亮那里把”语法错误”的高亮设置为放大127%了…<br><img src="https://res.cloudinary.com/regulus/image/upload/v1517319691/blog/texstudio07.jpg" alt="语法高亮的锅，蠢蠢的我"></p>
