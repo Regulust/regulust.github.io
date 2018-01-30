@@ -3,29 +3,26 @@
 <head>
     <meta charset="utf-8">
     
-    <title>【转载】网络传输加密之数字签名与数字证书 | Blog of Regulus</title>
+    <title>折腾TeXstudio&amp;拼写语法检查工具-LanguageTool | Blog of Regulus</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="转载,知识" />
+        <meta name="keywords" content="技术,LaTex,Tips" />
     
-    <meta name="description" content="因为登录一些网址安全性要求较高，需要下载数字证书，之前还听过数字签名这一名词，但一直不太清楚感兴趣查了查，查到这么一篇博文，图文写的很清晰，转载如下～不过最好之前查一下非对称加密、公钥、私钥等相关含义。（至于“钥”字读yue还是yao，只能说公yao、密yao大家这么念没错，但可能字典意义上yue是正确的读法，具体可查看相关知乎回答与果壳网中的讨论）
-
-转载地址：数字签名与数字证书阮一峰的网络日志">
+    <meta name="description" content="也用了蛮久的TeXstudio了(虽然还是很菜)，也记录下折腾TeXstudio的一点过程，以及最近在Ubuntu上搞定配置LanguageTool拼写语法检查插件。
+TeXstudioTeXstudio是一款专门用于写作LaTeX文档的编辑器，优势是使用简单方便，简单配置即可直接使用；对新手友好，优秀的代码高亮与补全功能；如果有更高要求，也有许多其它配置项可供自定义(具体特性可见TeXsudio">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【转载】网络传输加密之数字签名与数字证书">
-<meta property="og:url" content="regulus.online/2017/05/22/【转载】网络传输加密之数字签名与数字证书/index.html">
+<meta property="og:title" content="折腾TeXstudio&拼写语法检查工具-LanguageTool">
+<meta property="og:url" content="regulus.online/2018/01/30/折腾TeXstudio/index.html">
 <meta property="og:site_name" content="Blog of Regulus">
-<meta property="og:description" content="因为登录一些网址安全性要求较高，需要下载数字证书，之前还听过数字签名这一名词，但一直不太清楚感兴趣查了查，查到这么一篇博文，图文写的很清晰，转载如下～不过最好之前查一下非对称加密、公钥、私钥等相关含义。（至于“钥”字读yue还是yao，只能说公yao、密yao大家这么念没错，但可能字典意义上yue是正确的读法，具体可查看相关知乎回答与果壳网中的讨论）
-
-转载地址：数字签名与数字证书阮一峰的网络日志">
-<meta property="og:image" content="http://res.cloudinary.com/regulus/image/upload/v1495459841/blog/digitalsignature/ssl_dyjugv.jpg">
-<meta property="og:updated_time" content="2017-05-22T15:09:50.000Z">
+<meta property="og:description" content="也用了蛮久的TeXstudio了(虽然还是很菜)，也记录下折腾TeXstudio的一点过程，以及最近在Ubuntu上搞定配置LanguageTool拼写语法检查插件。
+TeXstudioTeXstudio是一款专门用于写作LaTeX文档的编辑器，优势是使用简单方便，简单配置即可直接使用；对新手友好，优秀的代码高亮与补全功能；如果有更高要求，也有许多其它配置项可供自定义(具体特性可见TeXsudio">
+<meta property="og:image" content="https://res.cloudinary.com/regulus/image/upload/v1517312736/blog/texstudio.jpg">
+<meta property="og:updated_time" content="2018-01-30T13:44:10.881Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【转载】网络传输加密之数字签名与数字证书">
-<meta name="twitter:description" content="因为登录一些网址安全性要求较高，需要下载数字证书，之前还听过数字签名这一名词，但一直不太清楚感兴趣查了查，查到这么一篇博文，图文写的很清晰，转载如下～不过最好之前查一下非对称加密、公钥、私钥等相关含义。（至于“钥”字读yue还是yao，只能说公yao、密yao大家这么念没错，但可能字典意义上yue是正确的读法，具体可查看相关知乎回答与果壳网中的讨论）
-
-转载地址：数字签名与数字证书阮一峰的网络日志">
-<meta name="twitter:image" content="http://res.cloudinary.com/regulus/image/upload/v1495459841/blog/digitalsignature/ssl_dyjugv.jpg">
+<meta name="twitter:title" content="折腾TeXstudio&拼写语法检查工具-LanguageTool">
+<meta name="twitter:description" content="也用了蛮久的TeXstudio了(虽然还是很菜)，也记录下折腾TeXstudio的一点过程，以及最近在Ubuntu上搞定配置LanguageTool拼写语法检查插件。
+TeXstudioTeXstudio是一款专门用于写作LaTeX文档的编辑器，优势是使用简单方便，简单配置即可直接使用；对新手友好，优秀的代码高亮与补全功能；如果有更高要求，也有许多其它配置项可供自定义(具体特性可见TeXsudio">
+<meta name="twitter:image" content="https://res.cloudinary.com/regulus/image/upload/v1517312736/blog/texstudio.jpg">
     
 
     
@@ -160,18 +157,18 @@ var _hmt = _hmt || [];
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/转载/">转载</a>
+    <a class="page-title-link" href="/categories/技术/">技术</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-【转载】网络传输加密之数字签名与数字证书" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-折腾TeXstudio" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        【转载】网络传输加密之数字签名与数字证书
+        折腾TeXstudio&amp;拼写语法检查工具-LanguageTool
         </h1>
     
 
@@ -179,25 +176,33 @@ var _hmt = _hmt || [];
         
         
             <div class="article-subtitle">
-                <a href="/2017/05/22/【转载】网络传输加密之数字签名与数字证书/" class="article-date">
-    <time datetime="2017-05-22T12:30:09.000Z" itemprop="datePublished">2017-05-22</time>
+                <a href="/2018/01/30/折腾TeXstudio/" class="article-date">
+    <time datetime="2018-01-30T11:29:02.000Z" itemprop="datePublished">2018-01-30</time>
 </a>
                 
-    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/知识/">知识</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/转载/">转载</a></li></ul>
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LaTex/">LaTex</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tips/">Tips</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>因为登录一些网址安全性要求较高，需要下载数字证书，之前还听过数字签名这一名词，但一直不太清楚感兴趣查了查，查到这么一篇博文，图文写的很清晰，转载如下～不过最好之前查一下非对称加密、公钥、私钥等相关含义。（至于“钥”字读yue还是yao，只能说公yao、密yao大家这么念没错，但可能字典意义上yue是正确的读法，具体可查看相关<a href="https://zhihu.com/question/22185695/answer/126675950" target="_blank" rel="external">知乎回答</a>与<a href="http://www.guokr.com/post/477522/" target="_blank" rel="external">果壳网中的讨论</a>）</p>
-<blockquote>
-<p>转载地址：<br><a href="http://blog.csdn.net/oscar999/article/details/9364101" target="_blank" rel="external">数字签名与数字证书</a><br><a href="http://www.ruanyifeng.com/blog/2011/08/what_is_a_digital_signature.html" target="_blank" rel="external">阮一峰的网络日志:数字签名是什么</a><br><a href="http://www.youdzone.com/signature.html" target="_blank" rel="external">英文原文:What is a Digital Signature?</a></p>
-</blockquote>
-<hr>
-<p>数字签名是什么？<br>作者：David Youd<br>翻译：阮一峰<br>原文网址：<a href="http://www.youdzone.com/signature.html" target="_blank" rel="external">http://www.youdzone.com/signature.html</a><br>1.<br><img src="http://res.cloudinary.com/regulus/image/upload/v1495458530/blog/digitalsignature/bg2011080901.png" alt=""></p>
-<p>鲍勃有两把钥匙，一把是公钥，另一把是私钥。<br>2.<br><img src="http://res.cloudinary.com/regulus/image/upload/v1495458527/blog/digitalsigniture/bg2011080902.png" alt=""><br>鲍勃把公钥送给他的朋友们—-帕蒂、道格、苏珊—-每人一把。<br>3.<br><img src="http://res.cloudinary.com/regulus/image/upload/v1495458527/blog/digitalsigniture/bg2011080903.png" alt=""><br>苏珊要给鲍勃写一封保密的信。她写完后用鲍勃的公钥加密，就可以达到保密的效果。<br>4.<br><img src="http://res.cloudinary.com/regulus/image/upload/v1495458527/blog/digitalsigniture/bg2011080904.png" alt=""><br>鲍勃收信后，用私钥解密，就看到了信件内容。这里要强调的是，只要鲍勃的私钥不泄露，这封信就是安全的，即使落在别人手里，也无法解密。<br>5.<br><img src="http://res.cloudinary.com/regulus/image/upload/v1495458527/blog/digitalsigniture/bg2011080905.png" alt=""><br>鲍勃给苏珊回信，决定采用”数字签名”。他写完后先用Hash函数，生成信件的摘要（digest）。<br>6.<br><img src="http://res.cloudinary.com/regulus/image/upload/v1495458527/blog/digitalsigniture/bg2011080906.png" alt=""><br>然后，鲍勃使用私钥，对这个摘要加密，生成”数字签名”（signature）。<br>7.<img src="http://res.cloudinary.com/regulus/image/upload/v1495458527/blog/digitalsigniture/bg2011080907.png" alt=""></p>
-<p>鲍勃将这个签名，附在信件下面，一起发给苏珊。<br>8.<br><img src="http://res.cloudinary.com/regulus/image/upload/v1495458527/blog/digitalsigniture/bg2011080908.png" alt=""><br>苏珊收信后，取下数字签名，用鲍勃的公钥解密，得到信件的摘要。由此证明，这封信确实是鲍勃发出的。<br>9.<br><img src="http://res.cloudinary.com/regulus/image/upload/v1495458527/blog/digitalsigniture/bg2011080909.png" alt=""><br>苏珊再对信件本身使用Hash函数，将得到的结果，与上一步得到的摘要进行对比。如果两者一致，就证明这封信未被修改过。<br>10.<br><img src="http://res.cloudinary.com/regulus/image/upload/v1495458527/blog/digitalsigniture/bg2011080910.png" alt=""><br>复杂的情况出现了。道格想欺骗苏珊，他偷偷使用了苏珊的电脑，用自己的公钥换走了鲍勃的公钥。此时，苏珊实际拥有的是道格的公钥，但是还以为这是鲍勃的公钥。因此，道格就可以冒充鲍勃，用自己的私钥做成”数字签名”，写信给苏珊，让苏珊用假的鲍勃公钥进行解密。<br>11.<br><img src="http://res.cloudinary.com/regulus/image/upload/v1495458527/blog/digitalsigniture/bg2011080911.png" alt=""><br>后来，苏珊感觉不对劲，发现自己无法确定公钥是否真的属于鲍勃。她想到了一个办法，要求鲍勃去找”证书中心”（certificate authority，简称CA），为公钥做认证。证书中心用自己的私钥，对鲍勃的公钥和一些相关信息一起加密，生成”数字证书”（Digital Certificate）。<br>12.<br><img src="http://res.cloudinary.com/regulus/image/upload/v1495458527/blog/digitalsigniture/bg2011080912.png" alt=""><br>鲍勃拿到数字证书以后，就可以放心了。以后再给苏珊写信，只要在签名的同时，再附上数字证书就行了。<br>13.<br><img src="http://res.cloudinary.com/regulus/image/upload/v1495458527/blog/digitalsigniture/bg2011080913.png" alt=""><br>苏珊收信后，用CA的公钥解开数字证书，就可以拿到鲍勃真实的公钥了，然后就能证明”数字签名”是否真的是鲍勃签的。<br>14.<br><img src="http://res.cloudinary.com/regulus/image/upload/v1495458527/blog/digitalsigniture/bg2011080914.png" alt=""><br>下面，我们看一个应用”数字证书”的实例：https协议。这个协议主要用于网页加密。<br>15.<br><img src="http://res.cloudinary.com/regulus/image/upload/v1495458527/blog/digitalsigniture/bg2011080915.png" alt=""><br>首先，客户端向服务器发出加密请求。<br>16.<img src="http://res.cloudinary.com/regulus/image/upload/v1495458527/blog/digitalsigniture/bg2011080916.png" alt=""></p>
-<p>服务器用自己的私钥加密网页以后，连同本身的数字证书，一起发送给客户端。<br>17.<br><img src="http://res.cloudinary.com/regulus/image/upload/v1495458527/blog/digitalsigniture/bg2011080917.png" alt=""><br>客户端（浏览器）的”证书管理器”，有”受信任的根证书颁发机构”列表。客户端会根据这张列表，查看解开数字证书的公钥是否在列表之内。<br>18.<br><img src="http://res.cloudinary.com/regulus/image/upload/v1495458527/blog/digitalsigniture/bg2011080918.png" alt=""><br>如果数字证书记载的网址，与你正在浏览的网址不一致，就说明这张证书可能被冒用，浏览器会发出警告。<br>19.<br><img src="http://res.cloudinary.com/regulus/image/upload/v1495458527/blog/digitalsigniture/bg2011080919.jpg" alt=""><br>如果这张数字证书不是由受信任的机构颁发的，浏览器会发出另一种警告。<br>20.<br><img src="http://res.cloudinary.com/regulus/image/upload/v1495458527/blog/digitalsigniture/bg2011080920.png" alt=""><br>如果数字证书是可靠的，客户端就可以使用证书中的服务器公钥，对信息进行加密，然后与服务器交换加密信息。<br>（完）</p>
+            <p><img src="https://res.cloudinary.com/regulus/image/upload/v1517312736/blog/texstudio.jpg" alt="TeXstudio"><br>也用了蛮久的TeXstudio了(虽然还是很菜)，也记录下折腾TeXstudio的一点过程，以及最近在Ubuntu上搞定配置LanguageTool拼写语法检查插件。</p>
+<h2 id="TeXstudio"><a href="#TeXstudio" class="headerlink" title="TeXstudio"></a>TeXstudio</h2><p>TeXstudio是一款专门用于写作LaTeX文档的编辑器，优势是使用简单方便，简单配置即可直接使用；对新手友好，优秀的代码高亮与补全功能；如果有更高要求，也有许多其它配置项可供自定义(具体特性可见<a href="texsudio.sourceforge.net">TeXsudio官网</a>)。最开始编辑LaTex时，使用的是<strong>TeXstudio</strong>的改版<strong><a href="http://www.xm1math.net/texmaker/" target="_blank" rel="external">TeXmaker</a></strong>，除了继承<strong>TeXstudio</strong>的大部分有点外，更好看的UI界面以及辅助工具，对新手更友好，不过在编辑带有BibTex格式参考文献的时候，发现支持并不是特别好，有时候需要手动去BibTex文档手动执行一下BibTex命令生成有效的.bbl文件才行，而<strong>TeXstudio</strong>几乎没有让我再手动执行过BibTex命令。</p>
+<p>这里提一下关于<strong>TeX</strong>的发行版，我一直是使用<strong><a href="http://tug.org/texlive/" target="_blank" rel="external">TeX Live</a></strong>发行版来编译LaTex文档的。总的来说比起其它发行版，<strong>TeX Live</strong>(以及MaC衍生版<strong><a href="http://tug.org/mactex/" target="_blank" rel="external">MacTeX</a></strong>)算是目前编译命令、宏包支持最完整，系统支持最完全的发行版了。网上以及身边的一些使用经验来看，其它发行版多多少少在使用一些模板时都会有不少难以解决的问题，latex吧吧主大神也是首推使用<strong>TeXLive</strong>。当然<strong>TeXLive</strong>也不是没有问题，只是用的人相对更多，问题通过各种方法大多都能解决。</p>
+<p>正常来说，无论在Win还是Linux环境，在正常安装<strong>TeXLive</strong>后(安装可参考<a href="http://regulus.cc/2017/03/25/LaTex%E7%9A%84%E4%B8%80%E7%82%B9%E5%85%A5%E9%97%A8%E7%BB%8F%E9%AA%8C&amp;TexLive%E7%9A%84%E5%AE%89%E8%A3%85/" target="_blank" rel="external">LaTex的一点入门经验</a>，注意选择”修改注册表PATH”或”创建指向系统目录符号链接”为”是”)，直接安装TeXsudio等编辑器，直接就可以编辑LaTex文档，然后使用编辑器的默认构建命令即可生成目标文档。</p>
+<p>但是在Ubuntu系统，使用TeXstudio也遇到一些坑。</p>
+<p>比如，我将之前在Win下生成的配置文档(调高亮配色调了好久…)，修改了构建命令路径，都可以正常使用，唯独命令的提示、解释窗口一片黄…</p>
+<p><img src="https://res.cloudinary.com/regulus/image/upload/v1517316898/blog/texstudio01.jpg" alt="命令提示窗口空&quot;黄&quot;"></p>
+<p>之后才发现，原来在Ubuntu系统中，外观界面样式还是Windows，导致出现了这样的情况，改成默认或其它样式就恢复正常。</p>
+<p><img src="https://res.cloudinary.com/regulus/image/upload/v1517317146/blog/texstudio02.jpg" alt="外观样式修改"><br>可能老手觉得这样的提示框很多余，但是在输入\cite引用文献的时候，它可是也能提示BibTex中文献条目的题目等信息哦~<br><img src="https://res.cloudinary.com/regulus/image/upload/v1517317306/blog/texstudio03.jpg" alt="命令提示窗口恢复正常"></p>
+<h2 id="LanguageTool"><a href="#LanguageTool" class="headerlink" title="LanguageTool"></a>LanguageTool</h2><p>之前码文章，老师帮忙修改的时候，说了一句”你的编辑器没有拼写检查吗，挺多拼写错误的”，然后给我展示了一下WinEdit的拼写检查…[哭笑] (有时间真是得把hexo的emoji输出搞定…)</p>
+<p>我这么强悍的<strong>TeXstudio</strong>怎么能没有拼写检查呢…<br>直接在配置选项-语言检查中就能看到拼写检查的相关选项了，主要需要自行设定的就是字典的路径，直接去设置中给出的跳转链接OpenOffice或者LibreOffice下载相关字典(我是参考了这篇<a href="http://blog.csdn.net/weixin_35653315/article/details/77851891" target="_blank" rel="external">CSDN博客</a>下载的词典文件)，把下载的文件路径填入即可实现简单的拼写检查功能，错误的单词会按照高亮设置进行下划线等提示，直接在单词右键就可以看到词典建议词。<br><img src="https://res.cloudinary.com/regulus/image/upload/v1517319691/blog/texstudio04.jpg" alt="拼写检查"></p>
+<p>但如果实现更高级的语法检查，就得用到大名鼎鼎的LanguageTool了…其实配置也还比较简单，前往<a href="(https://www.languagetool.org/">官网</a>)下载，再参考这篇<a href="http://blog.csdn.net/yinqingwang/article/details/54583541" target="_blank" rel="external">CSDN博文</a>可以很快在Windows下配置好，不过需要先安装java-JRE运行环境。</p>
+<p>参考同样的方法，我在Ubuntu中折腾许久，却没能让LanguageTool在TeXstudio中正常运行起来。</p>
+<p>终于我在官网发现了这么一句话：<em>The new release TeXstudio 2.12.6 is available (see changelog).<br>For Ubuntu 14.04 use Qt4 Version. LanguageTool &gt;=3.6 is only supported with Qt5.</em><br>原来，得使用Qt5编译的TeXstudio才能与高版本的LanguageTool4.0兼容…</p>
+<p>下载安装Qt5版本的TeXstudio(Qt5版本界面样式变少了，有些细节比起Qt4的感觉略丑)，然后配置。<br><img src="https://res.cloudinary.com/regulus/image/upload/v1517319692/blog/texstudio05.jpg" alt="LanguageTool配置"><br>Ubuntu17.10应该是默认安装java环境了，但运行LT时运行不了，所以手动<code>sudo apt install default-jdk</code>安装了一下java环境。但又一直java路径填写不正确，所以每次都得手动在LT文件夹下手动运行一下<code>java -jar languagetool.jar</code>，然后TeXStudio里面就可一正常看到LT给出的语法检查提示啦~简单的单复数、大小写、标点符号都能给出比较好的建议。</p>
+<p><img src="https://res.cloudinary.com/regulus/image/upload/v1517319691/blog/texstudio06.jpg" alt="为什么错误词语会变大？"></p>
+<p>有趣的是，刚成功的时候，错误的词语打着就会变大…后来一想，原来是高亮的锅，语法高亮那里把”语法错误”的高亮设置为放大127%了…<br><img src="https://res.cloudinary.com/regulus/image/upload/v1517319691/blog/texstudio07.jpg" alt="语法高亮的锅，蠢蠢的我"></p>
 
         </div>
         <footer class="article-footer">
@@ -275,20 +280,10 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
         
 <nav id="article-nav">
     
-        <a href="/2017/05/30/Ubuntu 解压提取rar文件报错Parsing Filters is unsupppirted/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">下一篇</strong>
-        <p class="article-nav-title">
-        
-            Ubuntu解压提取rar文件报错:parsing filter is unsupported
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2017/04/26/Ubuntu下ROOT的安装/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/01/02/2018，新年快乐/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">Ubuntu下ROOT的安装及遇到的问题[持续更新]</p>
+        <p class="article-nav-title">2018，新年快乐</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
