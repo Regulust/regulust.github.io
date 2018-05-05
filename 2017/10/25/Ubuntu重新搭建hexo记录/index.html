@@ -7,7 +7,7 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="技术,tips,hexo" />
+        <meta name="keywords" content="tips,技术,hexo" />
     
     <meta name="description" content="因为重装了Ubuntu 17.10，所以又重装了一遍Hexo，重新系统记录下安装流程，添加实现了ssh密钥免密部署：
 安装node.js和npm直接简单的用apt就好了：12sudo apt install nodejssudo apt install npm
@@ -280,6 +280,11 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
 
     <section id="comments">
     
+        
+    <div id="valine-thread"></div>
+
+
+    
     </section>
 
 
@@ -531,6 +536,26 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     </div>
 </footer>
         
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/xcss/valine@v1.1.7-rc3/dist/Valine.min.js"></script>
+    <script>
+        new Valine({
+            el: '#valine-thread' ,
+            notify:false,
+            verify:true,
+            app_id: '4yj1i2l8HBJQaYTgHH5scahs-gzGzoHsz',
+            app_key: 'MzIaBepUV0liVfGWQIBGefkF',
+            placeholder: 'Just Do It',
+            pageSize: 'undefined',
+            avatar: 'identicon',
+            avatar_cdn:  'undefined'
+            
+        });
+    </script>
+
+
+
 
 
     
