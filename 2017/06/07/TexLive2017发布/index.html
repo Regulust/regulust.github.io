@@ -10,17 +10,19 @@
         <meta name="keywords" content="技术,LaTex,News" />
     
     <meta name="description" content="TeX Live 2017 正式版已经于6月4日发布，各镜像站差不多已经同步完成，老版本需要重新安装（新旧可并存）。下载说明地址：http://www.tug.org/texlive/acquire.html中文版说明文档：http://www.tug.org/texlive/doc/texlive-zh-cn/texlive-zh-cn.pdf推荐使用”Downloading one huge">
+<meta name="keywords" content="技术,LaTex,News">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TeX Live 2017 发布">
 <meta property="og:url" content="regulus.online/2017/06/07/TexLive2017发布/index.html">
 <meta property="og:site_name" content="Blog of Regulus">
 <meta property="og:description" content="TeX Live 2017 正式版已经于6月4日发布，各镜像站差不多已经同步完成，老版本需要重新安装（新旧可并存）。下载说明地址：http://www.tug.org/texlive/acquire.html中文版说明文档：http://www.tug.org/texlive/doc/texlive-zh-cn/texlive-zh-cn.pdf推荐使用”Downloading one huge">
-<meta property="og:image" content="regulus.online/images/texlive2017.png">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="/images/texlive2017.png">
 <meta property="og:updated_time" content="2018-01-30T11:32:14.328Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TeX Live 2017 发布">
 <meta name="twitter:description" content="TeX Live 2017 正式版已经于6月4日发布，各镜像站差不多已经同步完成，老版本需要重新安装（新旧可并存）。下载说明地址：http://www.tug.org/texlive/acquire.html中文版说明文档：http://www.tug.org/texlive/doc/texlive-zh-cn/texlive-zh-cn.pdf推荐使用”Downloading one huge">
-<meta name="twitter:image" content="regulus.online/images/texlive2017.png">
+<meta name="twitter:image" content="/images/texlive2017.png">
     
 
     
@@ -196,7 +198,7 @@ var _hmt = _hmt || [];
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>TeX Live 2017 正式版已经于6月4日发布，各镜像站差不多已经同步完成，老版本需要重新安装（新旧可并存）。<br>下载说明地址：<a href="http://www.tug.org/texlive/acquire.html" target="_blank" rel="external">http://www.tug.org/texlive/acquire.html</a><br>中文版说明文档：<a href="http://www.tug.org/texlive/doc/texlive-zh-cn/texlive-zh-cn.pdf" target="_blank" rel="external">http://www.tug.org/texlive/doc/texlive-zh-cn/texlive-zh-cn.pdf</a><br>推荐使用”Downloading one huge ISO file (typically to burn your own DVD).”的方式下载完整镜像文件安装的方式。</p>
+            <p>TeX Live 2017 正式版已经于6月4日发布，各镜像站差不多已经同步完成，老版本需要重新安装（新旧可并存）。<br>下载说明地址：<a href="http://www.tug.org/texlive/acquire.html" target="_blank" rel="noopener">http://www.tug.org/texlive/acquire.html</a><br>中文版说明文档：<a href="http://www.tug.org/texlive/doc/texlive-zh-cn/texlive-zh-cn.pdf" target="_blank" rel="noopener">http://www.tug.org/texlive/doc/texlive-zh-cn/texlive-zh-cn.pdf</a><br>推荐使用”Downloading one huge ISO file (typically to burn your own DVD).”的方式下载完整镜像文件安装的方式。</p>
 <p>TeX Live 2017更新说明节取：<br>LuaTeX: 更多 callback，更多排版控制，更多对内部机制的控制；在一些平台增加了用<br>来动态载入代码的 ffi 库。 </p>
 <p>pdfTeX: 去年的 SOURCE_DATE_EPOCH_TEX_PRIMITIVES 环境变量被改名为<br>FORCE_SOURCE_DATE，没有功能改变。如果 \pdfpageattr token 列表包含了字符串<br>/MediaBox，则会忽略输出默认的 /MediaBox。 </p>
 <p>XeTeX: Unicode/OpenType 数学支持现在是基于 HarfBuzz 的 MATH table 支持实现的；<br>还有一些 bug 修正。 </p>
@@ -204,13 +206,13 @@ var _hmt = _hmt || [];
 <p>epTeX, eupTeX: 来自 pdfTeX 新的原生命令 \pdfuniformdeviate, \pdfnormaldeviate,<br>\pdfrandomseed, \pdfsetrandomseed, \pdfelapsedtime, \pdfresettimer。 </p>
 <p>MacTeX: 从这一年开始，MacTeX 只支持 Apple 还在发布安全更新的 MacOSX 版本，使用<br>的平台名称是 x86_64-darwin，目前这包括 Yosemite, El Capitan, 和 Sierra (10.10<br>及以后的)。给更老版本的 MacOSX 用的二进制程序不会包含在 MacTeX 里面，但 TeX<br>Live 里还会提供 (x86_64-darwinlegacy, i386-darwin, powerpc-darwin)。 </p>
 <p>基础架构: TEXMFLOCAL 树现在 (默认) 是在 TEXMFSYSCONFIG 和 TEXMFSYSVAR 之前搜索<br>了；这是为了更好地符合本地文件优先于系统文件的原则。另外，tlmgr 有一个新的<br>shell 模式，进行交互和脚本使用，和一个新的 conf auxtrees 功能来方便添加和删除<br>额外的目录树。 </p>
-<p>updmap 和 fmtutil: 这些脚本如果在没有明确指定是系统模式 (updmap-sys,<br>fmtutil-sys, 或者 -sys 选项)，还是用户模式 (updmap-user, fmtutil-user, 或者<br>-user 选项) 的时候会给出警告。这是为了减少常见的不小心启用用户模式而导致系统更<br>新无法生效。细节请参见 <a href="http://tug.org/texlive/scripts-sys-user.html。" target="_blank" rel="external">http://tug.org/texlive/scripts-sys-user.html。</a> </p>
+<p>updmap 和 fmtutil: 这些脚本如果在没有明确指定是系统模式 (updmap-sys,<br>fmtutil-sys, 或者 -sys 选项)，还是用户模式 (updmap-user, fmtutil-user, 或者<br>-user 选项) 的时候会给出警告。这是为了减少常见的不小心启用用户模式而导致系统更<br>新无法生效。细节请参见 <a href="http://tug.org/texlive/scripts-sys-user.html。" target="_blank" rel="noopener">http://tug.org/texlive/scripts-sys-user.html。</a> </p>
 <p>install-tl: Mac 下的个人路径现在默认设置为和 MacTeX 一样的 (~/Library/…)。增<br>加了新选项 -init-from-profile 来以特定 profile 启动安装；新命令 P 来直接保存一<br>个 profile；新的 profile 变量名 (但先前的名字也还支持)。 </p>
 <p>SyncTeX: 临时文件现在被改为了 foo.synctex(busy)，而不是 foo.synctex.gz(busy)<br>(不再有 .gz)。需要删除临时文件的前端和编译系统因此需要调整。 </p>
 <p>其他工具: texosquery-jre8 是一个新的跨平台程序，用来在 TeX 文档中获取系统<br>locale 和其他 OS 信息；它已经包含在了 shell_escape_commands 中，可以在受限的<br>shell 环境中执行。(texosquery 也支持更老的 JRE 版本，但不能在受限模式下启用，<br>因为 Oracle 由于安全问题不再支持那些版本了。) </p>
 <p>平台：见上述的 MacTeX 条目。没有其他的变化。 </p>
 <blockquote>
-<p>附：<br>latexstudio.net关于<a href="http://www.latexstudio.net/archives/10208" target="_blank" rel="external">TeX Live 下载及安装说明</a>，以及本站的历史文章<a href="http://www.regulus.online/2017/03/25/LaTex%E7%9A%84%E4%B8%80%E7%82%B9%E5%85%A5%E9%97%A8%E7%BB%8F%E9%AA%8C&amp;TexLive%E7%9A%84%E5%AE%89%E8%A3%85/" target="_blank" rel="external">LaTex的一点入门经验 &amp; TexLive安装</a></p>
+<p>附：<br>latexstudio.net关于<a href="http://www.latexstudio.net/archives/10208" target="_blank" rel="noopener">TeX Live 下载及安装说明</a>，以及本站的历史文章<a href="http://www.regulus.online/2017/03/25/LaTex%E7%9A%84%E4%B8%80%E7%82%B9%E5%85%A5%E9%97%A8%E7%BB%8F%E9%AA%8C&amp;TexLive%E7%9A%84%E5%AE%89%E8%A3%85/" target="_blank" rel="noopener">LaTex的一点入门经验 &amp; TexLive安装</a></p>
 </blockquote>
 
         </div>
@@ -534,7 +536,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
         new Valine({
             el: '#valine-thread' ,
             notify:false,
-            verify:null,
+            verify:,
             app_id: '4yj1i2l8HBJQaYTgHH5scahs-gzGzoHsz',
             app_key: 'MzIaBepUV0liVfGWQIBGefkF',
             placeholder: 'Be happy~',

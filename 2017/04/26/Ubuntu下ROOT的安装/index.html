@@ -3,23 +3,25 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Ubuntu下ROOT的安装及遇到的问题[持续更新] | Blog of Regulus</title>
+    <title>Ubuntu下ROOT的安装及遇到的问题[171025更新] | Blog of Regulus</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="技术,tips" />
+        <meta name="keywords" content="tips,技术" />
     
-    <meta name="description" content="2017.10.25更新：给小室长也新装了Ubuntu 17.10系统，同样也安装ROOT，从官网下载ROOT二进制包，直接运行会报错(缺这缺那的，iostream都缺…)，而下载源码编译，安装必要库之后，make编译进行1~2分钟后会报错如下：提示和lz4压缩算法库有关，那个github页面已经打不开了…百度lz4-1.7.5，搜到关于lz4压缩算法的页面(https://fossies.org">
+    <meta name="description" content="2017.10.25更新： 给小室长也新装了Ubuntu 17.10系统，同样也安装ROOT，从官网下载ROOT二进制包，直接运行会报错(缺这缺那的，iostream都缺…)，而下载源码编译，安装必要库之后，make编译进行1~2分钟后会报错如下：提示和lz4压缩算法库有关，那个github页面已经打不开了…百度lz4-1.7.5，搜到关于lz4压缩算法的页面(https://fossies.or">
+<meta name="keywords" content="tips,技术">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu下ROOT的安装及遇到的问题[持续更新]">
+<meta property="og:title" content="Ubuntu下ROOT的安装及遇到的问题[171025更新]">
 <meta property="og:url" content="regulus.online/2017/04/26/Ubuntu下ROOT的安装/index.html">
 <meta property="og:site_name" content="Blog of Regulus">
-<meta property="og:description" content="2017.10.25更新：给小室长也新装了Ubuntu 17.10系统，同样也安装ROOT，从官网下载ROOT二进制包，直接运行会报错(缺这缺那的，iostream都缺…)，而下载源码编译，安装必要库之后，make编译进行1~2分钟后会报错如下：提示和lz4压缩算法库有关，那个github页面已经打不开了…百度lz4-1.7.5，搜到关于lz4压缩算法的页面(https://fossies.org">
+<meta property="og:description" content="2017.10.25更新： 给小室长也新装了Ubuntu 17.10系统，同样也安装ROOT，从官网下载ROOT二进制包，直接运行会报错(缺这缺那的，iostream都缺…)，而下载源码编译，安装必要库之后，make编译进行1~2分钟后会报错如下：提示和lz4压缩算法库有关，那个github页面已经打不开了…百度lz4-1.7.5，搜到关于lz4压缩算法的页面(https://fossies.or">
+<meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://res.cloudinary.com/regulus/image/upload/v1493219202/blog/ROOT_Logo.png">
-<meta property="og:updated_time" content="2018-01-02T10:47:26.054Z">
+<meta property="og:updated_time" content="2018-07-13T06:26:13.862Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu下ROOT的安装及遇到的问题[持续更新]">
-<meta name="twitter:description" content="2017.10.25更新：给小室长也新装了Ubuntu 17.10系统，同样也安装ROOT，从官网下载ROOT二进制包，直接运行会报错(缺这缺那的，iostream都缺…)，而下载源码编译，安装必要库之后，make编译进行1~2分钟后会报错如下：提示和lz4压缩算法库有关，那个github页面已经打不开了…百度lz4-1.7.5，搜到关于lz4压缩算法的页面(https://fossies.org">
+<meta name="twitter:title" content="Ubuntu下ROOT的安装及遇到的问题[171025更新]">
+<meta name="twitter:description" content="2017.10.25更新： 给小室长也新装了Ubuntu 17.10系统，同样也安装ROOT，从官网下载ROOT二进制包，直接运行会报错(缺这缺那的，iostream都缺…)，而下载源码编译，安装必要库之后，make编译进行1~2分钟后会报错如下：提示和lz4压缩算法库有关，那个github页面已经打不开了…百度lz4-1.7.5，搜到关于lz4压缩算法的页面(https://fossies.or">
 <meta name="twitter:image" content="http://res.cloudinary.com/regulus/image/upload/v1493219202/blog/ROOT_Logo.png">
     
 
@@ -171,7 +173,7 @@ var _hmt = _hmt || [];
                 
     
         <h1 class="article-title" itemprop="name">
-        Ubuntu下ROOT的安装及遇到的问题[持续更新]
+        Ubuntu下ROOT的安装及遇到的问题[171025更新]
         </h1>
     
 
@@ -196,19 +198,21 @@ var _hmt = _hmt || [];
         
         
         <div class="article-entry" itemprop="articleBody">
-            <p>2017.10.25更新：<br>给小室长也新装了Ubuntu 17.10系统，同样也安装ROOT，从官网下载ROOT二进制包，直接运行会报错(缺这缺那的，iostream都缺…)，而下载源码编译，安装必要库之后，<code>make</code>编译进行1~2分钟后会报错如下：<br><img src="http://res.cloudinary.com/regulus/image/upload/v1509035005/root_lz4.png" alt="lz4报错"><br>提示和lz4压缩算法库有关，那个github页面已经打不开了…百度lz4-1.7.5，搜到关于lz4压缩算法的页面(<a href="https://fossies.org/linux/misc/legacy/lz4-1.7.5.tar.gz/)，下载，放到提示的/root-6.10.08/core/lz4/src/下，提取解压，然后cd到提出出的/lz4-1.7.5/这个文件夹，`make`一下" target="_blank" rel="external">https://fossies.org/linux/misc/legacy/lz4-1.7.5.tar.gz/)，下载，放到提示的/root-6.10.08/core/lz4/src/下，提取解压，然后cd到提出出的/lz4-1.7.5/这个文件夹，`make`一下</a>…<br>再回到root文件下，继续<code>make -j8</code>，就可以继续编译了…<br><img src="http://res.cloudinary.com/regulus/image/upload/v1509035005/root_make-j8.png" alt="8核全开的感觉真好"></p>
-<p>然而后面还会出来 fPIC 动态库链接错误问题，虽然提示 recompile with -fPIC，但再makefile文件一堆命令，哪些需要添加这个参数呢阿…之前别的程序也出现，查了许多，一直不知道怎么解决(我并不是一个专业的程序员啊，为什么要我解决程序员的问题，他们别人用root难道没有这个问题么，出去会发现，他们都用苹果[掩面])…<br><img src="http://res.cloudinary.com/regulus/image/upload/v1509035302/root_fPIC.png" alt="最后的链结失败：错误的值 recompile with -fPIC"></p>
+            <p><em>2017.10.25更新：</em></p>
+<p>给小室长也新装了Ubuntu 17.10系统，同样也安装ROOT，从官网下载ROOT二进制包，直接运行会报错(缺这缺那的，iostream都缺…)，而下载源码编译，安装必要库之后，<code>make</code>编译进行1~2分钟后会报错如下：<br><img src="https://res.cloudinary.com/regulus/image/upload/v1509035005/blog/root_lz4.png" alt="lz4报错"><br>提示和lz4压缩算法库有关，那个github页面已经打不开了…百度lz4-1.7.5，搜到关于lz4压缩算法的页面(<a href="https://fossies.org/linux/misc/legacy/lz4-1.7.5.tar.gz/)，下载，放到提示的/root-6.10.08/core/lz4/src/下，提取解压，然后cd到提出出的/lz4-1.7.5/这个文件夹，`make`一下" target="_blank" rel="noopener">https://fossies.org/linux/misc/legacy/lz4-1.7.5.tar.gz/)，下载，放到提示的/root-6.10.08/core/lz4/src/下，提取解压，然后cd到提出出的/lz4-1.7.5/这个文件夹，`make`一下</a>…<br>再回到root文件下，继续<code>make -j8</code>，就可以继续编译了…<br><img src="https://res.cloudinary.com/regulus/image/upload/v1509035005/blog/root_make-j8.png" alt="8核全开的感觉真好"></p>
+<p>然而后面还会出来 fPIC 动态库链接错误问题，虽然提示 recompile with -fPIC，但再makefile文件一堆命令，哪些需要添加这个参数呢阿…之前别的程序也出现，查了许多，一直不知道怎么解决(我并不是一个专业的程序员啊，为什么要我解决程序员的问题，他们别人用root难道没有这个问题么，出去会发现，他们都用苹果[掩面])…<br><img src="https://res.cloudinary.com/regulus/image/upload/v1509035302/blog/root_fPIC.png" alt="最后的链结失败：错误的值 recompile with -fPIC"></p>
 <hr>
-<p>以下为原文：<br><img src="http://res.cloudinary.com/regulus/image/upload/v1493214520/blog/root-6.png" alt="cern.root.ch"></p>
+<p><em>以下为原文：</em></p>
+<p><img src="http://res.cloudinary.com/regulus/image/upload/v1493214520/blog/root-6.png" alt="cern.root.ch"></p>
 <p>ROOT是CERN主导开发一个数据分析的环境框架，可以有效处理海量数据，并且现在搭配许多软件、插件也可以实现许多物理过程的模拟到结果输出。</p>
 <p>简单记录下在Linux系统下安装ROOT 6.0x的过程：</p>
-<p>1.首先在ROOT网站：<a href="https://root.cern.ch" target="_blank" rel="external">https://root.cern.ch</a>找到Download下载，目前ROOT的有3种Releases: Pro、Dev、Old，推荐首选Pro的稳定版本；<br>2.然后点击对应版本进入下载页面，虽然ROOT提供了许多对应系统的编译好的“二进制包”，但推荐还是选择下载最上方的“源码”，然后本地编译使用（如果下载二进制包的话，解压后，双击./bin/root就应该可以用了，但八成会有各种问题）；<br><img src="http://res.cloudinary.com/regulus/image/upload/v1493216627/blog/rootdownload.png" alt="ROOT下载页面"><br>3.下载得到“root_v6.09.02.source.tar.gz”后，直接右键提取，然后在终端中cd到解压得到的文件夹准备编译（我将其提取到了自己建立的  ~/Softwares 文件夹下）：<br>终端执行:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./configure</div></pre></td></tr></table></figure></p>
-<p>该命令会检查所需的库文件等…一般都会缺很多必要的库，这时需要到<a href="https://root.cern.ch/build-prerequisites" target="_blank" rel="external">https://root.cern.ch/build-prerequisites</a>查询安装必要的库，对于Ubuntu，可以简单的直接在终端运行:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install git dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev \</div><div class="line">libxft-dev libxext-dev</div></pre></td></tr></table></figure></p>
-<p>来安装所需的基本库，其它库可自行查看页面安装；<br>4.安装完所需库后，再运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Softwares/root-6.08.06/configure</div></pre></td></tr></table></figure></p>
-<p>当最后没有报错后，出现”可以运行make来build”的提示时，就可以在终端输入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">make -j4</div></pre></td></tr></table></figure></p>
-<p>来编译了，其中”-j4”是指用4个核心编译，速度较快，当然如果有8核心或者8线程的cpu的话也可以试试-j8；<br>5.漫长的等待后，如果没有报错就算编译完成了，此时还不能顺利运行ROOT，需要在终端中输入环境变量:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source ~/Softwares/root-6.08.06/bin/thisroot.sh</div></pre></td></tr></table></figure></p>
-<p>然后就可以在终端直接输入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">root</div></pre></td></tr></table></figure></p>
-<p>来启动root环境了～<br>如果不想每次打开终端都需要输入source环境变量，则需要在系统环境变量中添加对应的环境变量，Ubuntu的系统环境变量配置文件”.profile”位于home主文件夹下（Ubuntu按crtl+H可以显示隐藏文件），打开后，在最后添加:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">export ROOTSYS=$HOME/Softwares/root-6.08.06</div><div class="line">export PATH=$ROOTSYS/bin:$PATH </div><div class="line">export LD_LIBRARY_PATH=$ROOTSYS/lib:$LD_LIBRARY_PATH</div></pre></td></tr></table></figure></p>
+<p>1.首先在ROOT网站：<a href="https://root.cern.ch" target="_blank" rel="noopener">https://root.cern.ch</a>找到Download下载，目前ROOT的有3种Releases: Pro、Dev、Old，推荐首选Pro的稳定版本；<br>2.然后点击对应版本进入下载页面，虽然ROOT提供了许多对应系统的编译好的“二进制包”，但推荐还是选择下载最上方的“源码”，然后本地编译使用（如果下载二进制包的话，解压后，双击./bin/root就应该可以用了，但八成会有各种问题）；<br><img src="http://res.cloudinary.com/regulus/image/upload/v1493216627/blog/rootdownload.png" alt="ROOT下载页面"><br>3.下载得到“root_v6.09.02.source.tar.gz”后，直接右键提取，然后在终端中cd到解压得到的文件夹准备编译（我将其提取到了自己建立的  ~/Softwares 文件夹下）：<br>终端执行:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./configure</span><br></pre></td></tr></table></figure></p>
+<p>该命令会检查所需的库文件等…一般都会缺很多必要的库，这时需要到<a href="https://root.cern.ch/build-prerequisites" target="_blank" rel="noopener">https://root.cern.ch/build-prerequisites</a>查询安装必要的库，对于Ubuntu，可以简单的直接在终端运行:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev \</span><br><span class="line">libxft-dev libxext-dev</span><br></pre></td></tr></table></figure></p>
+<p>来安装所需的基本库，其它库可自行查看页面安装；<br>4.安装完所需库后，再运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Softwares/root-6.08.06/configure</span><br></pre></td></tr></table></figure></p>
+<p>当最后没有报错后，出现”可以运行make来build”的提示时，就可以在终端输入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make -j4</span><br></pre></td></tr></table></figure></p>
+<p>来编译了，其中”-j4”是指用4个核心编译，速度较快，当然如果有8核心或者8线程的cpu的话也可以试试-j8；<br>5.漫长的等待后，如果没有报错就算编译完成了，此时还不能顺利运行ROOT，需要在终端中输入环境变量:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/Softwares/root-6.08.06/bin/thisroot.sh</span><br></pre></td></tr></table></figure></p>
+<p>然后就可以在终端直接输入:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root</span><br></pre></td></tr></table></figure></p>
+<p>来启动root环境了～<br>如果不想每次打开终端都需要输入source环境变量，则需要在系统环境变量中添加对应的环境变量，Ubuntu的系统环境变量配置文件”.profile”位于home主文件夹下（Ubuntu按crtl+H可以显示隐藏文件），打开后，在最后添加:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export ROOTSYS=$HOME/Softwares/root-6.08.06</span><br><span class="line">export PATH=$ROOTSYS/bin:$PATH </span><br><span class="line">export LD_LIBRARY_PATH=$ROOTSYS/lib:$LD_LIBRARY_PATH</span><br></pre></td></tr></table></figure></p>
 <p>以后只要打开终端，输入<code>root</code>就可以启动ROOT环境啦～<br>对了，对于初学者，在ROOT环境下退出是<code>.q</code>哦～</p>
 
         </div>
@@ -532,7 +536,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
         new Valine({
             el: '#valine-thread' ,
             notify:false,
-            verify:null,
+            verify:,
             app_id: '4yj1i2l8HBJQaYTgHH5scahs-gzGzoHsz',
             app_key: 'MzIaBepUV0liVfGWQIBGefkF',
             placeholder: 'Be happy~',
