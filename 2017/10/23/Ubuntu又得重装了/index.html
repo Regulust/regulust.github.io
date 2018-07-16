@@ -18,7 +18,7 @@
 <meta property="og:description" content="今年4月份有过一次“折腾系统”的经历，今天看来又得经历一次了…一切源于坚果云更改了一下登陆邮箱，所有客户端需要重新登陆，然而Ubuntu上的坚果云客户端点击切换用户，切换用户启动界面总是闪一下就没了，根本点不到。卸载重装，因为软件的配置文件还在，所以启动问题依旧。百度到一个清理残留数据的命令dpkg -l |grep ^rc|awk &amp;#39;{print $2}&amp;#39; |sudo xargs">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://res.cloudinary.com/regulus/image/upload/v1508765965/blog/ubuntu_failure_thumbnail.png">
-<meta property="og:updated_time" content="2018-01-02T10:08:29.482Z">
+<meta property="og:updated_time" content="2018-07-16T06:50:58.525Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu又得重装了">
 <meta name="twitter:description" content="今年4月份有过一次“折腾系统”的经历，今天看来又得经历一次了…一切源于坚果云更改了一下登陆邮箱，所有客户端需要重新登陆，然而Ubuntu上的坚果云客户端点击切换用户，切换用户启动界面总是闪一下就没了，根本点不到。卸载重装，因为软件的配置文件还在，所以启动问题依旧。百度到一个清理残留数据的命令dpkg -l |grep ^rc|awk &amp;#39;{print $2}&amp;#39; |sudo xargs">
@@ -57,17 +57,6 @@ ga('send', 'pageview');
 
 </script>
     
-    
-        <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?7748d6e19d7ecb17b917a068e64772d5";
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
     
 
 
@@ -199,9 +188,9 @@ var _hmt = _hmt || [];
         
         <div class="article-entry" itemprop="articleBody">
             <p>今年4月份有过一次“折腾系统”的经历，今天看来又得经历一次了…<br>一切源于坚果云更改了一下登陆邮箱，所有客户端需要重新登陆，然而Ubuntu上的坚果云客户端点击切换用户，切换用户启动界面总是闪一下就没了，根本点不到。卸载重装，因为软件的配置文件还在，所以启动问题依旧。百度到一个清理残留数据的命令<code>dpkg -l |grep ^rc|awk &#39;{print $2}&#39; |sudo xargs dpkg -P</code>，直接粘贴进终端，还没打包名，直接一个回车…</p>
-<p>瞬间我懵逼了，看着满终端窗口跑的内核<code>linux-general 4.xxx....</code>已删除，过了1s再按ctrl+C已经来不及了…注销重新登陆 提示选择 graphical mode，然而鼠标、键盘都没有反应…<br><img src="http://res.cloudinary.com/regulus/image/upload/v1508764016/blog/ubuntu_failure.png" alt="What would you like do?"></p>
+<p>瞬间我懵逼了，看着满终端窗口跑的内核<code>linux-general 4.xxx....</code>已删除，过了1s再按ctrl+C已经来不及了…注销重新登陆 提示选择 graphical mode，然而鼠标、键盘都没有反应…<br><img src="https://res.cloudinary.com/regulus/image/upload/v1508764016/blog/ubuntu_failure.png" alt="What would you like do?"></p>
 <p>按电源重启，启动也是失败…进启动命令行，重安Ubuntu桌面环境和Unity也不行…命令还真的是强大啊…</p>
-<p><img src="http://res.cloudinary.com/regulus/image/upload/c_scale,w_517/v1508764023/blog/ubuntu_failure1.png" alt="ctrl+alt+F1启动命令行，apt-get install 也出了问题了"></p>
+<p><img src="https://res.cloudinary.com/regulus/image/upload/c_scale,w_587/v1508764023/blog/ubuntu_failure1.png" alt="ctrl+alt+F1启动命令行，apt-get install 也出了问题了"></p>
 <p>周三还要前还要跑几个数，周一大半夜还得重装系统…欲哭无泪啊…</p>
 <p>刚刚发布的17.10，得,这回不用升级了,直接下载新版本安装吧…就是之前配置的一堆东西，想想头皮都发麻…</p>
 <blockquote>
@@ -522,7 +511,8 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
 
         
     
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <!-- <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script> -->
+    <script src="cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
     <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
    <!-- <script src="//cdn.jsdelivr.net/gh/xcss/valine@v1.1.7-rc3/dist/Valine.min.js"></script> -->
     <script>
@@ -558,6 +548,11 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     
         <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
     
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     
 
 

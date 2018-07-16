@@ -52,17 +52,6 @@ ga('send', 'pageview');
 </script>
     
     
-        <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?7748d6e19d7ecb17b917a068e64772d5";
-  var s = document.getElementsByTagName("script")[0];
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-    
 
 
 </head>
@@ -460,7 +449,8 @@ Xmarks停止服务
 
         
     
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <!-- <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script> -->
+    <script src="cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
     <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
    <!-- <script src="//cdn.jsdelivr.net/gh/xcss/valine@v1.1.7-rc3/dist/Valine.min.js"></script> -->
     <script>
@@ -496,6 +486,11 @@ Xmarks停止服务
     
         <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
     
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     
 
 
