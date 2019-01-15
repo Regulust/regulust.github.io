@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Jaxodraw费曼图绘制软件指北 | Blog of Regulus</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="技术,Tips,[object Object]" />
+    
+    <meta name="description" content="JaxoDraw是一款简单的用于绘制费曼图的Java软件，开源免费，图形界面直观简单，通过鼠标拖拽就能完成费曼图的绘制，并可以导出为eps等矢量图片格式。  下载Jaxodraw其实已经很久没有维护，如果是Windows用户，可以尝试点击 Downloads -&amp;gt; Binary installers -&amp;gt; Windows self-installer 来安装（但不保证可以正常使用）；">
+<meta name="keywords" content="技术,Tips,[object Object]">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jaxodraw费曼图绘制软件指北">
+<meta property="og:url" content="regulus.online/2019/01/15/Jaxodraw费曼图绘制软件指北/index.html">
+<meta property="og:site_name" content="Blog of Regulus">
+<meta property="og:description" content="JaxoDraw是一款简单的用于绘制费曼图的Java软件，开源免费，图形界面直观简单，通过鼠标拖拽就能完成费曼图的绘制，并可以导出为eps等矢量图片格式。  下载Jaxodraw其实已经很久没有维护，如果是Windows用户，可以尝试点击 Downloads -&amp;gt; Binary installers -&amp;gt; Windows self-installer 来安装（但不保证可以正常使用）；">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://res.cloudinary.com/regulus/image/upload/v1547563044/blog/jaxodraw_logo1.jpg">
+<meta property="og:updated_time" content="2019-01-15T14:37:44.140Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Jaxodraw费曼图绘制软件指北">
+<meta name="twitter:description" content="JaxoDraw是一款简单的用于绘制费曼图的Java软件，开源免费，图形界面直观简单，通过鼠标拖拽就能完成费曼图的绘制，并可以导出为eps等矢量图片格式。  下载Jaxodraw其实已经很久没有维护，如果是Windows用户，可以尝试点击 Downloads -&amp;gt; Binary installers -&amp;gt; Windows self-installer 来安装（但不保证可以正常使用）；">
+<meta name="twitter:image" content="https://res.cloudinary.com/regulus/image/upload/v1547563044/blog/jaxodraw_logo1.jpg">
+    
+
+    
+
+    
+        <link rel="icon" href="/favicon.jpg" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-96178316-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">极致源于梦想，追求源于热爱~</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/News/">News</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Tips/">Tips</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/">技术</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/Hexo/">Hexo</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/ROOT/">ROOT</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/日常/">日常</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/转载/">转载</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/inbox/index.html">收集</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    未分类
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-Jaxodraw费曼图绘制软件指北" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Jaxodraw费曼图绘制软件指北
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/01/15/Jaxodraw费曼图绘制软件指北/" class="article-date">
+            <time datetime="2019-01-15T13:22:43.000Z" itemprop="datePublished">2019-01-15</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Tips/">Tips</a>, <a class="tag-link" href="/tags/object-Object/">[object Object]</a>, <a class="tag-link" href="/tags/技术/">技术</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <blockquote>
+<p><a href="http://jaxodraw.sourceforge.net/index.html" target="_blank" rel="noopener">JaxoDraw</a>是一款简单的用于绘制费曼图的Java软件，开源免费，图形界面直观简单，通过鼠标拖拽就能完成费曼图的绘制，并可以导出为eps等矢量图片格式。</p>
+</blockquote>
+<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>Jaxodraw其实已经很久没有维护，如果是Windows用户，可以尝试点击 Downloads -&gt; Binary installers -&gt; Windows self-installer 来安装（但不保证可以正常使用）；而对与macOS或者linux用户，或者是上一种方法无法正常使用的Windows用户，可以采用下载 预编译的二进制码的方式来使用Jaxodraw：<br><img src="https://res.cloudinary.com/regulus/image/upload/v1547559524/blog/jaxo_download.jpg" alt="Jaxo下载页面"></p>
+<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p>下载了“二进制码”该如何使用呢？因为Jaxodraw本质是一个java程序，其执行程序是一个后缀名为.jar的文件，所以像一个java程序一样运行它就可以了。对于Windows、Linux系统可能需要先安装java运行环境，在终端或者cmd命令行工具执行<figure class="highlight java"><figcaption><span>-version```，可以查看是否已有java环境，如果没有看到版本号，则需要手动安装。</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- Windows系统请百度：Windows如何安装java运行环境运行jar文件，教程很多，[参考链接](https:<span class="comment">//www.cnblogs.com/adam/p/3677462.html)；</span></span><br><span class="line">- Linux系统，以Ubuntu为例：终端执行```sudo apt-get install <span class="keyword">default</span>-jre ```即可，[参考链接](http:<span class="comment">//www.linuxidc.com/Linux/2014-09/106445.htm)；</span></span><br><span class="line">- macOS一般已经自带java环境，如果没有也可以通过 homebrew 安装，[参考链接](https:<span class="comment">//blog.csdn.net/easyClub_hanjixin/article/details/78830482)。</span></span><br><span class="line"></span><br><span class="line">安装完java环境，就可以通过终端(或者cmd命令行)，在jaxodraw文件夹下，执行</span><br></pre></td></tr></table></figure></p>
+<p>java -jar jaxodraw-2.1-0.jar<br>```<br>来运行jaxo程序，当然为了方便，也可以改变该文件的属性，Ubuntu下变更其为“可执行文件”，macOS下可以使用“Jar Launcher app”默认打开，Windows下可以通过<a href="https://blog.csdn.net/ah_quwei/article/details/80239070" target="_blank" rel="noopener">写一个bat脚本来方便运行jar文件</a>：<br><img src="https://res.cloudinary.com/regulus/image/upload/v1547561029/blog/jaxodraw_UI.jpg" alt=""><br>但其实如果我们想输出费曼图图片，还需要：电脑已经安装TeXLive等LaTeX编译软件，下面会提到。</p>
+<h3 id="配置与使用"><a href="#配置与使用" class="headerlink" title="配置与使用"></a>配置与使用</h3><p>打开jaxodraw之后，就可以看到各种费曼图熟悉的线型，可以通过拖拽绘制费曼图，也可以插入TeX格式的说明文字、希腊字母等等，绘制完之后，可以保存为.xml格式的文件，以便未来修改…<br>但绘制完成导出时，发现如果选择LaTeX -&gt; EPS，会报错:<br><img src="https://res.cloudinary.com/regulus/image/upload/v1547562385/blog/jaxodraw_erro.jpg" alt=""><br>提示说缺少’axodraw4j.sty’的LaTeX样式文件等。<br>此时可以选择导出File format为LaTeX，然后手动编译该LaTeX文件，生成eps或者pdf格式的费曼图(一般默认安装的TeXLive发行版，都自带了xodraw4j.sty样式)；<br>另外也可以我们从<a href="http://jaxodraw.sourceforge.net/reference/axodraw4j.html" target="_blank" rel="noopener">Jaxodraw的axodraw4j页面</a>下载对应的axodraw4j.sty文件，并放入同一目录下，然后进入到Options -&gt; Preferences：<br><img src="https://res.cloudinary.com/regulus/image/upload/v1547562385/blog/jaxodraw_erro.jpg" alt=""><br>然后手动输入对应的TeXLive中的latex与dvips命令的路径<br>（mac和Linux下默认安装TeXLive的对应命令路径为：<code>/usr/local/texlive/2018/bin/x86_64-darwin/latex</code>与<br><code>/usr/local/texlive/2018/bin/x86_64-darwin/dvips</code>），此时，我们再选择 export -&gt; File format -&gt; ‘latex -&gt; EPS’，就可以正常生成.eps格式的矢量费曼图了～<br><img src="https://res.cloudinary.com/regulus/image/upload/v1547562388/blog/jaxodraw_export.jpg" alt=""></p>
+<p>附Users guide：<br><a href="http://jaxodraw.sourceforge.net/userguide.html" target="_blank" rel="noopener">http://jaxodraw.sourceforge.net/userguide.html</a></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="valine-thread"></div>
+
+
+    
+    </section>
+
+
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/regulust" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/12/10/近来游戏心得/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">近来两则游戏故事/心得</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/01/15/Jaxodraw费曼图绘制软件指北/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://res.cloudinary.com/regulus/image/upload/v1547563044/blog/jaxodraw_logo1.jpg)" alt="Jaxodraw费曼图绘制软件指北" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/01/15/Jaxodraw费曼图绘制软件指北/" class="title">Jaxodraw费曼图绘制软件指北</a></p>
+                            <p class="item-date"><time datetime="2019-01-15T13:22:43.000Z" itemprop="datePublished">2019-01-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/12/10/近来游戏心得/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://res.cloudinary.com/regulus/image/upload/v1544456693/blog/PUBG_Dota2.jpg)" alt="近来两则游戏故事/心得" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/日常/">日常</a></p>
+                            <p class="item-title"><a href="/2018/12/10/近来游戏心得/" class="title">近来两则游戏故事/心得</a></p>
+                            <p class="item-date"><time datetime="2018-12-10T13:58:09.000Z" itemprop="datePublished">2018-12-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/21/TeXLive2018 beamer报错“Undefined control sequence. \begin{document}”/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://res.cloudinary.com/regulus/image/upload/v1542809691/blog/baocuo.jpg)" alt="TeXLive2018 beamer报错“Undefined control sequence. \begin{document}”" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tips/">Tips</a></p>
+                            <p class="item-title"><a href="/2018/11/21/TeXLive2018 beamer报错“Undefined control sequence. \begin{document}”/" class="title">TeXLive2018 beamer报错“Undefined control sequence. \begin{document}”</a></p>
+                            <p class="item-date"><time datetime="2018-11-21T13:47:02.000Z" itemprop="datePublished">2018-11-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/05/30/hexo导航栏折腾记/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://res.cloudinary.com/regulus/image/upload/v1527689573/blog/navbar.png)" alt="hexo导航栏折腾记" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/日常/">日常</a></p>
+                            <p class="item-title"><a href="/2018/05/30/hexo导航栏折腾记/" class="title">hexo导航栏折腾记</a></p>
+                            <p class="item-date"><time datetime="2018-05-30T13:28:39.000Z" itemprop="datePublished">2018-05-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/05/03/Ubuntu 18.04 LTS 正式发布/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://res.cloudinary.com/regulus/image/upload/v1525350754/blog/ubuntu1804.png)" alt="Ubuntu 18.04 LTS 正式发布" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/News/">News</a></p>
+                            <p class="item-title"><a href="/2018/05/03/Ubuntu 18.04 LTS 正式发布/" class="title">Ubuntu 18.04 LTS 正式发布</a></p>
+                            <p class="item-date"><time datetime="2018-05-03T12:18:01.000Z" itemprop="datePublished">2018-05-03</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/News/">News</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/">Tips</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">9</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Hexo/">Hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/ROOT/">ROOT</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/日常/">日常</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/转载/">转载</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTex/">LaTex</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/News/">News</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tips/">Tips</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/object-Object/">[object Object]</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tips/">tips</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术/">技术</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日常/">日常</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂谈/">杂谈</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知识/">知识</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转载/">转载</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/LaTex/" style="font-size: 14px;">LaTex</a> <a href="/tags/News/" style="font-size: 14px;">News</a> <a href="/tags/Tips/" style="font-size: 16px;">Tips</a> <a href="/tags/object-Object/" style="font-size: 10px;">[object Object]</a> <a href="/tags/hexo/" style="font-size: 16px;">hexo</a> <a href="/tags/tips/" style="font-size: 16px;">tips</a> <a href="/tags/技术/" style="font-size: 20px;">技术</a> <a href="/tags/日常/" style="font-size: 18px;">日常</a> <a href="/tags/杂谈/" style="font-size: 12px;">杂谈</a> <a href="/tags/知识/" style="font-size: 10px;">知识</a> <a href="/tags/转载/" style="font-size: 10px;">转载</a> <a href="/tags/随笔/" style="font-size: 16px;">随笔</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://hithep.science">HITHEP</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.likelly.science">木子今明的blog</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://blog.csdn.net/kakakaco">赫师兄的CSDN</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 regulus  </p>
+                <p> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本博客采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"> CC BY-NC-SA 4.0 International License </a>进行许可。</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+               <!-- 不蒜子 http://ibruce.info/2015/04/04/busuanzi/ -->
+                <!-- <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次,</span> 您是第<span id="busuanzi_value_site_uv"></span>个小伙伴 -->
+                <!-- 不蒜子 20181103 http://busuanzi.ibruce.info -->
+                <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次,</span> 您是第<span id="busuanzi_value_site_uv"></span>个小伙伴
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+        
+    
+    <!-- <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script> -->
+    <script src="cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+   <!-- <script src="//cdn.jsdelivr.net/gh/xcss/valine@v1.1.7-rc3/dist/Valine.min.js"></script> -->
+    <script>
+        new Valine({
+            el: '#valine-thread' ,
+            notify:false,
+            verify:,
+            app_id: '4yj1i2l8HBJQaYTgHH5scahs-gzGzoHsz',
+            app_key: 'MzIaBepUV0liVfGWQIBGefkF',
+            placeholder: 'Be happy~',
+            pageSize: '10',
+            avatar: 'identicon',
+            avatar_cdn:  'https://gravatar.loli.net/avatar/'
+            
+        });
+    </script>
+
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+<!-- 网页背景添加跟随鼠标移动的动态线条 https://laod.cn/design/page/canvas-nest-min-js.html -->
+<script type="text/javascript" src="https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+<!--
+!function(){function n(n,e,t){return n.getAttribute(e)||t}function e(n){return document.getElementsByTagName(n)}function t(){var t=e("script"),o=t.length,i=t[o-1];return{l:o,z:n(i,"zIndex",-1),o:n(i,"opacity",.5),c:n(i,"color","0,0,0"),n:n(i,"count",99)}}function o(){a=m.width=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,c=m.height=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight}function i(){r.clearRect(0,0,a,c);var n,e,t,o,m,l;s.forEach(function(i,x){for(i.x+=i.xa,i.y+=i.ya,i.xa*=i.x>a||i.x<0?-1:1,i.ya*=i.y>c||i.y<0?-1:1,r.fillRect(i.x-.5,i.y-.5,1,1),e=x+1;e<u.length;e++)n=u[e],null!==n.x&&null!==n.y&&(o=i.x-n.x,m=i.y-n.y,l=o*o+m*m,l<n.max&&(n===y&&l>=n.max/2&&(i.x-=.03*o,i.y-=.03*m),t=(n.max-l)/n.max,r.beginPath(),r.lineWidth=t/2,r.strokeStyle="rgba("+d.c+","+(t+.2)+")",r.moveTo(i.x,i.y),r.lineTo(n.x,n.y),r.stroke()))}),x(i)}var a,c,u,m=document.createElement("canvas"),d=t(),l="c_n"+d.l,r=m.getContext("2d"),x=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(n){window.setTimeout(n,1e3/45)},w=Math.random,y={x:null,y:null,max:2e4};m.id=l,m.style.cssText="position:fixed;top:0;left:0;z-index:"+d.z+";opacity:"+d.o,e("body")[0].appendChild(m),o(),window.onresize=o,window.onmousemove=function(n){n=n||window.event,y.x=n.clientX,y.y=n.clientY},window.onmouseout=function(){y.x=null,y.y=null};for(var s=[],f=0;d.n>f;f++){var h=w()*a,g=w()*c,v=2*w()-1,p=2*w()-1;s.push({x:h,y:g,xa:v,ya:p,max:6e3})}u=s.concat([y]),setTimeout(function(){i()},100)}();
+-->
+
+
+    </div>
+</body>
+</html>
