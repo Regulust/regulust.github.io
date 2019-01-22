@@ -7,18 +7,18 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="Hitokoto一言(每日一句)test: lwlhitokoto()  2018.09.25  更新了”创作共用许可协议”声明(CC BY-NC-SA 4.0 International License):本博客采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议进行许可。  去掉了关于页面的音乐外链解析。  Valine评论框不显示待修复。  中秋快乐，希望都好。  20">
+    <meta name="description" content="Hitokoto一言(每日一句)test: lwlhitokoto()   2018.09.25  更新了”创作共用许可协议”声明(CC BY-NC-SA 4.0 International License):本博客采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议进行许可。  去掉了关于页面的音乐外链解析。  Valine评论框不显示待修复。  中秋快乐，希望都好。  2">
 <meta property="og:type" content="website">
 <meta property="og:title" content="关于我，我就是我">
 <meta property="og:url" content="regulus.online/about/index.html">
 <meta property="og:site_name" content="Blog of Regulus">
-<meta property="og:description" content="Hitokoto一言(每日一句)test: lwlhitokoto()  2018.09.25  更新了”创作共用许可协议”声明(CC BY-NC-SA 4.0 International License):本博客采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议进行许可。  去掉了关于页面的音乐外链解析。  Valine评论框不显示待修复。  中秋快乐，希望都好。  20">
+<meta property="og:description" content="Hitokoto一言(每日一句)test: lwlhitokoto()   2018.09.25  更新了”创作共用许可协议”声明(CC BY-NC-SA 4.0 International License):本博客采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议进行许可。  去掉了关于页面的音乐外链解析。  Valine评论框不显示待修复。  中秋快乐，希望都好。  2">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
-<meta property="og:updated_time" content="2018-09-25T07:19:06.000Z">
+<meta property="og:updated_time" content="2019-01-22T10:10:53.658Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于我，我就是我">
-<meta name="twitter:description" content="Hitokoto一言(每日一句)test: lwlhitokoto()  2018.09.25  更新了”创作共用许可协议”声明(CC BY-NC-SA 4.0 International License):本博客采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议进行许可。  去掉了关于页面的音乐外链解析。  Valine评论框不显示待修复。  中秋快乐，希望都好。  20">
+<meta name="twitter:description" content="Hitokoto一言(每日一句)test: lwlhitokoto()   2018.09.25  更新了”创作共用许可协议”声明(CC BY-NC-SA 4.0 International License):本博客采用知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议进行许可。  去掉了关于页面的音乐外链解析。  Valine评论框不显示待修复。  中秋快乐，希望都好。  2">
 <meta name="twitter:image" content="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
     
 
@@ -174,6 +174,7 @@ ga('send', 'pageview');
 <!--  注释 -->
 <hr>
 <p><strong><a href="https://laod.cn/design/page/hitokoto-yiyan.html" target="_blank" rel="noopener">Hitokoto一言(每日一句)test:</a></strong> <em><script type="text/javascript" src="https://api.lwl12.com/hitokoto/main/get?encode=js&charset=utf-8"></script><div id="lwlhitokoto"><script>lwlhitokoto()</script></div></em></p>
+<p><em><script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js&charset=utf-8"></script></em></p>
 <hr>
 <p>2018.09.25</p>
 <ul>
@@ -509,8 +510,8 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
         
     
     <!-- <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script> -->
-    <script src="cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
-    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <!-- <script src="cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script> -->
+    <script src='https://unpkg.com/valine/dist/Valine.min.js'></script>
    <!-- <script src="//cdn.jsdelivr.net/gh/xcss/valine@v1.1.7-rc3/dist/Valine.min.js"></script> -->
     <script>
         new Valine({
@@ -522,7 +523,8 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
             placeholder: 'Be happy~',
             pageSize: '10',
             avatar: 'identicon',
-            avatar_cdn:  'https://gravatar.loli.net/avatar/'
+            avatar_cdn:  'https://gravatar.loli.net/avatar/',
+            el:'#vcomments'// 阅读量统计 - visitor: true
             
         });
     </script>

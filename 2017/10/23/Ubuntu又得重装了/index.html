@@ -7,10 +7,10 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="技术,日常" />
+        <meta name="keywords" content="日常,技术" />
     
     <meta name="description" content="今年4月份有过一次“折腾系统”的经历，今天看来又得经历一次了…一切源于坚果云更改了一下登陆邮箱，所有客户端需要重新登陆，然而Ubuntu上的坚果云客户端点击切换用户，切换用户启动界面总是闪一下就没了，根本点不到。卸载重装，因为软件的配置文件还在，所以启动问题依旧。百度到一个清理残留数据的命令dpkg -l |grep ^rc|awk &amp;#39;{print $2}&amp;#39; |sudo xargs">
-<meta name="keywords" content="技术,日常">
+<meta name="keywords" content="日常,技术">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu又得重装了">
 <meta property="og:url" content="regulus.online/2017/10/23/Ubuntu又得重装了/index.html">
@@ -516,8 +516,8 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
         
     
     <!-- <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script> -->
-    <script src="cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script>
-    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <!-- <script src="cdn.jsdelivr.net/npm/valine/dist/Valine.min.js"></script> -->
+    <script src='https://unpkg.com/valine/dist/Valine.min.js'></script>
    <!-- <script src="//cdn.jsdelivr.net/gh/xcss/valine@v1.1.7-rc3/dist/Valine.min.js"></script> -->
     <script>
         new Valine({
@@ -529,7 +529,8 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
             placeholder: 'Be happy~',
             pageSize: '10',
             avatar: 'identicon',
-            avatar_cdn:  'https://gravatar.loli.net/avatar/'
+            avatar_cdn:  'https://gravatar.loli.net/avatar/',
+            el:'#vcomments'// 阅读量统计 - visitor: true
             
         });
     </script>
