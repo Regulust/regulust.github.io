@@ -15,7 +15,7 @@
 <meta property="og:description" content="Hitokoto一言(每日一句)test: lwlhitokoto()   2019.01.22年底12月到1月学期末，是真的有点忙…还抽空帮忙维护了一下hiehep导航站点…今天晚上，终于抽空把valine评论框找回来了，其实也不知道问题出在哪里，最后相当于是把别的主题中的”valine.ejs”部分的代码扒了过来，然后就好使了，估计可能是valinejs代码有更新，其中某字段名变了">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
-<meta property="og:updated_time" content="2019-01-22T12:49:13.410Z">
+<meta property="og:updated_time" content="2019-01-22T13:41:50.602Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于我，我就是我">
 <meta name="twitter:description" content="Hitokoto一言(每日一句)test: lwlhitokoto()   2019.01.22年底12月到1月学期末，是真的有点忙…还抽空帮忙维护了一下hiehep导航站点…今天晚上，终于抽空把valine评论框找回来了，其实也不知道问题出在哪里，最后相当于是把别的主题中的”valine.ejs”部分的代码扒了过来，然后就好使了，估计可能是valinejs代码有更新，其中某字段名变了">
@@ -218,8 +218,19 @@ ga('send', 'pageview');
 
 <p>访问ip：<br><!--
  <script type="text/javascript" src="http://ip.chinaz.com/getip.aspx"></script> 
+--><br><!-- <script type="text/javascript" src="http://www.msxindl.com/tools/ip/userip.asp?s=1" charset="gbk"></script>
 --></p>
-<script type="text/javascript" src="http://www.msxindl.com/tools/ip/userip.asp?s=1"></script>
+<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script> 
+<center>
+<font id="ip" size="3"></font>
+</center> 
+<script type="text/javascript">
+(function ip() {
+var str=returnCitySN["cip"]+', '+returnCitySN["cname"];
+var _result=document.getElementById("ip");
+_result.innerHTML = str;
+})();
+</script>
 
         </div>
         <footer class="article-footer">
