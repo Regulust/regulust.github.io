@@ -15,7 +15,7 @@
 <meta property="og:description" content="Hitokoto一言(每日一句)test: lwlhitokoto()   2019.01.22年底12月到1月学期末，是真的有点忙…还抽空帮忙维护了一下hiehep导航站点…今天晚上，终于抽空把valine评论框找回来了，其实也不知道问题出在哪里，最后相当于是把别的主题中的”valine.ejs”部分的代码扒了过来，然后就好使了，估计可能是valinejs代码有更新，其中某字段名变了">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
-<meta property="og:updated_time" content="2019-01-22T13:50:23.546Z">
+<meta property="og:updated_time" content="2019-06-23T13:31:05.733Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于我，我就是我">
 <meta name="twitter:description" content="Hitokoto一言(每日一句)test: lwlhitokoto()   2019.01.22年底12月到1月学期末，是真的有点忙…还抽空帮忙维护了一下hiehep导航站点…今天晚上，终于抽空把valine评论框找回来了，其实也不知道问题出在哪里，最后相当于是把别的主题中的”valine.ejs”部分的代码扒了过来，然后就好使了，估计可能是valinejs代码有更新，其中某字段名变了">
@@ -233,6 +233,11 @@ _result.innerHTML = str;
 })();
 </script>
 
+
+<!-- valine阅读量统计 -->
+<!-- id 将作为查询条件 -->
+<p><span id="http://regulus.cc" class="leancloud-visitors" data-flag-title="Your Article Title"><br>    <em class="post-meta-item-text">阅读量 </em><br>    <i class="leancloud-visitors-count">1000000</i><br></span></p>
+
         </div>
         <footer class="article-footer">
             
@@ -283,8 +288,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
         
                     <!-- Valine -->
                     <div class="vcomments"></div>
-                    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-                    <script src="//cdn.jsdelivr.net/npm/valine"></script>
+                    <script src="//unpkg.com/valine"></script>
                     <script>
                         var GUEST = ['nick','mail','link'];
                         var meta = '';
@@ -302,7 +306,9 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                             app_key: "MzIaBepUV0liVfGWQIBGefkF",
                             placeholder: "Be happy~",
                             avatar:"identicon",
-                            meta:meta
+                            meta:"",
+                            recordIP:"true",
+                            visitor: "true"
                         });
                     </script>
                 
