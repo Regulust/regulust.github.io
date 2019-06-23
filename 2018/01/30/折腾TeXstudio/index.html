@@ -183,10 +183,18 @@ ga('send', 'pageview');
         <a class="tag-link" href="/tags/LaTex/">LaTex</a>, <a class="tag-link" href="/tags/Tips/">Tips</a>, <a class="tag-link" href="/tags/技术/">技术</a>
     </div>
 
+                
+   <span id="2018/01/30/折腾TeXstudio/" class="leancloud-visitors" data-flag-title="折腾TeXstudio&amp;拼写语法检查工具-LanguageTool">
+    <div class="article-counter">
+      <a class="post-meta-item-text">阅读量： </a>
+      <i class="leancloud-visitors-count">1000000</i>
+    </div>
+
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#TeXstudio"><span class="toc-text">TeXstudio</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LanguageTool"><span class="toc-text">LanguageTool</span></a></li></ol>
             <p><img src="https://res.cloudinary.com/regulus/image/upload/v1517312736/blog/texstudio.jpg" alt="TeXstudio"><br>也用了蛮久的TeXstudio了(虽然还是很菜)，也记录下折腾TeXstudio的一点过程，以及最近在Ubuntu上搞定配置LanguageTool拼写语法检查插件。</p>
 <h2 id="TeXstudio"><a href="#TeXstudio" class="headerlink" title="TeXstudio"></a>TeXstudio</h2><p>TeXstudio是一款专门用于写作LaTeX文档的编辑器，优势是使用简单方便，简单配置即可直接使用；对新手友好，优秀的代码高亮与补全功能；如果有更高要求，也有许多其它配置项可供自定义(具体特性可见<a href="texsudio.sourceforge.net">TeXsudio官网</a>)。最开始编辑LaTex时，使用的是<strong>TeXstudio</strong>的改版<strong><a href="http://www.xm1math.net/texmaker/" target="_blank" rel="noopener">TeXmaker</a></strong>，除了继承<strong>TeXstudio</strong>的大部分有点外，更好看的UI界面以及辅助工具，对新手更友好，不过在编辑带有BibTex格式参考文献的时候，发现支持并不是特别好，有时候需要手动去BibTex文档手动执行一下BibTex命令生成有效的.bbl文件才行，而<strong>TeXstudio</strong>几乎没有让我再手动执行过BibTex命令。</p>
 <p>这里提一下关于<strong>TeX</strong>的发行版，我一直是使用<strong><a href="http://tug.org/texlive/" target="_blank" rel="noopener">TeX Live</a></strong>发行版来编译LaTex文档的。总的来说比起其它发行版，<strong>TeX Live</strong>(以及MaC衍生版<strong><a href="http://tug.org/mactex/" target="_blank" rel="noopener">MacTeX</a></strong>)算是目前编译命令、宏包支持最完整，系统支持最完全的发行版了。网上以及身边的一些使用经验来看，其它发行版多多少少在使用一些模板时都会有不少难以解决的问题，latex吧吧主大神也是首推使用<strong>TeXLive</strong>。当然<strong>TeXLive</strong>也不是没有问题，只是用的人相对更多，问题通过各种方法大多都能解决。</p>
