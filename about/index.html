@@ -7,18 +7,18 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="Hitokoto一言(每日一句)test: lwlhitokoto()      2019.06.23好久没来折腾博客了，今天心血来潮，又处理了几个bug及弄明白了几个问题：  valine基于的LeanCloud服务原域名被封了 解决了valine评论之前填写昵称后仍显示Anonymous的问题（valine的meta项写错了，其实留空default就可以） 有些浏览器的广告拦截插件">
+    <meta name="description" content="Hitokoto一言(每日一句)test:         2019.06.23好久没来折腾博客了，今天心血来潮，又处理了几个bug及弄明白了几个问题：  valine基于的LeanCloud服务原域名被封了 解决了valine评论之前填写昵称后仍显示Anonymous的问题（valine的meta项写错了，其实留空default就可以） 有些浏览器的广告拦截插件会误拦截valine评">
 <meta property="og:type" content="website">
 <meta property="og:title" content="关于我，我就是我">
 <meta property="og:url" content="regulus.online/about/index.html">
 <meta property="og:site_name" content="Blog of Regulus">
-<meta property="og:description" content="Hitokoto一言(每日一句)test: lwlhitokoto()      2019.06.23好久没来折腾博客了，今天心血来潮，又处理了几个bug及弄明白了几个问题：  valine基于的LeanCloud服务原域名被封了 解决了valine评论之前填写昵称后仍显示Anonymous的问题（valine的meta项写错了，其实留空default就可以） 有些浏览器的广告拦截插件">
+<meta property="og:description" content="Hitokoto一言(每日一句)test:         2019.06.23好久没来折腾博客了，今天心血来潮，又处理了几个bug及弄明白了几个问题：  valine基于的LeanCloud服务原域名被封了 解决了valine评论之前填写昵称后仍显示Anonymous的问题（valine的meta项写错了，其实留空default就可以） 有些浏览器的广告拦截插件会误拦截valine评">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
-<meta property="og:updated_time" content="2019-06-24T13:00:51.321Z">
+<meta property="og:updated_time" content="2019-06-24T14:14:16.244Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于我，我就是我">
-<meta name="twitter:description" content="Hitokoto一言(每日一句)test: lwlhitokoto()      2019.06.23好久没来折腾博客了，今天心血来潮，又处理了几个bug及弄明白了几个问题：  valine基于的LeanCloud服务原域名被封了 解决了valine评论之前填写昵称后仍显示Anonymous的问题（valine的meta项写错了，其实留空default就可以） 有些浏览器的广告拦截插件">
+<meta name="twitter:description" content="Hitokoto一言(每日一句)test:         2019.06.23好久没来折腾博客了，今天心血来潮，又处理了几个bug及弄明白了几个问题：  valine基于的LeanCloud服务原域名被封了 解决了valine评论之前填写昵称后仍显示Anonymous的问题（valine的meta项写错了，其实留空default就可以） 有些浏览器的广告拦截插件会误拦截valine评">
 <meta name="twitter:image" content="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
     
 
@@ -177,11 +177,17 @@ ga('send', 'pageview');
 <!--  注释 -->
 <hr>
 <p><strong><a href="https://laod.cn/design/page/hitokoto-yiyan.html" target="_blank" rel="noopener">Hitokoto一言(每日一句)test:</a></strong></p>
+<!--
 <script type="text/javascript" src="https://api.lwl12.com/hitokoto/main/get?encode=js&charset=utf-8"></script><div id="lwlhitokoto"><script>lwlhitokoto()</script></div>
+-->
+<p><center></center></p>
+<p><font id="hitokoto" size="3"></font><br></p>
+<script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto"></script>
 
-<script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
 
-<p><em><script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js&charset=utf-8"></script></em></p>
+<!--
+*<script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js&charset=utf-8"></script>*
+-->
 <hr>
 <p>2019.06.23<br>好久没来折腾博客了，今天心血来潮，又处理了几个bug及弄明白了几个问题：</p>
 <ul>
@@ -249,7 +255,7 @@ _result.innerHTML = str;
 })();
 </script>
 
-
+<hr>
 <!-- valine阅读量统计 -->
 <!-- id 将作为查询条件 -->
 <p><span id="about/index.html/" class="leancloud-visitors" data-flag-title="<%= page.title %>"><br>    <em class="post-meta-item-text">阅读量 </em><br>    <i class="leancloud-visitors-count">1000000</i><br></span></p>
