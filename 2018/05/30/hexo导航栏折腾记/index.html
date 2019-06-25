@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     
     <title>hexo导航栏折腾记 | Blog of Regulus</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="hexo" />
+        <meta name="keywords" content="hexo">
     
     <meta name="description" content="最开始折腾Hexo，就选中了Hueman这个主题。哪里都好，就是在导航栏添加自定义页面的时候，总会多出一个”index.”。  到现在大概过去一年了，都没折腾明白，按照Hexo文档的说法，如果需要在导航栏添加页面，只需要在选用主题文件夹内的_config.yml配置文件中，在Menu项目加入自定义的页面名称和路径即可…  可是，添加关于About页面就没有显示多余的”index.”，而自定义添加">
 <meta name="keywords" content="hexo">
@@ -28,7 +28,7 @@
     
 
     
-        <link rel="icon" href="/favicon.jpg" />
+        <link rel="icon" href="/favicon.jpg">
     
 
     <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
@@ -56,12 +56,13 @@ ga('create', 'UA-96178316-1', 'auto');
 ga('send', 'pageview');
 
 </script>
+
     
     
 
 
 </head>
-
+</html>
 <body>
     <div id="wrap">
         <header id="header">
@@ -178,6 +179,8 @@ ga('send', 'pageview');
     </div>
 
                 
+
+                
     <div class="article-tag">
         <i class="fa fa-tag"></i>
         <a class="tag-link" href="/tags/hexo/">hexo</a>
@@ -185,9 +188,9 @@ ga('send', 'pageview');
 
                 
    <span id="/2018/05/30/hexo导航栏折腾记/" class="leancloud-visitors" data-flag-title="hexo导航栏折腾记">
-      <a class="post-meta-item-text">阅读量： </a>
+      <span class="post-meta-item-text">阅读次数: </span>
       <i class="leancloud-visitors-count">1000000</i>
-      </spac>
+      </span>
 
 
 <!-- old wrong code -->
@@ -266,32 +269,10 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <section id="comments">
     
         
-                    <!-- Valine -->
-                    <div class="vcomments"></div>
-                    <script src="//unpkg.com/valine"></script>
-                    <script>
-                        var GUEST = ['nick','mail','link'];
-                        var meta = '';
-                        meta = meta.split(',').filter(function (item) {
-                            return GUEST.indexOf(item)>-1;
-                        });
-                        var notify = 'false' == true ? true : false;
-                        var verify = '' == true ? true : false;
-                        var avatarcdn = 'https://gravatar.loli.net/avatar/' == true ? true : false;
-                        new Valine({
-                            el: '.vcomments',
-                            notify: notify,
-                            verify: verify,
-                            app_id: "4yj1i2l8HBJQaYTgHH5scahs-gzGzoHsz",
-                            app_key: "MzIaBepUV0liVfGWQIBGefkF",
-                            placeholder: "Be happy~",
-                            avatar:"identicon",
-                            meta:"",
-                            recordIP:"true",
-                            visitor: "true"
-                        });
-                    </script>
-                
+    <section id="isso-thread"></section>
+
+
+
     
     </section>
 
@@ -570,6 +551,14 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
 
 
         
+    
+    <script data-isso="//[object Object]"
+            src="//[object Object]/js/embed.min.js">
+    </script>
+
+
+
+
 
 
     
