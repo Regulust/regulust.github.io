@@ -173,6 +173,7 @@ ga('send', 'pageview');
             <div class="article-meta">
                 
     <div class="article-date">
+         <i class="fa fa-calendar"></i>
         <a href="/2017/09/20/回归/" class="article-date">
             <time datetime="2017-09-20T12:35:26.000Z" itemprop="datePublished">2017-09-20</time>
         </a>
@@ -182,12 +183,15 @@ ga('send', 'pageview');
 
                 
     <div class="article-tag">
+      <span class="post-meta-divider">  | &nbsp; </span>
         <i class="fa fa-tag"></i>
         <a class="tag-link" href="/tags/随笔/">随笔</a>
     </div>
 
                 
    <span id="/2017/09/20/回归/" class="leancloud-visitors" data-flag-title="回归">
+      <span class="post-meta-divider">  | &nbsp; </span>
+      <i class="fa fa-eye"></i>
       <span class="post-meta-item-text">阅读次数: </span>
       <i class="leancloud-visitors-count">1000000</i>
       </span>
@@ -202,6 +206,18 @@ ga('send', 'pageview');
       <a class="/2017/09/20/回归/" </a>
     </div>
  -->
+                
+    <div class="article-counter">
+         <span class="post-meta-divider">  | &nbsp; </span>
+         <i class="fa fa-file-word-o"></i>
+         <span class="post-count-item-text">本文字数: </span>
+        <span class="post-count">465</span>
+        <span class="post-meta-divider"> &nbsp; | &nbsp; </span>
+        <i class="fa fa-clock-o"></i>
+        <span class="post-time-item-text">阅读时长: </span>
+        <span class="post-count">1 分钟 </span>
+    </div>
+
             </div>
         
         
@@ -266,10 +282,32 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <section id="comments">
     
         
-    <section id="isso-thread"></section>
-
-
-
+                    <!-- Valine -->
+                    <div class="vcomments"></div>
+                    <script src="//unpkg.com/valine"></script>
+                    <script>
+                        var GUEST = ['nick','mail','link'];
+                        var meta = '';
+                        meta = meta.split(',').filter(function (item) {
+                            return GUEST.indexOf(item)>-1;
+                        });
+                        var notify = 'false' == true ? true : false;
+                        var verify = '' == true ? true : false;
+                        var avatarcdn = 'https://gravatar.loli.net/avatar/' == true ? true : false;
+                        new Valine({
+                            el: '.vcomments',
+                            notify: notify,
+                            verify: verify,
+                            app_id: "4yj1i2l8HBJQaYTgHH5scahs-gzGzoHsz",
+                            app_key: "MzIaBepUV0liVfGWQIBGefkF",
+                            placeholder: "Be happy~",
+                            avatar:"identicon",
+                            recordIP:"true",
+                            meta:meta,
+                            visitor: "true"
+                        });
+                    </script>
+                
     
     </section>
 
