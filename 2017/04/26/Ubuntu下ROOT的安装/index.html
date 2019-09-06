@@ -18,7 +18,7 @@
 <meta property="og:description" content="2017.10.25更新： 给小室长也新装了Ubuntu 17.10系统，同样也安装ROOT，从官网下载ROOT二进制包，直接运行会报错(缺这缺那的，iostream都缺…)，而下载源码编译，安装必要库之后，make编译进行1~2分钟后会报错如下：提示和lz4压缩算法库有关，那个github页面已经打不开了…百度lz4-1.7.5，搜到关于lz4压缩算法的页面(https://fossies.or">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://res.cloudinary.com/regulus/image/upload/v1493219202/blog/ROOT_Logo.png">
-<meta property="og:updated_time" content="2018-07-13T06:26:13.000Z">
+<meta property="og:updated_time" content="2019-09-03T11:50:01.325Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu下ROOT的安装及遇到的问题[171025更新]">
 <meta name="twitter:description" content="2017.10.25更新： 给小室长也新装了Ubuntu 17.10系统，同样也安装ROOT，从官网下载ROOT二进制包，直接运行会报错(缺这缺那的，iostream都缺…)，而下载源码编译，安装必要库之后，make编译进行1~2分钟后会报错如下：提示和lz4压缩算法库有关，那个github页面已经打不开了…百度lz4-1.7.5，搜到关于lz4压缩算法的页面(https://fossies.or">
@@ -224,7 +224,7 @@ ga('send', 'pageview');
         <div class="article-entry" itemprop="articleBody">
             
             <p><em>2017.10.25更新：</em></p>
-<p>给小室长也新装了Ubuntu 17.10系统，同样也安装ROOT，从官网下载ROOT二进制包，直接运行会报错(缺这缺那的，iostream都缺…)，而下载源码编译，安装必要库之后，<code>make</code>编译进行1~2分钟后会报错如下：<br><img src="https://res.cloudinary.com/regulus/image/upload/v1509035005/blog/root_lz4.png" alt="lz4报错"><br>提示和lz4压缩算法库有关，那个github页面已经打不开了…百度lz4-1.7.5，搜到关于lz4压缩算法的页面(<a href="https://fossies.org/linux/misc/legacy/lz4-1.7.5.tar.gz/)，下载，放到提示的/root-6.10.08/core/lz4/src/下，提取解压，然后cd到提出出的/lz4-1.7.5/这个文件夹，`make`一下.." target="_blank" rel="noopener">https://fossies.org/linux/misc/legacy/lz4-1.7.5.tar.gz/)，下载，放到提示的/root-6.10.08/core/lz4/src/下，提取解压，然后cd到提出出的/lz4-1.7.5/这个文件夹，`make`一下..</a>.<br>再回到root文件下，继续<code>make -j8</code>，就可以继续编译了…<br><img src="https://res.cloudinary.com/regulus/image/upload/v1509035005/blog/root_make-j8.png" alt="8核全开的感觉真好"></p>
+<p>给小室长也新装了Ubuntu 17.10系统，同样也安装ROOT，从官网下载ROOT二进制包，直接运行会报错(缺这缺那的，iostream都缺…)，而下载源码编译，安装必要库之后，<code>make</code>编译进行1~2分钟后会报错如下：<br><img src="https://res.cloudinary.com/regulus/image/upload/v1509035005/blog/root_lz4.png" alt="lz4报错"><br>提示和lz4压缩算法库有关，那个github页面已经打不开了…百度lz4-1.7.5，搜到关于lz4压缩算法的页面(<a href="https://fossies.org/linux/misc/legacy/lz4-1.7.5.tar.gz/)，" target="_blank" rel="noopener">https://fossies.org/linux/misc/legacy/lz4-1.7.5.tar.gz/)，</a> 下载，放到提示的/root-6.10.08/core/lz4/src/下，提取解压，然后cd到提出出的/lz4-1.7.5/这个文件夹，<code>make</code>一下…<br>再回到root文件下，继续<code>make -j8</code>，就可以继续编译了…<br><img src="https://res.cloudinary.com/regulus/image/upload/v1509035005/blog/root_make-j8.png" alt="8核全开的感觉真好"></p>
 <p>然而后面还会出来 fPIC 动态库链接错误问题，虽然提示 recompile with -fPIC，但再makefile文件一堆命令，哪些需要添加这个参数呢阿…之前别的程序也出现，查了许多，一直不知道怎么解决(我并不是一个专业的程序员啊，为什么要我解决程序员的问题，他们别人用root难道没有这个问题么，出去会发现，他们都用苹果[掩面])…<br><img src="https://res.cloudinary.com/regulus/image/upload/v1509035302/blog/root_fPIC.png" alt="最后的链结失败：错误的值 recompile with -fPIC"></p>
 <hr>
 <p><em>以下为原文：</em></p>
@@ -552,6 +552,10 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                 
                     <li>
                         <a href="https://yanshuo.name/cn/">石页大神的blog</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://dpcforever.cn/">dpcforever-blog</a>
                     </li>
                 
             </ul>
