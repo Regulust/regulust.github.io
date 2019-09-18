@@ -7,10 +7,10 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="技术,tips">
+        <meta name="keywords" content="tips,技术">
     
     <meta name="description" content="2019.09.18更新 ROOT更新了cmake的安装方式，原来的configure/make方式仍然可以使用，但不支持某些新特性(详见ROOT building-introduction)。所以更新本贴，记录采用 “CMake编译源码的方式” 安装ROOT的过程，直接下载Binary distributions 的方式比较简单，可以自行摸索(前往ROOT官网下载对应系统版本的binary包解压">
-<meta name="keywords" content="技术,tips">
+<meta name="keywords" content="tips,技术">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu下ROOT的安装及遇到的问题[190918更新]">
 <meta property="og:url" content="regulus.online/2017/04/26/Ubuntu下ROOT的安装/index.html">
@@ -18,7 +18,7 @@
 <meta property="og:description" content="2019.09.18更新 ROOT更新了cmake的安装方式，原来的configure/make方式仍然可以使用，但不支持某些新特性(详见ROOT building-introduction)。所以更新本贴，记录采用 “CMake编译源码的方式” 安装ROOT的过程，直接下载Binary distributions 的方式比较简单，可以自行摸索(前往ROOT官网下载对应系统版本的binary包解压">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://res.cloudinary.com/regulus/image/upload/v1493219202/blog/ROOT_Logo.png">
-<meta property="og:updated_time" content="2019-09-18T13:10:21.405Z">
+<meta property="og:updated_time" content="2019-09-18T13:20:07.743Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu下ROOT的安装及遇到的问题[190918更新]">
 <meta name="twitter:description" content="2019.09.18更新 ROOT更新了cmake的安装方式，原来的configure/make方式仍然可以使用，但不支持某些新特性(详见ROOT building-introduction)。所以更新本贴，记录采用 “CMake编译源码的方式” 安装ROOT的过程，直接下载Binary distributions 的方式比较简单，可以自行摸索(前往ROOT官网下载对应系统版本的binary包解压">
@@ -215,14 +215,14 @@ ga('send', 'pageview');
         <span class="post-meta-divider"> &nbsp; | &nbsp; </span>
         <i class="fa fa-clock-o"></i>
         <span class="post-time-item-text">阅读时长: </span>
-        <span class="post-count">5 分钟 </span>
+        <span class="post-count">6 分钟 </span>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#若不想每次都在终端输入source环境变量，可以参照文末方法添加系统环境变量。"><span class="toc-text">若不想每次都在终端输入source环境变量，可以参照文末方法添加系统环境变量。</span></a></li></ol>
             <p><em>2019.09.18更新</em></p>
 <p>ROOT更新了cmake的安装方式，原来的<code>configure/make</code>方式仍然可以使用，但不支持某些新特性(详见<a href="https://root.cern.ch/building-root" target="_blank" rel="noopener">ROOT building-introduction</a>)。所以更新本贴，记录采用 “CMake编译源码的方式” 安装ROOT的过程，直接下载Binary distributions 的方式比较简单，可以自行摸索(前往ROOT官网下载对应系统版本的binary包解压即可)。</p>
 <ol>
@@ -246,15 +246,14 @@ ga('send', 'pageview');
 <li><p>在builddir目录下执行cmake检查<code>cmake path/to/source</code>，对于本文目录命令为</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmake ~/Softwares/root_v6.18.04.source/root-6.18.04</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>cmake通过后，即可以开始编译了(j4表示使用4核心，可以随计算器配置改变)</p>
+<li><p>cmake通过后，即可以开始编译了(j4表示使用4核心，可以随计算机配置改变)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make -j4</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>编译完成后，source修改环境变量，然后就可以在任意目录下使用root命令来启用ROOT环境了</p>
+<li><p>编译完成后，source修改环境变量，然后就可以使用root命令来启用ROOT环境了</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">source bin/thisroot.sh</span><br><span class="line">root </span><br><span class="line">.q [退出root]</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<hr>
-<p><em>2017.10.25更新：</em></p>
+<h2 id="若不想每次都在终端输入source环境变量，可以参照文末方法添加系统环境变量。"><a href="#若不想每次都在终端输入source环境变量，可以参照文末方法添加系统环境变量。" class="headerlink" title="若不想每次都在终端输入source环境变量，可以参照文末方法添加系统环境变量。"></a>若不想每次都在终端输入source环境变量，可以参照文末方法添加系统环境变量。</h2><p><em>2017.10.25更新：</em></p>
 <p>给小室长也新装了Ubuntu 17.10系统，同样也安装ROOT，从官网下载ROOT二进制包，直接运行会报错(缺这缺那的，iostream都缺…)，而下载源码编译，安装必要库之后，<code>make</code>编译进行1~2分钟后会报错如下：<br><img src="https://res.cloudinary.com/regulus/image/upload/v1509035005/blog/root_lz4.png" alt="lz4报错"><br>提示和lz4压缩算法库有关，那个github页面已经打不开了…百度lz4-1.7.5，搜到关于lz4压缩算法的页面(<a href="https://fossies.org/linux/misc/legacy/lz4-1.7.5.tar.gz/)，" target="_blank" rel="noopener">https://fossies.org/linux/misc/legacy/lz4-1.7.5.tar.gz/)，</a> 下载，放到提示的/root-6.10.08/core/lz4/src/下，提取解压，然后cd到提出出的/lz4-1.7.5/这个文件夹，<code>make</code>一下…<br>再回到root文件下，继续<code>make -j8</code>，就可以继续编译了…<br><img src="https://res.cloudinary.com/regulus/image/upload/v1509035005/blog/root_make-j8.png" alt="8核全开的感觉真好"></p>
 <p>然而后面还会出来 fPIC 动态库链接错误问题，虽然提示 recompile with -fPIC，但再makefile文件一堆命令，哪些需要添加这个参数呢阿…之前别的程序也出现，查了许多，一直不知道怎么解决(我并不是一个专业的程序员啊，为什么要我解决程序员的问题，他们别人用root难道没有这个问题么，出去会发现，他们都用苹果[掩面])…<br><img src="https://res.cloudinary.com/regulus/image/upload/v1509035302/blog/root_fPIC.png" alt="最后的链结失败：错误的值 recompile with -fPIC"></p>
 <hr>
