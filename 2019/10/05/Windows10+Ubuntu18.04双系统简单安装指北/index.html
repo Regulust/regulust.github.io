@@ -18,7 +18,7 @@
 <meta property="og:description" content="很多时候，我们不得不用到Linux系统，而平时工作学习生活用Windows更多，而虚拟机的方式，对硬件利用效率比较低下，一般只适合临时尝鲜（但现在Win10已经可以在应用商店像应用一样直接安装Linux子系统，基本功能都有，可以满足基本需要，只是桌面图形化受限，详细可以参考在Win10中安装Ubuntu）， 为了更高的使用效率以及折腾学习Linux系统，很多人还是需要安装Windows+Linux">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://res.cloudinary.com/regulus/image/upload/v1570288315/blog/UbuntuandWin10.jpg">
-<meta property="og:updated_time" content="2019-10-21T16:11:17.283Z">
+<meta property="og:updated_time" content="2019-11-03T14:22:34.911Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows10+Ubuntu18.04双系统快速简单安装指北">
 <meta name="twitter:description" content="很多时候，我们不得不用到Linux系统，而平时工作学习生活用Windows更多，而虚拟机的方式，对硬件利用效率比较低下，一般只适合临时尝鲜（但现在Win10已经可以在应用商店像应用一样直接安装Linux子系统，基本功能都有，可以满足基本需要，只是桌面图形化受限，详细可以参考在Win10中安装Ubuntu）， 为了更高的使用效率以及折腾学习Linux系统，很多人还是需要安装Windows+Linux">
@@ -201,7 +201,7 @@ ga('send', 'pageview');
    <div class="article-counter">
       <i class="fa fa-file-word-o"></i>
       <span class="post-count-item-text">本文字数: </span>
-      <span class="post-count">3.4k</span>
+      <span class="post-count">3.7k</span>
       <i class="fa fa-clock-o"></i>
       <span class="post-time-item-text">阅读时长: </span>
       <span class="post-count">12 分钟 </span>
@@ -212,7 +212,7 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">安装前准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">开始安装系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">如何删除Ubuntu</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">关于更简安装以及分区的讨论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text">分区时分EFI分区用于安装引导器？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text">如果只分一个根目录行不行？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">Ubuntu双系统安装完之后要做的事</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text">双系统时间问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text">文件夹名称的问题</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">安装前准备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">开始安装系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">如何删除Ubuntu</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">关于更简安装以及分区的讨论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text">分区时分EFI分区用于安装引导器？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text">如果只分一个根目录行不行？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">Ubuntu双系统安装完之后要做的事</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text">双系统时间问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text">文件夹名称的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text">Ubuntu上网问题</span></a></li></ol></li></ol>
             <p>很多时候，我们不得不用到Linux系统，而平时工作学习生活用Windows更多，而虚拟机的方式，对硬件利用效率比较低下，一般只适合临时尝鲜（但现在Win10已经可以在应用商店像应用一样直接安装Linux子系统，基本功能都有，可以满足基本需要，只是桌面图形化受限，详细可以参考<a href="https://jingyan.baidu.com/article/ae97a64617a90bbbfd461d80.html" target="_blank" rel="noopener">在Win10中安装Ubuntu</a>），</p>
 <p>为了更高的使用效率以及折腾学习Linux系统，很多人还是需要安装Windows+Linux双系统。知名的Linux发行版包括Debian、CentOS、Arch、Ubuntu以及国产的<a href="https://www.deepin.org/" target="_blank" rel="noopener">深度deepin</a>等等，其中Ubuntu系统在普通用户群体中使用最为广泛，系统使用的相关教程也比较多。</p>
 <p>不过许多读研的同学等群体，安装Linux也只是为了完成课程需要或者临时兴趣，以后也许并不想过多深入研究Linux，待完成学业也想完全删除Linux而完全不影响Windows系统，所以需要以&quot;两系统互不影响+最简&quot;的方式安装双系统，本文记录总结了关于Windows+Ubuntu双系统安装的心得、经验，可以帮助新手快速上手，少走一些弯路。</p>
@@ -291,6 +291,9 @@ Win10快速启动的功能加快了系统开机速度，但可能造成开机时
 <p>此时我们可以在菜单栏最右侧点击下拉三角-系统设置，找到语言设置，设置其为英文，然后注销登录，重新进入系统，会跳出提示询问是否更改文件夹名为英文名称，我们选择“更新名称/Update Names”。<br>
 然后重新在系统设置中将语言改回中文，注销重新登录，依然会弹出弹窗询问是否将文件夹名改回中文，我们勾选“不要再询问”，然后选择“保留旧名称”即可<br>
 <img src="https://res.cloudinary.com/regulus/image/upload/v1571672112/blog/2019-10-05_07-27-40_%E7%9A%84%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE.png" alt></p>
+<h3>Ubuntu上网问题</h3>
+<p>Ubuntu使用离不开互联网，一些品牌特定型号的笔记本（例如Thinkpad、神舟等品牌的某些型号），在安装Ubuntu后，可能无法使用Wi-Fi(或有线)网络，因为它们内置的无线(或有线)网卡型号在Linux内核中并没有内置通用驱动程序，官方也没有提供Linux版本的网卡驱动，可以百度搜索相关电脑型号、无线网卡型号，查询是否有其它大神制作编译了相关网卡驱动，下载安装。</p>
+<p>但上述方法可能折腾很久，对新手小白不友好。这里提一个最简单的临时解决办法，买一个外置的免驱「USB无线网卡」，最便宜的大概二三十块，即插即用，搜索时认准“免驱”。目前个人试用过的品牌中，<strong>腾达Tenda</strong>对Linux支持友好(我试用的型号为W311M)，在<a href="https://www.tenda.com.cn/download/cata-10.html" target="_blank" rel="noopener">官网的下载驱动程序页面</a>也可以看到其对各系统支持最全面。</p>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
@@ -413,9 +416,9 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     </a>
     
     
-        <a href="/2019/06/24/近来速记与折腾valine/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2019/09/18/Ubuntu下ROOT的安装/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">近来速记与折腾valine与字数统计</p>
+        <p class="article-nav-title">Ubuntu下ROOT的安装及遇到的问题[190918更新]</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -440,7 +443,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                             <a href="/2019/10/21/加密笔记测试-密码为spacex/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://res.cloudinary.com/regulus/image/upload/v1572790252/blog/hexo_encrypt.jpg)" alt="加密笔记测试-密码为spacex" class="thumbnail-image"></span>
     
     
 </a>
@@ -460,7 +463,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                             <a href="/2019/10/15/近来速记：node重装与hexo插件/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(https://res.cloudinary.com/regulus/image/upload/v1572790250/blog/nodejs_hexo.png)" alt="近来速记：node重装与hexo插件" class="thumbnail-image"></span>
     
     
 </a>
@@ -497,6 +500,26 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2019/09/18/Ubuntu下ROOT的安装/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://res.cloudinary.com/regulus/image/upload/v1493219202/blog/ROOT_Logo.png)" alt="Ubuntu下ROOT的安装及遇到的问题[190918更新]" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术/ROOT/">ROOT</a></p>
+                            <p class="item-title"><a href="/2019/09/18/Ubuntu下ROOT的安装/" class="title">Ubuntu下ROOT的安装及遇到的问题[190918更新]</a></p>
+                            <p class="item-date"><time datetime="2019-09-18T13:13:15.000Z" itemprop="datePublished">2019-09-18</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2019/06/24/近来速记与折腾valine/" class="thumbnail">
     
     
@@ -511,26 +534,6 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                             <p class="item-category"><a class="article-category-link" href="/categories/日常/">日常</a></p>
                             <p class="item-title"><a href="/2019/06/24/近来速记与折腾valine/" class="title">近来速记与折腾valine与字数统计</a></p>
                             <p class="item-date"><time datetime="2019-06-24T12:38:47.000Z" itemprop="datePublished">2019-06-24</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2019/01/15/Jaxodraw费曼图绘制软件指北/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://res.cloudinary.com/regulus/image/upload/v1547563044/blog/jaxodraw_logo1.jpg)" alt="JaxoDraw费曼图绘制软件安装使用指北" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Tips/">Tips</a></p>
-                            <p class="item-title"><a href="/2019/01/15/Jaxodraw费曼图绘制软件指北/" class="title">JaxoDraw费曼图绘制软件安装使用指北</a></p>
-                            <p class="item-date"><time datetime="2019-01-15T13:22:43.000Z" itemprop="datePublished">2019-01-15</time></p>
                         </div>
                     </li>
                 
@@ -553,7 +556,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
