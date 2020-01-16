@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>折腾编辑器 &amp; Visual Studio Code | Blog of Regulus</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="Tips,技术">
+    
+    <meta name="description" content="折腾的编辑器  最早用编辑器，在Windows用的是Sublime Text，然后在Ubuntu把geditor调的不错了，就一直用geditor，然后换了电脑，又安装了Sublime Text和Atom，而LaTeX编辑器最最开始用的TexMaker（比较“傻瓜式”，适合小白），后来就一直在用Texsudio了。 Sublime Text(ST)主要看中了它的小巧，毕竟也不是写什么大工程，只是需">
+<meta name="keywords" content="Tips,技术">
+<meta property="og:type" content="article">
+<meta property="og:title" content="折腾编辑器 &amp; Visual Studio Code">
+<meta property="og:url" content="regulus.online/2020/01/03/折腾编辑器 - Visual Studio Code/index.html">
+<meta property="og:site_name" content="Blog of Regulus">
+<meta property="og:description" content="折腾的编辑器  最早用编辑器，在Windows用的是Sublime Text，然后在Ubuntu把geditor调的不错了，就一直用geditor，然后换了电脑，又安装了Sublime Text和Atom，而LaTeX编辑器最最开始用的TexMaker（比较“傻瓜式”，适合小白），后来就一直在用Texsudio了。 Sublime Text(ST)主要看中了它的小巧，毕竟也不是写什么大工程，只是需">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://res.cloudinary.com/regulus/image/upload/v1579203724/blog/visualstudio_code-logo.png">
+<meta property="og:updated_time" content="2020-01-16T20:02:33.993Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="折腾编辑器 &amp; Visual Studio Code">
+<meta name="twitter:description" content="折腾的编辑器  最早用编辑器，在Windows用的是Sublime Text，然后在Ubuntu把geditor调的不错了，就一直用geditor，然后换了电脑，又安装了Sublime Text和Atom，而LaTeX编辑器最最开始用的TexMaker（比较“傻瓜式”，适合小白），后来就一直在用Texsudio了。 Sublime Text(ST)主要看中了它的小巧，毕竟也不是写什么大工程，只是需">
+<meta name="twitter:image" content="https://res.cloudinary.com/regulus/image/upload/v1579203724/blog/visualstudio_code-logo.png">
+    
+
+    
+
+    
+        <link rel="icon" href="/favicon.jpg">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-96178316-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">极致源于梦想，追求源于热爱~</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/News/">News</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Tips/">Tips</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/">技术</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/Hexo/">Hexo</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/ROOT/">ROOT</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/日常/">日常</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/转载/">转载</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/inbox/index.html">收集</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    未分类
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-折腾编辑器 - Visual Studio Code" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        折腾编辑器 &amp; Visual Studio Code
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+      <i class="fa fa-calendar"></i>
+      <a href="/2020/01/03/折腾编辑器 - Visual Studio Code/" class="article-date">
+         <time datetime="2020-01-03T09:16:57.000Z" itemprop="datePublished">2020-01-03</time>
+      </a>
+    </div>
+
+
+                
+
+                
+    <div class="article-tag">
+      <span class="post-meta-divider">  | &nbsp; </span>
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Tips/">Tips</a>, <a class="tag-link" href="/tags/技术/">技术</a>
+    </div>
+
+                
+   <span id="/2020/01/03/折腾编辑器 - Visual Studio Code/" class="leancloud-visitors" data-flag-title="折腾编辑器 &amp; Visual Studio Code">
+   <i class="fa fa-eye"></i>
+   <span class="post-meta-item-text">阅读次数: </span>
+   <i class="leancloud-visitors-count">1000000</i>
+   </span>
+
+
+                
+   <div class="article-counter">
+      <i class="fa fa-file-word-o"></i>
+      <span class="post-count-item-text">本文字数: </span>
+      <span class="post-count">1.6k</span>
+      <i class="fa fa-clock-o"></i>
+      <span class="post-time-item-text">阅读时长: </span>
+      <span class="post-count">6 分钟 </span>
+   </div>
+
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-text">折腾的编辑器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-text">附录-VS Code 使用记录:</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">常用快捷键</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">插件们</span></a></li></ol></li></ol>
+            <h1>折腾的编辑器</h1>
+<p><img src="https://user-images.githubusercontent.com/6909617/55654227-b871b680-57e8-11e9-8728-62be20609813.png" alt="VSCode logo Update"></p>
+<p>最早用编辑器，在Windows用的是Sublime Text，然后在Ubuntu把geditor调的不错了，就一直用geditor，然后换了电脑，又安装了Sublime Text和Atom，而LaTeX编辑器最最开始用的<a href="https://www.xm1math.net/texmaker/" target="_blank" rel="noopener">TexMaker</a>（比较“傻瓜式”，适合小白），后来就一直在用<a href="https://www.texstudio.org/" target="_blank" rel="noopener">Texsudio</a>了。</p>
+<p>Sublime Text(ST)主要看中了它的小巧，毕竟也不是写什么大工程，只是需要一个轻快、高亮美观的编辑器，同时其插件也不少，不过ST是商业软件，授权费用也不低，免费版不影响使用，但付费弹窗还是有点频繁。</p>
+<p>Atom是因为后来用GitHub用的多了些(但依然很小白)，了解到它是GitHub出品的编辑器，然后开始网上也比较火，就下来试一试，不过感觉到现如今启动还是感觉有点慢，虽然界面很不错，但总觉得不太顺手，只是在博客、网页、改GitHub项目时用过几次（印象最深是一次提交GitHub的update，用ST改的脚本，在GitHub网页查看代码换行处总有个红色的错误警示，用Atom复制一遍就没有，后来查了好像红色提示是换行符，不知道ST为啥那里换行符不对）。</p>
+<p>最近出国，师兄推荐他一直使用的<a href="https://code.visualstudio.com" target="_blank" rel="noopener">Visual Studio Code</a>(微软的开源编辑器)，给我展示了一些很不错的特性：全平台、界面美观、插件多、配置可GitHub备份、自带终端、远程连接(借助pdf插件可以SSH远程打开服务器上的图片PDF)等等，然后自己也简单查了一下，确实很多人推荐VSCode，遂下载来试一试～<br>
+折腾一圈确实还蛮顺手的。<br>
+不过许多要素、特性还得学习习惯一下，比如关于工作区和文件夹的关系，目前是三个编辑环境：计算+Blog+LaTeX，但目前VS目前只能同时打开一个工作区，在做计算时，想写下blog，就得关闭计算区(好多窗口、终端都已经打开了，关闭再开很不方便)，目前还没有找到合适的工作流或使用技巧；同时也遇到一些莫名其妙的bug(网上查感觉别人并没有遇到过)，比如想更改终端打开的快捷键，在设置和setting.json都配置了，但均无效，习惯用默认的快捷键【ctrl+`】却偶尔失效无反应；</p>
+<p>B站也有不少VSCode教程，有空学习一下～</p>
+<h1>附录-VS Code 使用记录:</h1>
+<p>[TOC]</p>
+<h2>常用快捷键</h2>
+<p>[官方快捷键文档for macOS]<br>
+(<a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf" target="_blank" rel="noopener">https://code.visualstudio.com/shortcuts/keyboard-shortcuts-macos.pdf</a>)<br>
+[官方快捷键文档for Linux]<br>
+(<a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf" target="_blank" rel="noopener">https://code.visualstudio.com/shortcuts/keyboard-shortcuts-linux.pdf</a>)<br>
+<a href="https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf" target="_blank" rel="noopener">官方快捷键文档for Windows</a></p>
+<ul>
+<li>Terminal：活动窗口【ctrl+`】 和 新建终端窗口【ctrl+shift+`】</li>
+<li>拆分窗口：【cmd+\】</li>
+<li>设置：【ctrl+,】</li>
+<li>快捷键搜索：【ctrl+shift+P】</li>
+<li>文件搜索：【ctrl+P】</li>
+<li>LaTeX编译：【ctrl+alt+B/cmd+opt+B】(need LaTeX Workshop插件)</li>
+<li>LaTeX编译：【ctrl+alt+V/cmd+opt+V】</li>
+<li>LaTeX文档正反同步跳转：【ctrl/cmd+click】</li>
+</ul>
+<h2>插件们</h2>
+<ul>
+<li><strong>Modern Fortran：</strong><br>
+v2.1.1(190106)Fortran代码高亮插件，带有代码折叠、自动补全等功能; <a href="https://marketplace.visualstudio.com/items?itemName=krvajalm.linter-gfortran&amp;ssr=false#overview" target="_blank" rel="noopener">Main Page</a></li>
+<li><strong>Markdown Preview Enhanced：</strong><br>
+Markdown预览增强，VS Code已自带md预览（快捷键<figure class="highlight plain"><figcaption><span>v```开启，并可适配主题暗色），但不支持LaTeX公式等，本插件可以增强预览功能[Doc](https://shd101wyy.github.io/markdown-preview-enhanced/#/zh-cn/vscode-installation) </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">- **Panda Theme：**</span><br><span class="line">v1.3.0(190107)，A superminimal, dark syntax theme. [Main page](http://panda.siamak.work)</span><br><span class="line">- **LaTeX Workshop：**</span><br><span class="line">LaTeX写作增强，build/view/源文件跳转...[wiki](https://github.com/James-Yu/LaTeX-Workshop/wiki) 编译快捷键：【ctrl+alt+B/cmd+opt+B】</span><br><span class="line">- **Better Comment：**</span><br><span class="line">注释增强插件，[main page](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)</span><br><span class="line"></span><br><span class="line">## 设置&amp;问题与Tips：</span><br><span class="line">### 显示语言更改</span><br><span class="line">1）打开vscode工具；</span><br><span class="line">2）使用快捷键组合【Ctrl+Shift+p】，在搜索框中输入“configure display language”，回车即可；</span><br><span class="line">3）或者修改locale.json文件下的属性“locale”为“zh-CN”;</span><br><span class="line">4）重启vscode工具；</span><br><span class="line">5）若中文未正常显示，则在插件搜索栏搜索安装&quot;Chinese simplified&quot;</span><br><span class="line">&gt; https://blog.csdn.net/qq_30068487/article/details/82589347</span><br><span class="line"></span><br><span class="line">### 预览模式问题</span><br><span class="line">VS Code打开新的文件会覆盖当前打开窗口的文件，这是因为你**单击文件名 “预览模式”**，此时tab上文件名是斜体，所以再单击其他文件时，会覆盖当前打开的文件。如果你要每次都打开新tab，**双击文件名**会用编辑模式打开新窗口。</span><br><span class="line"></span><br><span class="line">如果你实在不喜欢，可以关掉，</span><br><span class="line">在配置settings.json里加一条：</span><br><span class="line">`</span><br><span class="line">&quot;workbench.editor.enablePreview&quot;: false,</span><br><span class="line">`</span><br><span class="line">&gt; https://segmentfault.com/q/1010000006131199</span><br><span class="line"></span><br><span class="line">### 对比文件</span><br><span class="line">右键文件1-选择以比较(Select for compare)，右键文件2-与已选择文件比较(Compare with selected) </span><br><span class="line">[使用vscode比较两个文件的差别](https://www.cnblogs.com/dead-micky/p/8472647.html)</span><br><span class="line"></span><br><span class="line">### 代码高亮颜色修改</span><br><span class="line">发现VScode的默认代码高亮颜色不喜欢（注释是绿色的），可以自定义代码高亮颜色：</span><br><span class="line">设置 - 右上角小图标 点开 setting.json，在最下方（需在已有的大括号&#123;&#125;内）添加</span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>“editor.tokenColorCustomizations”: {<br>
+“comments”: {<br>
+// 设置字体样式 加粗 下划线 斜体等<br>
+//“fontStyle”: “”,<br>
+// 设置字体颜色<br>
+&quot;foreground&quot;: “555555”<br>
+}, // 注释<br>
+// “keywords”: “#0a0”, // 关键字<br>
+// “variables”: “#f00”, // 变量名<br>
+// “strings”: “#e2d75dbd”, // 字符串<br>
+// “functions”: “#5b99fcc9”, // 函数名<br>
+// “numbers”: “#AE81FF” // 数字<br>
+},</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; https://www.jianshu.com/p/975b009f9c4a</span><br><span class="line"></span><br><span class="line">### 代码列分割线</span><br><span class="line">To configure it, go to File &gt; Preferences &gt; Settings and add this to to your user or workspace settings:</span><br></pre></td></tr></table></figure>
+<p>“editor.rulers”: [72,132]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The color of the rulers can be customized like this:</span><br></pre></td></tr></table></figure>
+<p>“workbench.colorCustomizations”: {<br>
+“editorRuler.foreground”: “#ff4081”<br>
+}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">或者按语言显示不同分割线</span><br></pre></td></tr></table></figure>
+<p>“[git-commit]”: {“editor.rulers”: [50]}<br>
+&quot;[python]&quot;: {“editor.rulers”: [79,120]}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; https://www.zhihu.com/question/57128852</span><br><span class="line">&gt; https://stackoverflow.com/questions/29968499/vertical-rulers-in-visual-studio-code</span><br><span class="line">Fortran的分割线设置写法：</span><br></pre></td></tr></table></figure>
+<p>“[fortran_fixed-form]”: {“editor.rulers”: [0,1,5,6,72]},<br>
+&quot;[FortranFreeForm]&quot;: {“editor.rulers”: [0,1,5,6,132]}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; Fortran固定/自由格式：http://micro.ustc.edu.cn/Fortran/ZJDing/Sec1-3.htm</span><br><span class="line"></span><br><span class="line">### 编辑器自动换行</span><br><span class="line">Visual Studio Code是默认不会自动换行的</span><br><span class="line">那么如何设置它按照我们的可视区域自动折行呢？</span><br><span class="line">方法如下：</span><br><span class="line">文件 -&gt; 首选项 -&gt; 设置，</span><br><span class="line">Mac则是右上角</span><br><span class="line">Code -&gt; 首选项 -&gt; 设置，搜索Editor Word Wrap并打开即可，或在setting.json中添加：</span><br></pre></td></tr></table></figure>
+<p>“editor.wordWrap”: “on”</p>
+<pre><code>&gt; https://sherlockgy.github.io/2018/09/01/设置VsCode自动换行/</code></pre>
+
+        </div>
+        <footer class="article-footer">
+            
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+                    <!-- Valine -->
+                    <div class="vcomments"></div>
+                    <script src="//unpkg.com/valine"></script>
+                    <script>
+                        var GUEST = ['nick','mail','link'];
+                        var meta = '';
+                        meta = meta.split(',').filter(function (item) {
+                            return GUEST.indexOf(item)>-1;
+                        });
+                        var avatarcdn = 'https://gravatar.loli.net/avatar/' == true;
+                        new Valine({
+                            el: '.vcomments',
+                            notify: "false",
+                            verify: "",
+                            app_id: "4yj1i2l8HBJQaYTgHH5scahs-gzGzoHsz",
+                            app_key: "MzIaBepUV0liVfGWQIBGefkF",
+                            placeholder: "Be happy~",
+                            avatar:"identicon",
+                            recordIP:"true",
+                            visitor: "true"
+                        });
+                    </script>
+                
+
+    
+    </section>
+
+
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/regulust" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2019/10/21/加密笔记测试-密码为spacex/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">加密笔记测试-密码为spacex</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/01/03/折腾编辑器 - Visual Studio Code/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://res.cloudinary.com/regulus/image/upload/v1579203724/blog/visualstudio_code-logo.png)" alt="折腾编辑器 &amp; Visual Studio Code" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/01/03/折腾编辑器 - Visual Studio Code/" class="title">折腾编辑器 &amp; Visual Studio Code</a></p>
+                            <p class="item-date"><time datetime="2020-01-03T09:16:57.000Z" itemprop="datePublished">2020-01-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/21/加密笔记测试-密码为spacex/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://res.cloudinary.com/regulus/image/upload/v1572790252/blog/hexo_encrypt.jpg)" alt="加密笔记测试-密码为spacex" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/10/21/加密笔记测试-密码为spacex/" class="title">加密笔记测试-密码为spacex</a></p>
+                            <p class="item-date"><time datetime="2019-10-21T15:55:10.000Z" itemprop="datePublished">2019-10-21</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/15/近来速记：node重装与hexo插件/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://res.cloudinary.com/regulus/image/upload/v1572790250/blog/nodejs_hexo.png)" alt="近来速记：node重装与hexo插件" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术/Hexo/">Hexo</a></p>
+                            <p class="item-title"><a href="/2019/10/15/近来速记：node重装与hexo插件/" class="title">近来速记：node重装与hexo插件</a></p>
+                            <p class="item-date"><time datetime="2019-10-15T15:22:49.000Z" itemprop="datePublished">2019-10-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/05/Windows10+Ubuntu18.04双系统简单安装指北/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://res.cloudinary.com/regulus/image/upload/v1570288315/blog/UbuntuandWin10.jpg)" alt="Windows10+Ubuntu18.04双系统快速简单安装指北" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a></p>
+                            <p class="item-title"><a href="/2019/10/05/Windows10+Ubuntu18.04双系统简单安装指北/" class="title">Windows10+Ubuntu18.04双系统快速简单安装指北</a></p>
+                            <p class="item-date"><time datetime="2019-10-05T14:28:59.000Z" itemprop="datePublished">2019-10-05</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/09/18/Ubuntu下ROOT的安装/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://res.cloudinary.com/regulus/image/upload/v1493219202/blog/ROOT_Logo.png)" alt="Ubuntu下ROOT的安装及遇到的问题[190918更新]" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/技术/">技术</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/技术/ROOT/">ROOT</a></p>
+                            <p class="item-title"><a href="/2019/09/18/Ubuntu下ROOT的安装/" class="title">Ubuntu下ROOT的安装及遇到的问题[190918更新]</a></p>
+                            <p class="item-date"><time datetime="2019-09-18T13:13:15.000Z" itemprop="datePublished">2019-09-18</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/News/">News</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/">Tips</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">11</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Hexo/">Hexo</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/ROOT/">ROOT</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/日常/">日常</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/转载/">转载</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTex/">LaTex</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/News/">News</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tips/">Tips</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/object-Object/">[object Object]</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tips/">tips</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/加密/">加密</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术/">技术</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日常/">日常</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂谈/">杂谈</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知识/">知识</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转载/">转载</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/LaTex/" style="font-size: 12.86px;">LaTex</a> <a href="/tags/News/" style="font-size: 12.86px;">News</a> <a href="/tags/Tips/" style="font-size: 15.71px;">Tips</a> <a href="/tags/object-Object/" style="font-size: 10px;">[object Object]</a> <a href="/tags/hexo/" style="font-size: 18.57px;">hexo</a> <a href="/tags/tips/" style="font-size: 17.14px;">tips</a> <a href="/tags/加密/" style="font-size: 10px;">加密</a> <a href="/tags/技术/" style="font-size: 20px;">技术</a> <a href="/tags/日常/" style="font-size: 18.57px;">日常</a> <a href="/tags/杂谈/" style="font-size: 11.43px;">杂谈</a> <a href="/tags/知识/" style="font-size: 10px;">知识</a> <a href="/tags/转载/" style="font-size: 10px;">转载</a> <a href="/tags/随笔/" style="font-size: 14.29px;">随笔</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://hithep.science">HITHEP</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://valine.js.org">Valine</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.likelly.science">木子今明的blog</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://blog.csdn.net/kakakaco">赫师兄的CSDN</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://frams163com.github.io">建神的blog</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://yanshuo.name/cn/">石页大神的blog</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://dpcforever.cn/">dpcforever-blog</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2020 regulus  </p>
+                <p> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本博客采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"> CC BY-NC-SA 4.0 International License </a>进行许可。</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+               <!-- 不蒜子 http://ibruce.info/2015/04/04/busuanzi/ -->
+                <!-- <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次,</span> 您是第<span id="busuanzi_value_site_uv"></span>个小伙伴 -->
+                <!-- 不蒜子 20181103 http://busuanzi.ibruce.info -->
+                <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次,</span> 您是第<span id="busuanzi_value_site_uv"></span>个小伙伴
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+        
+    
+    <script data-isso="//[object Object]"
+            src="//[object Object]/js/embed.min.js">
+    </script>
+
+
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+<!-- 网页背景添加跟随鼠标移动的动态线条 https://laod.cn/design/page/canvas-nest-min-js.html -->
+<script type="text/javascript" src="https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+<!--
+!function(){function n(n,e,t){return n.getAttribute(e)||t}function e(n){return document.getElementsByTagName(n)}function t(){var t=e("script"),o=t.length,i=t[o-1];return{l:o,z:n(i,"zIndex",-1),o:n(i,"opacity",.5),c:n(i,"color","0,0,0"),n:n(i,"count",99)}}function o(){a=m.width=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,c=m.height=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight}function i(){r.clearRect(0,0,a,c);var n,e,t,o,m,l;s.forEach(function(i,x){for(i.x+=i.xa,i.y+=i.ya,i.xa*=i.x>a||i.x<0?-1:1,i.ya*=i.y>c||i.y<0?-1:1,r.fillRect(i.x-.5,i.y-.5,1,1),e=x+1;e<u.length;e++)n=u[e],null!==n.x&&null!==n.y&&(o=i.x-n.x,m=i.y-n.y,l=o*o+m*m,l<n.max&&(n===y&&l>=n.max/2&&(i.x-=.03*o,i.y-=.03*m),t=(n.max-l)/n.max,r.beginPath(),r.lineWidth=t/2,r.strokeStyle="rgba("+d.c+","+(t+.2)+")",r.moveTo(i.x,i.y),r.lineTo(n.x,n.y),r.stroke()))}),x(i)}var a,c,u,m=document.createElement("canvas"),d=t(),l="c_n"+d.l,r=m.getContext("2d"),x=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(n){window.setTimeout(n,1e3/45)},w=Math.random,y={x:null,y:null,max:2e4};m.id=l,m.style.cssText="position:fixed;top:0;left:0;z-index:"+d.z+";opacity:"+d.o,e("body")[0].appendChild(m),o(),window.onresize=o,window.onmousemove=function(n){n=n||window.event,y.x=n.clientX,y.y=n.clientY},window.onmouseout=function(){y.x=null,y.y=null};for(var s=[],f=0;d.n>f;f++){var h=w()*a,g=w()*c,v=2*w()-1,p=2*w()-1;s.push({x:h,y:g,xa:v,ya:p,max:6e3})}u=s.concat([y]),setTimeout(function(){i()},100)}();
+-->
+
+
+    </div>
+</body>
+</html>

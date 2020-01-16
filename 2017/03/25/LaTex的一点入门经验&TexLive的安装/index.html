@@ -7,21 +7,21 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="技术,Tips,LaTex">
+        <meta name="keywords" content="LaTex,Tips,技术">
     
-    <meta name="description" content="学习使用LaTeX在入门时确实花费了不少时间，这里把自己的一点入门经验分享一下～  首先需要先了解一下什么是LaTeX，LaTeX可以认为是一种排版系统，中文音译接近“拉泰赫”，从latex百度贴吧、LaTeX开源小屋等一些社区网站，可以获取一些简单的关于LaTeX的信息；这里还有一份LaTex简单的入门，可以先大概看看第一章基本知识了解一下一份不太简短的LATEX介绍；另外也可以搜索购买 刘海洋">
-<meta name="keywords" content="技术,Tips,LaTex">
+    <meta name="description" content="Update： 找到一份简短的安装 LaTeX 的介绍 https://github.com/OsbertWang/install-latex ，非常值得小白阅读。 学习使用LaTeX在入门时确实花费了不少时间，这里把自己的一点入门经验分享一下～  首先需要先了解一下什么是LaTeX，LaTeX可以认为是一种排版系统，中文音译接近“拉泰赫”，从latex百度贴吧、LaTeX开源小屋等一些社区网站，">
+<meta name="keywords" content="LaTex,Tips,技术">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LaTeX 的一点入门经验 &amp; TeX Live 安装">
 <meta property="og:url" content="regulus.online/2017/03/25/LaTex的一点入门经验&TexLive的安装/index.html">
 <meta property="og:site_name" content="Blog of Regulus">
-<meta property="og:description" content="学习使用LaTeX在入门时确实花费了不少时间，这里把自己的一点入门经验分享一下～  首先需要先了解一下什么是LaTeX，LaTeX可以认为是一种排版系统，中文音译接近“拉泰赫”，从latex百度贴吧、LaTeX开源小屋等一些社区网站，可以获取一些简单的关于LaTeX的信息；这里还有一份LaTex简单的入门，可以先大概看看第一章基本知识了解一下一份不太简短的LATEX介绍；另外也可以搜索购买 刘海洋">
+<meta property="og:description" content="Update： 找到一份简短的安装 LaTeX 的介绍 https://github.com/OsbertWang/install-latex ，非常值得小白阅读。 学习使用LaTeX在入门时确实花费了不少时间，这里把自己的一点入门经验分享一下～  首先需要先了解一下什么是LaTeX，LaTeX可以认为是一种排版系统，中文音译接近“拉泰赫”，从latex百度贴吧、LaTeX开源小屋等一些社区网站，">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="/images/latexlogo.jpg">
-<meta property="og:updated_time" content="2019-01-15T13:20:36.242Z">
+<meta property="og:updated_time" content="2019-12-13T20:19:57.794Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LaTeX 的一点入门经验 &amp; TeX Live 安装">
-<meta name="twitter:description" content="学习使用LaTeX在入门时确实花费了不少时间，这里把自己的一点入门经验分享一下～  首先需要先了解一下什么是LaTeX，LaTeX可以认为是一种排版系统，中文音译接近“拉泰赫”，从latex百度贴吧、LaTeX开源小屋等一些社区网站，可以获取一些简单的关于LaTeX的信息；这里还有一份LaTex简单的入门，可以先大概看看第一章基本知识了解一下一份不太简短的LATEX介绍；另外也可以搜索购买 刘海洋">
+<meta name="twitter:description" content="Update： 找到一份简短的安装 LaTeX 的介绍 https://github.com/OsbertWang/install-latex ，非常值得小白阅读。 学习使用LaTeX在入门时确实花费了不少时间，这里把自己的一点入门经验分享一下～  首先需要先了解一下什么是LaTeX，LaTeX可以认为是一种排版系统，中文音译接近“拉泰赫”，从latex百度贴吧、LaTeX开源小屋等一些社区网站，">
 <meta name="twitter:image" content="/images/latexlogo.jpg">
     
 
@@ -201,7 +201,7 @@ ga('send', 'pageview');
    <div class="article-counter">
       <i class="fa fa-file-word-o"></i>
       <span class="post-count-item-text">本文字数: </span>
-      <span class="post-count">741</span>
+      <span class="post-count">769</span>
       <i class="fa fa-clock-o"></i>
       <span class="post-time-item-text">阅读时长: </span>
       <span class="post-count">2 分钟 </span>
@@ -213,7 +213,8 @@ ga('send', 'pageview');
         
         <div class="article-entry" itemprop="articleBody">
             
-            <p>学习使用LaTeX在入门时确实花费了不少时间，这里把自己的一点入门经验分享一下～</p>
+            <p><em>Update：</em> 找到一份简短的安装 LaTeX 的介绍 <a href="https://github.com/OsbertWang/install-latex/" target="_blank" rel="noopener">https://github.com/OsbertWang/install-latex</a> ，非常值得小白阅读。</p>
+<p>学习使用LaTeX在入门时确实花费了不少时间，这里把自己的一点入门经验分享一下～</p>
 <ul>
 <li>首先需要先了解一下什么是LaTeX，LaTeX可以认为是一种排版系统，中文音译接近“拉泰赫”，从<strong>latex百度贴吧</strong>、<a href="http://www.latexstudio.net/page/introduction-to-latex/" target="_blank" rel="noopener">LaTeX开源小屋</a>等一些社区网站，可以获取一些简单的关于LaTeX的信息；这里还有一份LaTex简单的入门，可以先大概看看第一章基本知识了解一下<a href="https://zhidao.baidu.com/share/14ad2e201ac1c92a8d3c5fb92b2d661e.html" target="_blank" rel="noopener">一份不太简短的LATEX介绍</a>；另外也可以搜索购买 刘海洋老师的《LaTeX入门》书籍，</li>
 <li>LaTex有许多发行版(查看各发行版<a href="http://www.latexstudio.net/page/texsoftware" target="_blank" rel="noopener">介绍</a>)，包括CTeX、MiKTeX、TexLive等，这里推荐开源且更加全面的<strong>TeXLive</strong> (<a href="http://www.tug.org/texlive/acquire.html" target="_blank" rel="noopener">TeXLive 最新版本下载地址</a> ，选择&quot;Downloading one huge ISO file&quot; -&gt; “download from a nearby CTAN mirror”，该链接会自动接入最近的ctan的镜像站，整个套装接近3G，教育网会有有几MB/s的速度，下载比较快； 安装过程可以参考：<a href="https://zhuanlan.zhihu.com/p/19779481?columnSlug=LaTeX" target="_blank" rel="noopener">TeX Live 2014安装引导流程</a>以及<a href="http://www.linuxidc.com/Linux/2016-08/133913.htm" target="_blank" rel="noopener">Linux 系统下原版 TeX Live 2016 的安装与配置</a>。</li>
@@ -383,6 +384,26 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2020/01/03/折腾编辑器 - Visual Studio Code/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://res.cloudinary.com/regulus/image/upload/v1579203724/blog/visualstudio_code-logo.png)" alt="折腾编辑器 &amp; Visual Studio Code" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2020/01/03/折腾编辑器 - Visual Studio Code/" class="title">折腾编辑器 &amp; Visual Studio Code</a></p>
+                            <p class="item-date"><time datetime="2020-01-03T09:16:57.000Z" itemprop="datePublished">2020-01-03</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2019/10/21/加密笔记测试-密码为spacex/" class="thumbnail">
     
     
@@ -460,26 +481,6 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2019/06/24/近来速记与折腾valine/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://res.cloudinary.com/regulus/image/upload/v1561381689/blog/valinelogo.jpg)" alt="近来速记与折腾valine与字数统计" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/日常/">日常</a></p>
-                            <p class="item-title"><a href="/2019/06/24/近来速记与折腾valine/" class="title">近来速记与折腾valine与字数统计</a></p>
-                            <p class="item-date"><time datetime="2019-06-24T12:38:47.000Z" itemprop="datePublished">2019-06-24</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -499,7 +500,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -509,7 +510,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTex/">LaTex</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/News/">News</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tips/">Tips</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/object-Object/">[object Object]</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tips/">tips</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/加密/">加密</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术/">技术</a><span class="tag-list-count">18</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日常/">日常</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂谈/">杂谈</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知识/">知识</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转载/">转载</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">5</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTex/">LaTex</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/News/">News</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tips/">Tips</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/object-Object/">[object Object]</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tips/">tips</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/加密/">加密</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术/">技术</a><span class="tag-list-count">19</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日常/">日常</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂谈/">杂谈</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知识/">知识</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转载/">转载</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">5</span></li></ul>
         </div>
     </div>
 
@@ -519,7 +520,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/LaTex/" style="font-size: 13.33px;">LaTex</a> <a href="/tags/News/" style="font-size: 13.33px;">News</a> <a href="/tags/Tips/" style="font-size: 15px;">Tips</a> <a href="/tags/object-Object/" style="font-size: 10px;">[object Object]</a> <a href="/tags/hexo/" style="font-size: 18.33px;">hexo</a> <a href="/tags/tips/" style="font-size: 16.67px;">tips</a> <a href="/tags/加密/" style="font-size: 10px;">加密</a> <a href="/tags/技术/" style="font-size: 20px;">技术</a> <a href="/tags/日常/" style="font-size: 18.33px;">日常</a> <a href="/tags/杂谈/" style="font-size: 11.67px;">杂谈</a> <a href="/tags/知识/" style="font-size: 10px;">知识</a> <a href="/tags/转载/" style="font-size: 10px;">转载</a> <a href="/tags/随笔/" style="font-size: 15px;">随笔</a>
+            <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/LaTex/" style="font-size: 12.86px;">LaTex</a> <a href="/tags/News/" style="font-size: 12.86px;">News</a> <a href="/tags/Tips/" style="font-size: 15.71px;">Tips</a> <a href="/tags/object-Object/" style="font-size: 10px;">[object Object]</a> <a href="/tags/hexo/" style="font-size: 18.57px;">hexo</a> <a href="/tags/tips/" style="font-size: 17.14px;">tips</a> <a href="/tags/加密/" style="font-size: 10px;">加密</a> <a href="/tags/技术/" style="font-size: 20px;">技术</a> <a href="/tags/日常/" style="font-size: 18.57px;">日常</a> <a href="/tags/杂谈/" style="font-size: 11.43px;">杂谈</a> <a href="/tags/知识/" style="font-size: 10px;">知识</a> <a href="/tags/转载/" style="font-size: 10px;">转载</a> <a href="/tags/随笔/" style="font-size: 14.29px;">随笔</a>
         </div>
     </div>
 
@@ -583,7 +584,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                 <h1 class="logo-wrap">
                     <a href="/" class="logo"></a>
                 </h1>
-                <p>&copy; 2019 regulus  </p>
+                <p>&copy; 2020 regulus  </p>
                 <p> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本博客采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"> CC BY-NC-SA 4.0 International License </a>进行许可。</p>
                 <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
                <!-- 不蒜子 http://ibruce.info/2015/04/04/busuanzi/ -->
