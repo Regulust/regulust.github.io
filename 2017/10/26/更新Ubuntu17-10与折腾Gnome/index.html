@@ -18,7 +18,7 @@
 <meta property="og:description" content="周一因为打错一行命令导致Ubuntu跪了，作为一个Linux菜鸟来说，实在无法挽救… 恰逢最近Ubuntu更新17.10，带来不少易见的新特性，怎么能不尝试下（就是忍不住折腾）～ 这里记录下三天来装系统、折腾GNOME的一些事(坑)～ 系统安装 我一直是使用UltraISO来制作系统安装盘的，操作简单，通吃Linux、Windows，制作启动盘几乎没出过问题[1]，很久前下过一个绿色版的Ultr">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://res.cloudinary.com/regulus/image/upload/v1509006546/blog/gnome3.png">
-<meta property="og:updated_time" content="2018-01-02T10:07:13.000Z">
+<meta property="og:updated_time" content="2020-01-31T22:17:25.683Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="更新Ubuntu17.10与折腾Gnome">
 <meta name="twitter:description" content="周一因为打错一行命令导致Ubuntu跪了，作为一个Linux菜鸟来说，实在无法挽救… 恰逢最近Ubuntu更新17.10，带来不少易见的新特性，怎么能不尝试下（就是忍不住折腾）～ 这里记录下三天来装系统、折腾GNOME的一些事(坑)～ 系统安装 我一直是使用UltraISO来制作系统安装盘的，操作简单，通吃Linux、Windows，制作启动盘几乎没出过问题[1]，很久前下过一个绿色版的Ultr">
@@ -221,12 +221,12 @@ ga('send', 'pageview');
 <p>我一直是使用UltraISO来制作系统安装盘的，操作简单，通吃Linux、Windows，制作启动盘几乎没出过问题<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>，很久前下过一个绿色版的UltraISO我一直保留着。<br>
 Ubuntu启动盘的好处是，自己就是一个PE系统，可以通过Try Ubuntu选项进入一个几乎完整版的Ubuntu系统(如果连着有线，上网都没有问题，无线网卡可能有驱动问题)，然后我备份了原系统中的/home文件夹，包括以前下载保留的一些.deb包，以及一些文件夹结构，新安装完系统可以快速再次开展工作。</p>
 <p>之前安装Ubuntu，我的分区方案一直是’\boot’ 512MB，swap留上4GB+，剩下的根目录 '‘与’\home’平分，说是这样重装可以保留用户文件，然而使用过程发现，因为一般都是双系统安装，给Ubuntu留下的空间也就几十GB，根目录与\home平分的方式不能最大化利用空间，别说Ubuntu用不了多少空间，装个MMA近10GB，TexLive套装几个GB，如果有人会用到Matlab，那又是近10GB，一些课程跑程序偶尔会跑出个几个GB(虽然现在不跑了，但是一旦需要空间时真的蛋疼)，如果分两个区，每个区都空几个GB，但程序装不上的事情可不想再出现了…</p>
-<p><img src="http://res.cloudinary.com/regulus/image/upload/v1508998970/blog/ubuntu1710_01.png" alt="看来覆盖升级安装的方式貌似可能会影响到引导分区，还是选其它选项重新分区吧"></p>
+<p><img src="https://res.cloudinary.com/regulus/image/upload/v1508998970/blog/ubuntu1710_01.png" alt="看来覆盖升级安装的方式貌似可能会影响到引导分区，还是选其它选项重新分区吧"></p>
 <p>加上Ubuntu已经把“交换分区”的工作交给了“交换文件”，所以这次分区超级简单，一个\boot 2048MB(也别说\boot这么大用不到，就升级过几次内核，总给我说空间不足), 剩下的全给了根目录\ ,引导依然安装到\boot 目录下，不影响Windows的引导，切换系统时手动bios切换或者平时默认grub引导(如果Linux挂了，直接删Linux分区，我可不想影响到Windows)。</p>
-<p><img src="http://res.cloudinary.com/regulus/image/upload/v1508998969/blog/ubuntu1710_02.png" alt="“机灵的土豚”，我来了"></p>
+<p><img src="https://res.cloudinary.com/regulus/image/upload/v1508998969/blog/ubuntu1710_02.png" alt="“机灵的土豚”，我来了"></p>
 <h3>折腾Gnome</h3>
 <p>最早用Ubuntu的时候曾经看过许多酷炫的Gnome美化，心想：Ubuntu用的这么酷…然而一直还是默认Unity一直用着，实用优先…<br>
-<img src="http://res.cloudinary.com/regulus/image/upload/v1508998970/blog/ubuntu1710_0.png" alt="Ubuntu17.10桌面"></p>
+<img src="https://res.cloudinary.com/regulus/image/upload/v1508998970/blog/ubuntu1710_0.png" alt="Ubuntu17.10桌面"></p>
 <p>这次好了，17.10直接默认Gnome了，一上手确实蛮美观的，然而慢慢开始Unity遗留的各种不适应：<br>
 **输入法：**安装搜狗输入法，发现顶栏输入法图标不变为fcitx的小企鹅，设置切换也没用，但是输入框确实sogou的…在MMA输入不了中文了，然后设置里切不回来ibus输入法…呃，所以一直是一种，打字输入框是sogou的，顶栏图标是ibus的，然后设置输入法切换无效的奇葩状态…后来卸载重装ibus、fcitx几轮，现在是用着ibus，切换不了fcitx，输入法折腾这么久还是这么蛋疼，可能很多人会说“你就是不会用”，确实没错啊，就一个输入法你还要我花多大精力去调整啊，很基础的功能难道不是开箱即用的么（好吧，想起Ubuntu社区的一句话了：软件系统都是免费的，软件功能有问题轮不到你发脾气，开发者不欠你什么）…<br>
 **挂起按钮：**用了Gnome，发现找不到挂起按钮了。这个功能我之前很常用，因为台式机，每天打开一堆窗口，关机开机还得再把它们打开，第二天难以无缝的继续前一天的工作，而挂起就可以快速、无缝的继续前一天的工作，而且省电、安全(保持内存上电的同时，现场也会存入硬盘，断电也不会丢失，只是再启动稍慢)。然而Gnome的挂起呢？我找了教程，可以终端键入<code>systemctl suspend</code>实现免sudo挂起，就算写了.sh双击运行还是太麻烦（我说我觉得这样不够优雅你信吗），安装了Gnome插件Suspend Button添加了挂起按钮，然而点击无反应…昨天看了“帮助”，才看到原来打开系统菜单，按住alt键或者长按关机按钮，关机按钮会变为挂起按钮[掩面]，作为一个长期unity党，我怎么会知道这样的“常识”，百度还百度不到…<br>
@@ -490,7 +490,7 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
                             <a href="/2019/09/18/Ubuntu下ROOT的安装/" class="thumbnail">
     
     
-        <span style="background-image:url(http://res.cloudinary.com/regulus/image/upload/v1493219202/blog/ROOT_Logo.png)" alt="Ubuntu下ROOT的安装及遇到的问题[190918更新]" class="thumbnail-image"></span>
+        <span style="background-image:url(https://res.cloudinary.com/regulus/image/upload/v1493219202/blog/ROOT_Logo.png)" alt="Ubuntu下ROOT的安装及遇到的问题[190918更新]" class="thumbnail-image"></span>
     
     
 </a>
