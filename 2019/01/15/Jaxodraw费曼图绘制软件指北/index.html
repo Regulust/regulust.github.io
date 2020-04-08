@@ -18,7 +18,7 @@
 <meta property="og:description" content="JaxoDraw是一款简单的用于绘制费曼图的Java软件，开源免费，图形界面直观简单，通过鼠标拖拽就能完成费曼图的绘制，并可以导出为eps等矢量图片格式。  下载 JaxoDraw其实已经很久没有维护，如果是Windows用户，可以尝试点击 Downloads -&amp;gt; Binary installers -&amp;gt; Windows self-installer 来安装（但不保证可以正常使用）">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://res.cloudinary.com/regulus/image/upload/v1547563044/blog/jaxodraw_logo1.jpg">
-<meta property="og:updated_time" content="2019-06-23T16:22:26.000Z">
+<meta property="og:updated_time" content="2020-04-08T22:03:30.117Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JaxoDraw费曼图绘制软件安装使用指北">
 <meta name="twitter:description" content="JaxoDraw是一款简单的用于绘制费曼图的Java软件，开源免费，图形界面直观简单，通过鼠标拖拽就能完成费曼图的绘制，并可以导出为eps等矢量图片格式。  下载 JaxoDraw其实已经很久没有维护，如果是Windows用户，可以尝试点击 Downloads -&amp;gt; Binary installers -&amp;gt; Windows self-installer 来安装（但不保证可以正常使用）">
@@ -201,10 +201,10 @@ ga('send', 'pageview');
    <div class="article-counter">
       <i class="fa fa-file-word-o"></i>
       <span class="post-count-item-text">本文字数: </span>
-      <span class="post-count">778</span>
+      <span class="post-count">961</span>
       <i class="fa fa-clock-o"></i>
       <span class="post-time-item-text">阅读时长: </span>
-      <span class="post-count">2 分钟 </span>
+      <span class="post-count">3 分钟 </span>
    </div>
 
 
@@ -216,11 +216,12 @@ ga('send', 'pageview');
             <blockquote>
 <p><a href="http://jaxodraw.sourceforge.net/index.html" target="_blank" rel="noopener">JaxoDraw</a>是一款简单的用于绘制费曼图的Java软件，开源免费，图形界面直观简单，通过鼠标拖拽就能完成费曼图的绘制，并可以导出为eps等矢量图片格式。</p>
 </blockquote>
-<h3>下载</h3>
-<p>JaxoDraw其实已经很久没有维护，如果是Windows用户，可以尝试点击 Downloads -&gt; Binary installers -&gt; Windows self-installer 来安装（但不保证可以正常使用）；而对与macOS或者linux用户，或者是上一种方法无法正常使用的Windows用户，可以采用下载 预编译的二进制码的方式来使用Jaxodraw：<br>
+<h3><a href="http://jaxodraw.sourceforge.net/index.html" target="_blank" rel="noopener">下载</a></h3>
+<p>JaxoDraw其实已经很久没有维护，如果是Windows用户，可以尝试点击 Downloads -&gt; Binary installers -&gt; Windows self-installer 来安装（但不保证可以正常使用）；而对与macOS或者linux用户，或者是上一种方法无法正常使用的Windows用户，可以通过下载 Binary-预编译的二进制码的方式来使用Jaxodraw：<br>
 <img src="https://res.cloudinary.com/regulus/image/upload/v1547559524/blog/jaxo_download.jpg" alt="Jaxo下载页面"></p>
 <h3>运行</h3>
-<p>下载了“二进制码”该如何使用呢？因为JaxoDraw本质是一个java程序，其执行程序是一个后缀名为.jar的文件，所以像一个java程序一样运行它就可以了。对于Windows、Linux系统可能需要先安装java运行环境，在终端或者cmd命令行工具执行<code>java -version</code>，<br>
+<p>下载了“二进制码”该如何使用呢？因为JaxoDraw本质是一个java程序，解压文件夹后可以发现其执行程序是一个后缀名为.jar的文件(jaxodraw-2.1-0.jar)，所以像一个java程序一样运行它就可以了。</p>
+<p>对于Windows、Linux系统可能需要先安装java运行环境，在终端或者cmd命令行工具执行<code>java -version</code>，<br>
 可以查看是否已有java环境，如果没有看到版本号，则需要手动安装。</p>
 <ul>
 <li>Windows系统请百度：Windows如何安装java运行环境运行jar文件，教程很多，<a href="https://www.cnblogs.com/adam/p/3677462.html" target="_blank" rel="noopener">参考链接</a>；</li>
@@ -230,29 +231,33 @@ ga('send', 'pageview');
 </ul>
 <p>安装完java环境，就可以通过终端(或者cmd命令行)，在JaxoDraw文件夹下，执行</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar jaxodraw-2.1-0.jar</span><br></pre></td></tr></table></figure>
-<p>来运行jaxo程序，当然为了方便，也可以改变该文件的属性，Ubuntu下变更其为“可执行文件”，macOS下可以使用“Jar Launcher app”默认打开，Windows下可以通过<a href="https://blog.csdn.net/ah_quwei/article/details/80239070" target="_blank" rel="noopener">写一个bat脚本来方便运行jar文件</a>：<br>
+<p>来运行jaxo程序。<br>
+当然为了方便，也可以改变该文件的属性为“可执行文件”，以后双击.jar文件即可以打开：Ubuntu下右键该文件，属性标签勾选“可执行”，或使用<code>chmox +x xxx.jar</code>命令（<a href="https://blog.csdn.net/puyangdev/article/details/62215334" target="_blank" rel="noopener">参考链接</a>）；macOS下，右键该.jar文件，Open with选项默认使用“Jar Launcher app”打开；Windows下可以通过<a href="https://blog.csdn.net/ah_quwei/article/details/80239070" target="_blank" rel="noopener">写一个bat脚本来方便运行jar文件</a>：<br>
 <img src="https://res.cloudinary.com/regulus/image/upload/v1547561029/blog/jaxodraw_UI.jpg" alt><br>
-但其实如果我们想输出费曼图图片，还需要：电脑已经安装TeXLive等LaTeX编译软件，下面会提到。</p>
+但其实如果我们想输出费曼图图片，还需要电脑已经安装TeXLive等LaTeX编译软件，下面会提到。</p>
 <h3>配置与使用</h3>
 <p>打开JaxoDraw之后，就可以看到各种费曼图熟悉的线型，可以通过拖拽绘制费曼图，也可以插入TeX格式的说明文字、希腊字母等等，绘制完之后，可以保存为.xml格式的文件，以便未来修改…<br>
 但绘制完成导出时，发现如果选择LaTeX -&gt; EPS，会报错:<br>
 <img src="https://res.cloudinary.com/regulus/image/upload/v1547562385/blog/jaxodraw_erro.jpg" alt><br>
-提示说缺少’axodraw4j.sty’的LaTeX样式文件等。<br>
-此时可以选择导出File format为LaTeX，然后手动编译该LaTeX文件，生成eps或者pdf格式的费曼图(一般默认安装的TeXLive发行版，都自带了xodraw4j.sty样式)；<br>
-另外也可以我们从<a href="http://jaxodraw.sourceforge.net/reference/axodraw4j.html" target="_blank" rel="noopener">Jaxodraw的axodraw4j页面</a>下载对应的axodraw4j.sty文件，并放入同一目录下，然后进入到Options -&gt; Preferences：<br>
+提示说缺少’axodraw4j.sty’的LaTeX样式文件等。</p>
+<p>此时可以选择导出File format为LaTeX，然后手动编译该LaTeX文件，生成eps或者pdf格式的费曼图(一般默认安装的TeXLive发行版，都自带了axodraw4j.sty样式)；</p>
+<p>另外也可以我们从<a href="http://jaxodraw.sourceforge.net/reference/axodraw4j.html" target="_blank" rel="noopener">Jaxodraw的axodraw4j页面</a>下载对应的<a href="http://jaxodraw.sourceforge.net/download/axodraw4j.html" target="_blank" rel="noopener">axodraw4j.sty</a>文件，并放入同一目录下，然后进入到Options -&gt; Preferences：<br>
 <img src="https://res.cloudinary.com/regulus/image/upload/v1547562385/blog/jaxodraw_erro.jpg" alt><br>
-然后手动输入对应的TeXLive中的latex与dvips命令的路径<br>
+手动输入对应的TeXLive中的latex与dvips命令的路径<br>
 （mac和Linux下默认安装TeXLive的对应命令路径为：<code>/usr/local/texlive/2018/bin/x86_64-darwin/latex</code>与<br>
-<code>/usr/local/texlive/2018/bin/x86_64-darwin/dvips</code>），此时，我们再选择 export -&gt; File format -&gt; ‘latex -&gt; EPS’，就可以正常生成.eps格式的矢量费曼图了～<br>
+<code>/usr/local/texlive/2018/bin/x86_64-darwin/dvips</code>，需要注意版本号哦，本文安装时是2018版位于2018文件夹）。</p>
+<p>此时，我们再选择 export -&gt; File format -&gt; ‘latex -&gt; EPS’，就可以正常生成.eps格式的矢量费曼图了～<br>
 <img src="https://res.cloudinary.com/regulus/image/upload/v1547562388/blog/jaxodraw_export.jpg" alt></p>
+<p>Ps：如果想要导出前Preview预览，则需要自行安装可以预览eps文件的软件，然后在Preferences中字形填写viewer路径，但我一直没有找到合适的预览软件(mac直接空格eps文件用Preview.app是可以打开eps的，但我填写其路径依然提示预览错误)，不过不影响导出，可以导出后再预览查看。</p>
 <p>附Users guide：<br>
 <a href="http://jaxodraw.sourceforge.net/userguide.html" target="_blank" rel="noopener">http://jaxodraw.sourceforge.net/userguide.html</a></p>
+<p><em>(2020/04 update)</em></p>
 <!-- valine阅读量统计 -->
 <!-- id 将作为查询条件 -->
-<p>Valine阅读量统计测试：<br>
+<p>Valine阅读量统计测试test：<br>
 <span id="/2019/01/15/Jaxodraw费曼图绘制软件指北/" class="leancloud-visitors" data-flag-title="Jaxodraw费曼图绘制软件指北"><br>
 <em class="post-meta-item-text">阅读量 </em><br>
-<i class="leancloud-visitors-count">1000000</i><br>
+<i class="leancloud-visitors-count">100000</i><br>
 </span></p>
 
         </div>
