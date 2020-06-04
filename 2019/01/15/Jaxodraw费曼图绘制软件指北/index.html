@@ -18,7 +18,7 @@
 <meta property="og:description" content="JaxoDraw是一款简单的用于绘制费曼图的Java软件，开源免费，图形界面直观简单，通过鼠标拖拽就能完成费曼图的绘制，并可以导出为eps等矢量图片格式。  下载 JaxoDraw其实已经很久没有维护，如果是Windows用户，可以尝试点击 Downloads -&amp;gt; Binary installers -&amp;gt; Windows self-installer 来安装（但不保证可以正常使用）">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://res.cloudinary.com/regulus/image/upload/v1547563044/blog/jaxodraw_logo1.jpg">
-<meta property="og:updated_time" content="2020-04-08T22:03:30.117Z">
+<meta property="og:updated_time" content="2020-06-04T21:02:52.435Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JaxoDraw费曼图绘制软件安装使用指北">
 <meta name="twitter:description" content="JaxoDraw是一款简单的用于绘制费曼图的Java软件，开源免费，图形界面直观简单，通过鼠标拖拽就能完成费曼图的绘制，并可以导出为eps等矢量图片格式。  下载 JaxoDraw其实已经很久没有维护，如果是Windows用户，可以尝试点击 Downloads -&amp;gt; Binary installers -&amp;gt; Windows self-installer 来安装（但不保证可以正常使用）">
@@ -201,7 +201,7 @@ ga('send', 'pageview');
    <div class="article-counter">
       <i class="fa fa-file-word-o"></i>
       <span class="post-count-item-text">本文字数: </span>
-      <span class="post-count">961</span>
+      <span class="post-count">982</span>
       <i class="fa fa-clock-o"></i>
       <span class="post-time-item-text">阅读时长: </span>
       <span class="post-count">3 分钟 </span>
@@ -241,11 +241,13 @@ ga('send', 'pageview');
 <img src="https://res.cloudinary.com/regulus/image/upload/v1547562385/blog/jaxodraw_erro.jpg" alt><br>
 提示说缺少’axodraw4j.sty’的LaTeX样式文件等。</p>
 <p>此时可以选择导出File format为LaTeX，然后手动编译该LaTeX文件，生成eps或者pdf格式的费曼图(一般默认安装的TeXLive发行版，都自带了axodraw4j.sty样式)；</p>
-<p>另外也可以我们从<a href="http://jaxodraw.sourceforge.net/reference/axodraw4j.html" target="_blank" rel="noopener">Jaxodraw的axodraw4j页面</a>下载对应的<a href="http://jaxodraw.sourceforge.net/download/axodraw4j.html" target="_blank" rel="noopener">axodraw4j.sty</a>文件，并放入同一目录下，然后进入到Options -&gt; Preferences：<br>
-<img src="https://res.cloudinary.com/regulus/image/upload/v1547562385/blog/jaxodraw_erro.jpg" alt><br>
+<p>另外也可以我们从<a href="http://jaxodraw.sourceforge.net/reference/axodraw4j.html" target="_blank" rel="noopener">Jaxodraw的axodraw4j页面</a>下载对应的<a href="http://jaxodraw.sourceforge.net/download/axodraw4j.html" target="_blank" rel="noopener">axodraw4j.sty</a>文件(或<a href="https://res.cloudinary.com/regulus/raw/upload/v1591303793/blog/axodraw4j.sty" target="_blank" rel="noopener">点此下载</a>)，放入jaxodraw.jar同目录下即可。</p>
+<p><img src="https://res.cloudinary.com/regulus/image/upload/v1591304120/blog/jaxodraw_path_error.jpg" alt><br>
+此时再输出export，如果出现path提示报错，需进入到Options -&gt; Preferences，<br>
 手动输入对应的TeXLive中的latex与dvips命令的路径<br>
 （mac和Linux下默认安装TeXLive的对应命令路径为：<code>/usr/local/texlive/2018/bin/x86_64-darwin/latex</code>与<br>
-<code>/usr/local/texlive/2018/bin/x86_64-darwin/dvips</code>，需要注意版本号哦，本文安装时是2018版位于2018文件夹）。</p>
+<code>/usr/local/texlive/2018/bin/x86_64-darwin/dvips</code>，需要注意版本号哦，本文安装时是2018版位于2018文件夹）。<br>
+<img src="https://res.cloudinary.com/regulus/image/upload/v1591304120/blog/jaxodraw_path.jpg" alt></p>
 <p>此时，我们再选择 export -&gt; File format -&gt; ‘latex -&gt; EPS’，就可以正常生成.eps格式的矢量费曼图了～<br>
 <img src="https://res.cloudinary.com/regulus/image/upload/v1547562388/blog/jaxodraw_export.jpg" alt></p>
 <p>Ps：如果想要导出前Preview预览，则需要自行安装可以预览eps文件的软件，然后在Preferences中字形填写viewer路径，但我一直没有找到合适的预览软件(mac直接空格eps文件用Preview.app是可以打开eps的，但我填写其路径依然提示预览错误)，不过不影响导出，可以导出后再预览查看。</p>
