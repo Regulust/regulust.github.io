@@ -7,18 +7,18 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="Hitokoto一言(每日一句)test:             2020.09.15  将Valine评论使用的LeanCloud服务转到了国际版，并迁移了评论数据 添加了Valine-Admin评论系统拓展，现在评论里如果填写了邮箱，会收到邮件提醒了   2020.01  给 GitHub page 开启了 https Valine启用了评论输入验证码   2019.10  修改h">
+    <meta name="description" content="Hitokoto一言(每日一句)test:             2020.09.15  将Valine评论使用的LeanCloud服务转到了国际版，并迁移了评论数据 添加了Valine-Admin评论系统拓展，现在评论里如果填写了邮箱，@回复可以收到邮件提醒 修复了“关于”页面底部的Valine阅读次数记录 之前 counter-id 一直写的是 id=/about/index.ht">
 <meta property="og:type" content="website">
 <meta property="og:title" content="关于我，我就是我">
 <meta property="og:url" content="regulus.online/about/index.html">
 <meta property="og:site_name" content="Blog of Regulus">
-<meta property="og:description" content="Hitokoto一言(每日一句)test:             2020.09.15  将Valine评论使用的LeanCloud服务转到了国际版，并迁移了评论数据 添加了Valine-Admin评论系统拓展，现在评论里如果填写了邮箱，会收到邮件提醒了   2020.01  给 GitHub page 开启了 https Valine启用了评论输入验证码   2019.10  修改h">
+<meta property="og:description" content="Hitokoto一言(每日一句)test:             2020.09.15  将Valine评论使用的LeanCloud服务转到了国际版，并迁移了评论数据 添加了Valine-Admin评论系统拓展，现在评论里如果填写了邮箱，@回复可以收到邮件提醒 修复了“关于”页面底部的Valine阅读次数记录 之前 counter-id 一直写的是 id=/about/index.ht">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
-<meta property="og:updated_time" content="2020-09-15T08:47:32.422Z">
+<meta property="og:updated_time" content="2020-09-16T06:38:52.093Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于我，我就是我">
-<meta name="twitter:description" content="Hitokoto一言(每日一句)test:             2020.09.15  将Valine评论使用的LeanCloud服务转到了国际版，并迁移了评论数据 添加了Valine-Admin评论系统拓展，现在评论里如果填写了邮箱，会收到邮件提醒了   2020.01  给 GitHub page 开启了 https Valine启用了评论输入验证码   2019.10  修改h">
+<meta name="twitter:description" content="Hitokoto一言(每日一句)test:             2020.09.15  将Valine评论使用的LeanCloud服务转到了国际版，并迁移了评论数据 添加了Valine-Admin评论系统拓展，现在评论里如果填写了邮箱，@回复可以收到邮件提醒 修复了“关于”页面底部的Valine阅读次数记录 之前 counter-id 一直写的是 id=/about/index.ht">
 <meta name="twitter:image" content="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
     
 
@@ -201,7 +201,9 @@ ga('send', 'pageview');
 <p>2020.09.15</p>
 <ul>
 <li>将<a href="https://valine.js.org" target="_blank" rel="noopener">Valine评论</a>使用的<a href="https://leancloud.cn/" target="_blank" rel="noopener">LeanCloud</a>服务转到了<a href="https://leancloud.app/" target="_blank" rel="noopener">国际版</a>，并迁移了评论数据</li>
-<li>添加了<a href="https://github.com/DesertsP/Valine-Admin" target="_blank" rel="noopener">Valine-Admin</a>评论系统拓展，现在评论里如果填写了邮箱，会收到邮件提醒了</li>
+<li>添加了<a href="https://github.com/DesertsP/Valine-Admin" target="_blank" rel="noopener">Valine-Admin</a>评论系统拓展，现在评论里如果填写了邮箱，@回复可以收到邮件提醒</li>
+<li>修复了“关于”页面底部的Valine阅读次数记录<br>
+<code>之前 counter-id 一直写的是 id=/about/index.html/ ，正确写 id=/about/ 即可</code></li>
 </ul>
 <hr>
 <p>2020.01</p>
@@ -319,8 +321,8 @@ _result.innerHTML = str;
 <hr>
 <!-- valine阅读量统计 -->
 <!-- id 将作为查询条件 -->
-<span id="/about/index.html" class="leancloud_visitors" data-flag-title="关于我，我就是我">
-    <em class="post-meta-item-text">阅读量 </em>
+<span class="leancloud_visitors" data-flag-title="关于我，我就是我" id="/about/">
+    <em> <b> <small> 本页阅读次数 </small> </b> </em>
     <i class="leancloud-visitors-count">1000000</i>
 </span>
         </div>
