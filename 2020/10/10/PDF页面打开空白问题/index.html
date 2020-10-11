@@ -3,26 +3,26 @@
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
     
-    <title>更新Ubuntu17.10与折腾Gnome | Blog of Regulus</title>
+    <title>PDF页面打开显示空白的问题 | Blog of Regulus</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="技术,随笔">
+        <meta name="keywords" content="Tips">
     
-    <meta name="description" content="周一因为打错一行命令导致Ubuntu跪了，作为一个Linux菜鸟来说，实在无法挽救… 恰逢最近Ubuntu更新17.10，带来不少易见的新特性，怎么能不尝试下（就是忍不住折腾）～ 这里记录下三天来装系统、折腾GNOME的一些事(坑)～ 系统安装 我一直是使用UltraISO来制作系统安装盘的，操作简单，通吃Linux、Windows，制作启动盘几乎没出过问题[1]，很久前下过一个绿色版的Ultr">
-<meta name="keywords" content="技术,随笔">
+    <meta name="description" content="下载一篇老文献，应该是pdf扫描的电子版，其中一页在PDFExpert、mac自带的预览等软件里打开是空白的，但在Chrome、Adober Reader DC中就是可以正常显示的。经查询可能与黑白扫描算法有关，导致在某些阅读器里无法正常显示，➡️PDF导入Goodnotes5中，部分页面显示为空白的问题。 不过该参考文章里的解决方法，需要用到Adobe Acrobat软件，很多同学没有购买、激">
+<meta name="keywords" content="Tips">
 <meta property="og:type" content="article">
-<meta property="og:title" content="更新Ubuntu17.10与折腾Gnome">
-<meta property="og:url" content="regulus.online/2017/10/26/更新Ubuntu17-10与折腾Gnome/index.html">
+<meta property="og:title" content="PDF页面打开显示空白的问题">
+<meta property="og:url" content="regulus.online/2020/10/10/PDF页面打开空白问题/index.html">
 <meta property="og:site_name" content="Blog of Regulus">
-<meta property="og:description" content="周一因为打错一行命令导致Ubuntu跪了，作为一个Linux菜鸟来说，实在无法挽救… 恰逢最近Ubuntu更新17.10，带来不少易见的新特性，怎么能不尝试下（就是忍不住折腾）～ 这里记录下三天来装系统、折腾GNOME的一些事(坑)～ 系统安装 我一直是使用UltraISO来制作系统安装盘的，操作简单，通吃Linux、Windows，制作启动盘几乎没出过问题[1]，很久前下过一个绿色版的Ultr">
+<meta property="og:description" content="下载一篇老文献，应该是pdf扫描的电子版，其中一页在PDFExpert、mac自带的预览等软件里打开是空白的，但在Chrome、Adober Reader DC中就是可以正常显示的。经查询可能与黑白扫描算法有关，导致在某些阅读器里无法正常显示，➡️PDF导入Goodnotes5中，部分页面显示为空白的问题。 不过该参考文章里的解决方法，需要用到Adobe Acrobat软件，很多同学没有购买、激">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://res.cloudinary.com/regulus/image/upload/v1509006546/blog/gnome3.png">
-<meta property="og:updated_time" content="2020-01-31T22:17:25.683Z">
+<meta property="og:image" content="https://res.cloudinary.com/regulus/image/upload/v1602406987/blog/PDF_icon.jpg">
+<meta property="og:updated_time" content="2020-10-11T09:06:03.980Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="更新Ubuntu17.10与折腾Gnome">
-<meta name="twitter:description" content="周一因为打错一行命令导致Ubuntu跪了，作为一个Linux菜鸟来说，实在无法挽救… 恰逢最近Ubuntu更新17.10，带来不少易见的新特性，怎么能不尝试下（就是忍不住折腾）～ 这里记录下三天来装系统、折腾GNOME的一些事(坑)～ 系统安装 我一直是使用UltraISO来制作系统安装盘的，操作简单，通吃Linux、Windows，制作启动盘几乎没出过问题[1]，很久前下过一个绿色版的Ultr">
-<meta name="twitter:image" content="https://res.cloudinary.com/regulus/image/upload/v1509006546/blog/gnome3.png">
+<meta name="twitter:title" content="PDF页面打开显示空白的问题">
+<meta name="twitter:description" content="下载一篇老文献，应该是pdf扫描的电子版，其中一页在PDFExpert、mac自带的预览等软件里打开是空白的，但在Chrome、Adober Reader DC中就是可以正常显示的。经查询可能与黑白扫描算法有关，导致在某些阅读器里无法正常显示，➡️PDF导入Goodnotes5中，部分页面显示为空白的问题。 不过该参考文章里的解决方法，需要用到Adobe Acrobat软件，很多同学没有购买、激">
+<meta name="twitter:image" content="https://res.cloudinary.com/regulus/image/upload/v1602406987/blog/PDF_icon.jpg">
     
 
     
@@ -152,18 +152,18 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/技术/">技术</a>
+    <a class="page-title-link" href="/categories/Tips/">Tips</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-更新Ubuntu17-10与折腾Gnome" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-PDF页面打开空白问题" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        更新Ubuntu17.10与折腾Gnome
+        PDF页面打开显示空白的问题
         </h1>
     
 
@@ -174,8 +174,8 @@ ga('send', 'pageview');
                 
     <div class="article-date">
       <i class="fa fa-calendar"></i>
-      <a href="/2017/10/26/更新Ubuntu17-10与折腾Gnome/" class="article-date">
-         <time datetime="2017-10-26T05:51:47.000Z" itemprop="datePublished">2017-10-26</time>
+      <a href="/2020/10/10/PDF页面打开空白问题/" class="article-date">
+         <time datetime="2020-10-10T20:50:03.000Z" itemprop="datePublished">2020-10-11</time>
       </a>
     </div>
 
@@ -186,11 +186,11 @@ ga('send', 'pageview');
     <div class="article-tag">
       <span class="post-meta-divider">  | &nbsp; </span>
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/技术/">技术</a>, <a class="tag-link" href="/tags/随笔/">随笔</a>
+        <a class="tag-link" href="/tags/Tips/">Tips</a>
     </div>
 
                 
-   <span id="/2017/10/26/更新Ubuntu17-10与折腾Gnome/" class="leancloud-visitors" data-flag-title="更新Ubuntu17.10与折腾Gnome">
+   <span id="/2020/10/10/PDF页面打开空白问题/" class="leancloud-visitors" data-flag-title="PDF页面打开显示空白的问题">
    <i class="fa fa-eye"></i>
    <span class="post-meta-item-text">阅读次数: </span>
    <i class="leancloud-visitors-count">1000000</i>
@@ -201,10 +201,10 @@ ga('send', 'pageview');
    <div class="article-counter">
       <i class="fa fa-file-word-o"></i>
       <span class="post-count-item-text">本文字数: </span>
-      <span class="post-count">1.8k</span>
+      <span class="post-count">206</span>
       <i class="fa fa-clock-o"></i>
       <span class="post-time-item-text">阅读时长: </span>
-      <span class="post-count">6 分钟 </span>
+      <span class="post-count">1 分钟 </span>
    </div>
 
 
@@ -212,64 +212,11 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text">系统安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text">折腾Gnome</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text">附：Gnome-Extension 插件的安装</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#null"><span class="toc-text">Tips:</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-text">参考：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#null"><span class="toc-text">一些安装的插件:</span></a></li></ol></li></ol></li></ol>
-            <p><img src="https://res.cloudinary.com/regulus/image/upload/v1509006546/blog/gnome3.png" alt="Ubuntu+GNOME=满满的爱，o(∩∩)o...哈哈"></p>
-<p>周一因为打错一行命令导致Ubuntu跪了，作为一个Linux菜鸟来说，实在无法挽救…<br>
-恰逢最近Ubuntu更新17.10，带来不少易见的新特性，怎么能不尝试下（就是忍不住折腾）～<br>
-这里记录下三天来装系统、折腾GNOME的一些事(坑)～</p>
-<h3>系统安装</h3>
-<p>我一直是使用UltraISO来制作系统安装盘的，操作简单，通吃Linux、Windows，制作启动盘几乎没出过问题<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>，很久前下过一个绿色版的UltraISO我一直保留着。<br>
-Ubuntu启动盘的好处是，自己就是一个PE系统，可以通过Try Ubuntu选项进入一个几乎完整版的Ubuntu系统(如果连着有线，上网都没有问题，无线网卡可能有驱动问题)，然后我备份了原系统中的/home文件夹，包括以前下载保留的一些.deb包，以及一些文件夹结构，新安装完系统可以快速再次开展工作。</p>
-<p>之前安装Ubuntu，我的分区方案一直是’\boot’ 512MB，swap留上4GB+，剩下的根目录 '‘与’\home’平分，说是这样重装可以保留用户文件，然而使用过程发现，因为一般都是双系统安装，给Ubuntu留下的空间也就几十GB，根目录与\home平分的方式不能最大化利用空间，别说Ubuntu用不了多少空间，装个MMA近10GB，TexLive套装几个GB，如果有人会用到Matlab，那又是近10GB，一些课程跑程序偶尔会跑出个几个GB(虽然现在不跑了，但是一旦需要空间时真的蛋疼)，如果分两个区，每个区都空几个GB，但程序装不上的事情可不想再出现了…</p>
-<p><img src="https://res.cloudinary.com/regulus/image/upload/v1508998970/blog/ubuntu1710_01.png" alt="看来覆盖升级安装的方式貌似可能会影响到引导分区，还是选其它选项重新分区吧"></p>
-<p>加上Ubuntu已经把“交换分区”的工作交给了“交换文件”，所以这次分区超级简单，一个\boot 2048MB(也别说\boot这么大用不到，就升级过几次内核，总给我说空间不足), 剩下的全给了根目录\ ,引导依然安装到\boot 目录下，不影响Windows的引导，切换系统时手动bios切换或者平时默认grub引导(如果Linux挂了，直接删Linux分区，我可不想影响到Windows)。</p>
-<p><img src="https://res.cloudinary.com/regulus/image/upload/v1508998969/blog/ubuntu1710_02.png" alt="“机灵的土豚”，我来了"></p>
-<h3>折腾Gnome</h3>
-<p>最早用Ubuntu的时候曾经看过许多酷炫的Gnome美化，心想：Ubuntu用的这么酷…然而一直还是默认Unity一直用着，实用优先…<br>
-<img src="https://res.cloudinary.com/regulus/image/upload/v1508998970/blog/ubuntu1710_0.png" alt="Ubuntu17.10桌面"></p>
-<p>这次好了，17.10直接默认Gnome了，一上手确实蛮美观的，然而慢慢开始Unity遗留的各种不适应：<br>
-**输入法：**安装搜狗输入法，发现顶栏输入法图标不变为fcitx的小企鹅，设置切换也没用，但是输入框确实sogou的…在MMA输入不了中文了，然后设置里切不回来ibus输入法…呃，所以一直是一种，打字输入框是sogou的，顶栏图标是ibus的，然后设置输入法切换无效的奇葩状态…后来卸载重装ibus、fcitx几轮，现在是用着ibus，切换不了fcitx，输入法折腾这么久还是这么蛋疼，可能很多人会说“你就是不会用”，确实没错啊，就一个输入法你还要我花多大精力去调整啊，很基础的功能难道不是开箱即用的么（好吧，想起Ubuntu社区的一句话了：软件系统都是免费的，软件功能有问题轮不到你发脾气，开发者不欠你什么）…<br>
-**挂起按钮：**用了Gnome，发现找不到挂起按钮了。这个功能我之前很常用，因为台式机，每天打开一堆窗口，关机开机还得再把它们打开，第二天难以无缝的继续前一天的工作，而挂起就可以快速、无缝的继续前一天的工作，而且省电、安全(保持内存上电的同时，现场也会存入硬盘，断电也不会丢失，只是再启动稍慢)。然而Gnome的挂起呢？我找了教程，可以终端键入<code>systemctl suspend</code>实现免sudo挂起，就算写了.sh双击运行还是太麻烦（我说我觉得这样不够优雅你信吗），安装了Gnome插件Suspend Button添加了挂起按钮，然而点击无反应…昨天看了“帮助”，才看到原来打开系统菜单，按住alt键或者长按关机按钮，关机按钮会变为挂起按钮[掩面]，作为一个长期unity党，我怎么会知道这样的“常识”，百度还百度不到…<br>
-**坚果云：**坚果云是我在linux下最重要的工具之一了，真正的全平台支持，同步些文档、代码非常实用方便，速度也很快…然而，再17.10下，坚果云安装完成后，顶栏图标不出现…虽然同步还能正常进行，但无法进行设置…之后搜到<a href="https://imcn.me/html/y2017/31253.html" target="_blank" rel="noopener">IMCN博文-GNOME 3.26中的新功能</a>，才看到原来GNOME 3.26 去掉了旧式系统托盘，导致图标不能显示，通过安装TopIcons Plus扩展可以恢复托盘图标(邮件联系坚果云，回复说Linux工程师家里有事请假了…也是不容易啊，祝好吧)。</p>
-<p>…</p>
-<p>至少现在一切都可以正常使用了，该继续工作了～<br>
-转述一段社区看到的话：Linux对于多数人只是一个工具，怎么用取决于你自己，Linux也不是个玩具，留出更多的时间，用它创造出哪怕一点点的新东西来…</p>
-<h3>附：Gnome-Extension 插件的安装</h3>
-<p>因为Ubuntu17.10默认使用了Gnome3的桌面，可以安装许多插件，但安装过程有点小曲折</p>
-<p>进入 <a href="https://extensions.gnome.org/" target="_blank" rel="noopener">https://extensions.gnome.org/</a> gnome extension网站，搜索插件，点击安装时，网页上方会有安装chrome插件的提示；<br>
-安装完插件后，可能网页会有系统“host…主机…设置”相关问题，在终端输入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install chrome-gnome-shell</span><br></pre></td></tr></table></figure>
-<p>再次回到前面网页，会看到插件旁边出现 on/off开关，打开安装即可~</p>
-<h5>Tips:</h5>
-<p>记得安装Gnome-tweak来定制Gnome桌面以及管理扩展：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install gnome-tweak-tool</span><br></pre></td></tr></table></figure>
-<h4>参考：</h4>
-<ul>
-<li><a href="http://www.jianshu.com/p/007ff9cb13e4" target="_blank" rel="noopener">Gnome extionsion 安装方法</a></li>
-<li><a href="http://tieba.baidu.com/p/5265026869" target="_blank" rel="noopener">贴吧-ubuntu17.10GNOME3桌面配置</a></li>
-</ul>
-<h5>一些安装的插件:</h5>
-<ul>
-<li><a href="https://extensions.gnome.org/extension/307/dash-to-dock/" target="_blank" rel="noopener">Dash to Dock</a>: 美观高效的Dock栏</li>
-<li><a href="https://extensions.gnome.org/extension/968/alternatetababove/" target="_blank" rel="noopener">AlternateTabAbove</a>: 在alt+tab在窗口间切换</li>
-<li><a href="https://extensions.gnome.org/extension/8/places-status-indicator/" target="_blank" rel="noopener">Places Status Indicator</a>: Add a menu for quickly navigating places in the system.</li>
-<li><a href="https://extensions.gnome.org/extension/120/system-monitor/" target="_blank" rel="noopener">System Monitor</a>: 顶栏 CPU、网速显示</li>
-<li><a href="https://extensions.gnome.org/extension/826/suspend-button/" target="_blank" rel="noopener">Suspend Button</a>: 添加挂起按钮在status menu</li>
-<li><a href="https://extensions.gnome.org/extension/1031/topicons/" target="_blank" rel="noopener">TopIcons Plus</a>: Ｇnome3.26删除了系统托盘，导致坚果云图标不显示，通过安装Ｔoplcons Ｐlus来恢复托盘图标</li>
-</ul>
-<p>IMCN博客-<a href="https://imcn.me/html/y2017/31364.html" target="_blank" rel="noopener">功能演示 Gnome 3.26</a>：</p>
-<div style="width: 750px;" class="wp-video"><video class="wp-video-shortcode" id="video-31364-2" width="750" height="490" preload="metadata" controls="controls"><source type="video/mp4" src="http://i.imcn.me/GNOME-3-26-See-What-s-New.mp4?_=2"><a href="http://i.imcn.me/GNOME-3-26-See-What-s-New.mp4" target="_blank" rel="noopener">http://i.imcn.me/GNOME-3-26-See-What-s-New.mp4</a></video></div>
-<p>GNOME 3.26视频更新上传优酷：</p>
-<iframe height="420" width="725" src="http://player.youku.com/embed/XMzExMTg5NTkyMA==" frameborder="0" 'allowfullscreen'></iframe>
-<p>原Youtube地址～：</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/25ZQmyDTPwg" frameborder="0" allowfullscreen></iframe>
-<hr class="footnotes-sep">
-<section class="footnotes">
-<ol class="footnotes-list">
-<li id="fn1" class="footnote-item"><p>不过近期有一次是制作Windows10 1709带创意者更新版本，其中更新文件大于4G，而UEFI只认FAT32的启动盘，制作启动盘时直接跳过了这个文件，也没有提示，安装系统时提示找不到xxx…呃，微软你在想什么… <a href="#fnref1" class="footnote-backref">↩</a></p>
-</li>
-</ol>
-</section>
+            
+            <p><img src="https://res.cloudinary.com/regulus/image/upload/v1602406987/blog/PDF_icon.jpg" alt></p>
+<p>下载一篇老文献，应该是pdf扫描的电子版，其中一页在PDFExpert、mac自带的预览等软件里打开是空白的，但在Chrome、Adober Reader DC中就是可以正常显示的。经查询可能与黑白扫描算法有关，导致在某些阅读器里无法正常显示，➡️<a href="https://zhuanlan.zhihu.com/p/107110505" target="_blank" rel="noopener">PDF导入Goodnotes5中，部分页面显示为空白的问题</a>。</p>
+<p>不过该参考文章里的解决方法，需要用到Adobe Acrobat软件，很多同学没有购买、激活该软件。</p>
+<p>这里可以尝试使用一些“在线PDF工具箱”来变相解决许多类似问题，在搜索引擎搜索“PDF工具箱”就有很多结果，比如使用<a href="https://www.ilovepdf.com/zh-cn" target="_blank" rel="noopener">ILOVEPDF</a>，使用压缩、修复PDF等功能，就能解决某页面空白的问题了。</p>
 
         </div>
         <footer class="article-footer">
@@ -372,20 +319,10 @@ window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMin
         
 <nav id="article-nav">
     
-        <a href="/2017/12/19/更换域名了/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">下一篇</strong>
-        <p class="article-nav-title">
-        
-            更换域名了 → regulus.cc
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2017/10/25/Ubuntu重新搭建hexo记录/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2020/07/30/GitHub Arctic Code Vault Contributor/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">Ubuntu重新搭建hexo &amp; ssh免密Git</p>
+        <p class="article-nav-title">GitHub Arctic Code Vault Contributor</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
