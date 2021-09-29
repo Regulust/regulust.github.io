@@ -9,19 +9,19 @@
     
         <meta name="keywords" content="tips">
     
-    <meta name="description" content="前言：Cloudinary是一个很棒的云图像存储/处理服务，注册流程友好（但为英文），免费注册即可使用，访问速度也较快，最早是在壁纸应用EarthLiveSharp中了解到的。免费用户即拥有10GB空间（总文件数上限30,000，每月带宽20GB），日常作为图床足够，而且支持多种图像优化处理工具，例如修改分辨率直接改url就能实现。 之前没有搞明白Cloudinary的API使用，一直在网页端手动">
+    <meta name="description" content="前言：Cloudinary是一个很棒的云图像存储/处理服务，注册流程友好（但为英文），免费注册即可使用，访问速度也较快，最早是在壁纸应用EarthLiveSharp中了解到的。免费用户即拥有10GB空间（总文件数上限30,000，每月带宽20GB），日常作为图床足够，而且支持多种图像云处理工具，对于public链接直接修改url就能实现。 之前没有搞明白Cloudinary的API使用，一直在网页">
 <meta name="keywords" content="tips">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Cloudinary 图床上传配置 MWeb&#x2F;PicGo">
 <meta property="og:url" content="regulus.online/2021/09/17/Cloudinary图床上传配置MWeb:PicGo/index.html">
 <meta property="og:site_name" content="Blog of Regulus">
-<meta property="og:description" content="前言：Cloudinary是一个很棒的云图像存储/处理服务，注册流程友好（但为英文），免费注册即可使用，访问速度也较快，最早是在壁纸应用EarthLiveSharp中了解到的。免费用户即拥有10GB空间（总文件数上限30,000，每月带宽20GB），日常作为图床足够，而且支持多种图像优化处理工具，例如修改分辨率直接改url就能实现。 之前没有搞明白Cloudinary的API使用，一直在网页端手动">
+<meta property="og:description" content="前言：Cloudinary是一个很棒的云图像存储/处理服务，注册流程友好（但为英文），免费注册即可使用，访问速度也较快，最早是在壁纸应用EarthLiveSharp中了解到的。免费用户即拥有10GB空间（总文件数上限30,000，每月带宽20GB），日常作为图床足够，而且支持多种图像云处理工具，对于public链接直接修改url就能实现。 之前没有搞明白Cloudinary的API使用，一直在网页">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://res.cloudinary.com/regulus/image/upload/s--fKqCOzua--/v1631856516/blog/cloudinarylogo_avj9zo.jpg">
-<meta property="og:updated_time" content="2021-09-17T05:30:35.629Z">
+<meta property="og:updated_time" content="2021-09-17T05:34:26.266Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Cloudinary 图床上传配置 MWeb&#x2F;PicGo">
-<meta name="twitter:description" content="前言：Cloudinary是一个很棒的云图像存储/处理服务，注册流程友好（但为英文），免费注册即可使用，访问速度也较快，最早是在壁纸应用EarthLiveSharp中了解到的。免费用户即拥有10GB空间（总文件数上限30,000，每月带宽20GB），日常作为图床足够，而且支持多种图像优化处理工具，例如修改分辨率直接改url就能实现。 之前没有搞明白Cloudinary的API使用，一直在网页端手动">
+<meta name="twitter:description" content="前言：Cloudinary是一个很棒的云图像存储/处理服务，注册流程友好（但为英文），免费注册即可使用，访问速度也较快，最早是在壁纸应用EarthLiveSharp中了解到的。免费用户即拥有10GB空间（总文件数上限30,000，每月带宽20GB），日常作为图床足够，而且支持多种图像云处理工具，对于public链接直接修改url就能实现。 之前没有搞明白Cloudinary的API使用，一直在网页">
 <meta name="twitter:image" content="https://res.cloudinary.com/regulus/image/upload/s--fKqCOzua--/v1631856516/blog/cloudinarylogo_avj9zo.jpg">
     
 
@@ -201,7 +201,7 @@ ga('send', 'pageview');
    <div class="article-counter">
       <i class="fa fa-file-word-o"></i>
       <span class="post-count-item-text">本文字数: </span>
-      <span class="post-count">692</span>
+      <span class="post-count">690</span>
       <i class="fa fa-clock-o"></i>
       <span class="post-time-item-text">阅读时长: </span>
       <span class="post-count">2 分钟 </span>
@@ -213,8 +213,8 @@ ga('send', 'pageview');
         
         <div class="article-entry" itemprop="articleBody">
             <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">MWeb配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">PicGo快速配置</span></a></li></ol>
-            <p>前言：Cloudinary是一个很棒的云图像存储/处理服务，注册流程友好（但为英文），免费注册即可使用，访问速度也较快，最早是在壁纸应用<a href="https://github.com/bitdust/EarthLiveSharp" target="_blank" rel="noopener">EarthLiveSharp</a>中了解到的。免费用户即拥有10GB空间（总文件数上限30,000，每月带宽20GB），日常作为图床足够，而且支持多种图像优化处理工具，例如修改分辨率直接改url就能实现。<br>
-之前没有搞明白Cloudinary的API使用，一直在网页端手动上传，有点蠢蠢的，直到最近看到了<a href="https://xlsdg.org/p/7867b414.html" target="_blank" rel="noopener">xLsDg的博客：MWeb 使用 Cloudinary 图床</a>，成功配置了MWeb的图床，借鉴参考后又搞定了PicGo的配置，感谢大佬的教程。</p>
+            <p>前言：Cloudinary是一个很棒的云图像存储/处理服务，注册流程友好（但为英文），免费注册即可使用，访问速度也较快，最早是在壁纸应用<a href="https://github.com/bitdust/EarthLiveSharp" target="_blank" rel="noopener">EarthLiveSharp</a>中了解到的。免费用户即拥有10GB空间（总文件数上限30,000，每月带宽20GB），日常作为图床足够，而且支持多种图像云处理工具，对于public链接直接修改url就能实现。</p>
+<p>之前没有搞明白Cloudinary的API使用，一直在网页端手动上传，有点蠢蠢的，直到最近看到了<a href="https://xlsdg.org/p/7867b414.html" target="_blank" rel="noopener">xLsDg的博客：MWeb 使用 Cloudinary 图床</a>，成功配置了MWeb的图床，借鉴参考后又搞定了PicGo的配置，感谢大佬的教程。</p>
 <h2>MWeb配置</h2>
 <p><em>详细设置可前往参考<a href="https://xlsdg.org/p/7867b414.html" target="_blank" rel="noopener">xLsDg的博客</a>。</em></p>
 <p>注册并登录Cloudinary，记录或自定义<code>Cloud Name</code>。<br>
@@ -230,12 +230,12 @@ ga('send', 'pageview');
 <p>最后点击验证即可。</p>
 <h2>PicGo快速配置</h2>
 <p><a href="https://molunerfinn.com/PicGo/" target="_blank" rel="noopener">PicGo</a>是一个很棒的图床上传+管理工具，本体虽仅支持7个主流的图床/对象管理服务，但支持插件系统，通过安装插件可以支持或自定义其它图床服务，使用更加便捷。</p>
-<p>首先依照前篇注册、登录并配置Upload Preset<a href="https://cloudinary.com/" target="_blank" rel="noopener">Cloudinary</a>。</p>
+<p>首先依照前篇注册、登录并配置Cloudinary Upload Preset。</p>
 <p>下载安装<a href="https://github.com/Molunerfinn/PicGo" target="_blank" rel="noopener">PicGo最新版本</a>（mac用户下载dmg版本即可，首次如果无法启动，可以前往Application文件夹，右键PicGo.app - 打开 - 弹窗提示仍然打开），在菜单栏右键PicGo图标-打开详细窗口。<br>
 <img src="https://res.cloudinary.com/regulus/image/upload/s--ERaPFFf_--/v1631855625/blog/PicGoSetting_zazcyo.jpg" alt></p>
 <p>搜索安装<code>Web-Uploader</code>插件：<br>
 <img src="https://res.cloudinary.com/regulus/image/upload/s--Y_jkOP3h--/v1631855701/blog/PicGo-AddOn_whvzmy.jpg" alt></p>
-<p>在自定义图床插件中配置，API地址填入自己的<code>Image upload url</code>，post参数填入<code>file</code>，JSON路径填入secure_url，自定义body按示例填入自己的<code>[&quot;upload_preset&quot;:&quot;YourPresetName&quot;]</code>：<br>
+<p>在自定义图床插件中配置，API地址填入自己的<code>Image upload url</code>，post参数填入<code>file</code>，JSON路径填入<code>secure_url</code>，自定义body按示例填入自己的<code>[&quot;upload_preset&quot;:&quot;YourPresetName&quot;]</code>：<br>
 <img src="https://res.cloudinary.com/regulus/image/upload/s--yUTBXngZ--/v1631855718/blog/PicGo_CustomImg_b55boa.jpg" alt></p>
 <p>最后，右键菜单栏PicGo图标，更改默认图床为 自定义web图床，然后拖动示例图片到菜单栏图标，一切顺利的话应该会收到上传成功的通知。<br>
 <img src="https://res.cloudinary.com/regulus/image/upload/s--HUWwEpME--/v1631854979/blog/PicGoUploadSuccess_kfc36s.jpg" alt></p>
