@@ -9,19 +9,19 @@
     
         <meta name="keywords" content="技术,Tips">
     
-    <meta name="description" content="快速在线自动安装 访问：https://feyncalc.github.io （FeynCalc页面托管在GitHub，有时访问较慢）。 按照页面中Installation的提示，在Mathematica中输入后按Shift+Enter执行： 123Import[&amp;quot;https://raw.githubusercontent.com/FeynCalc/feyncalc/master/ins">
+    <meta name="description" content="快速在线自动安装 访问：https://feyncalc.github.io （FeynCalc页面托管在GitHub，有时访问较慢）。 按照页面中Installation的提示，在Mathematica(MMA)中输入后按Shift+Enter执行： 123Import[&amp;quot;https://raw.githubusercontent.com/FeynCalc/feyncalc/maste">
 <meta name="keywords" content="技术,Tips">
 <meta property="og:type" content="article">
 <meta property="og:title" content="FeynCalc安装指北">
 <meta property="og:url" content="regulus.online/2021/09/29/FeynCalc安装指北/index.html">
 <meta property="og:site_name" content="Blog of Regulus">
-<meta property="og:description" content="快速在线自动安装 访问：https://feyncalc.github.io （FeynCalc页面托管在GitHub，有时访问较慢）。 按照页面中Installation的提示，在Mathematica中输入后按Shift+Enter执行： 123Import[&amp;quot;https://raw.githubusercontent.com/FeynCalc/feyncalc/master/ins">
+<meta property="og:description" content="快速在线自动安装 访问：https://feyncalc.github.io （FeynCalc页面托管在GitHub，有时访问较慢）。 按照页面中Installation的提示，在Mathematica(MMA)中输入后按Shift+Enter执行： 123Import[&amp;quot;https://raw.githubusercontent.com/FeynCalc/feyncalc/maste">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://res.cloudinary.com/regulus/image/upload/s--qW5NZrYA--/v1632894190/blog/20210929134308_tf4smc.png">
-<meta property="og:updated_time" content="2021-09-29T05:53:24.962Z">
+<meta property="og:updated_time" content="2021-09-29T11:57:52.780Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="FeynCalc安装指北">
-<meta name="twitter:description" content="快速在线自动安装 访问：https://feyncalc.github.io （FeynCalc页面托管在GitHub，有时访问较慢）。 按照页面中Installation的提示，在Mathematica中输入后按Shift+Enter执行： 123Import[&amp;quot;https://raw.githubusercontent.com/FeynCalc/feyncalc/master/ins">
+<meta name="twitter:description" content="快速在线自动安装 访问：https://feyncalc.github.io （FeynCalc页面托管在GitHub，有时访问较慢）。 按照页面中Installation的提示，在Mathematica(MMA)中输入后按Shift+Enter执行： 123Import[&amp;quot;https://raw.githubusercontent.com/FeynCalc/feyncalc/maste">
 <meta name="twitter:image" content="https://res.cloudinary.com/regulus/image/upload/s--qW5NZrYA--/v1632894190/blog/20210929134308_tf4smc.png">
     
 
@@ -201,10 +201,10 @@ ga('send', 'pageview');
    <div class="article-counter">
       <i class="fa fa-file-word-o"></i>
       <span class="post-count-item-text">本文字数: </span>
-      <span class="post-count">410</span>
+      <span class="post-count">544</span>
       <i class="fa fa-clock-o"></i>
       <span class="post-time-item-text">阅读时长: </span>
-      <span class="post-count">1 分钟 </span>
+      <span class="post-count">2 分钟 </span>
    </div>
 
 
@@ -212,10 +212,10 @@ ga('send', 'pageview');
         
         
         <div class="article-entry" itemprop="articleBody">
-            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-text">快速在线自动安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-text">使用替代源在线安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-text">离线自动安装</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-text">快速在线自动安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-text">使用替代源在线安装（测试）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#null"><span class="toc-text">离线自动安装</span></a></li></ol>
             <h4>快速在线自动安装</h4>
 <p>访问：<a href="https://feyncalc.github.io/" target="_blank" rel="noopener">https://feyncalc.github.io</a> （FeynCalc页面托管在GitHub，有时访问较慢）。<br>
-按照页面中Installation的提示，在Mathematica中输入后按<code>Shift+Enter</code>执行：</p>
+按照页面中Installation的提示，在Mathematica(MMA)中输入后按<code>Shift+Enter</code>执行：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Import[&quot;https://raw.githubusercontent.com/FeynCalc/feyncalc/master/install.m&quot;];</span><br><span class="line"></span><br><span class="line">InstallFeynCalc[]</span><br></pre></td></tr></table></figure>
 <p>网络状况良好时，会远程载入安装脚本并安装，按提示进行即可。<br>
 但有时，会报错：<br>
@@ -223,21 +223,24 @@ ga('send', 'pageview');
 <p>可能的原因是：raw.githubusercontent.com是GitHub托管在Amazon的云服务用来存储用户文件的，不是GitHub主站，导致有时在国内网络环境下即使可以正常访问GitHub主站，raw.githubusercontent.com可能也会访问异常。<br>
 参考：<a href="https://blog.csdn.net/The_Time_Runner/article/details/89737949" target="_blank" rel="noopener">CSDN-raw.githubusercontent.com与github什么关系</a>；<br>
 <a href="https://zhuanlan.zhihu.com/p/107691233" target="_blank" rel="noopener">知乎-解决GitHub网页githubusercontent地址无法访问问题</a></p>
-<p><strong>有两种替代方法：</strong></p>
-<h4>使用替代源在线安装</h4>
+<p><strong>另有两种替代方法：</strong></p>
+<h4>使用替代源在线安装（测试）</h4>
 <p>在<a href="https://search.gitee.com/?skin=rec&amp;type=repository&amp;q=FeynCalc" target="_blank" rel="noopener">Gitee码市</a>搜索FeynCalc，使用搬运的FeynCalc库安装，如https://gitee.com/resonhou/feyncalc，截至本月与原版版本几乎无差（v9.3.1）：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Import[&quot;https://gitee.com/resonhou/feyncalc/raw/master/install.m&quot;];</span><br><span class="line"></span><br><span class="line">InstallFeynCalc[]</span><br></pre></td></tr></table></figure>
 <h4>离线自动安装</h4>
-<p>若安装仍不成功，可以考虑“离线自动安装”。<br>
+<p>若安装仍不成功，最后可以考虑“离线自动安装”。<br>
 点击FeynCalc页面上部的<code>Install&gt;&gt;</code>，查看<a href="https://github.com/FeynCalc/feyncalc/wiki/Installation#st_offline_installation" target="_blank" rel="noopener">安装帮助文档</a>：<br>
-手动下载3个文件，并放在同一文件夹下，假设路径为<code>/home/YouName/Download</code>：</p>
+手动下载3个文件，并放在同一文件夹下，假设路径为<code>~/Download/feyncalc</code>：</p>
 <ul>
 <li><a href="https://github.com/FeynCalc/feyncalc/archive/hotfix-stable.zip" target="_blank" rel="noopener">https://github.com/FeynCalc/feyncalc/archive/hotfix-stable.zip</a></li>
 <li><a href="https://github.com/FeynCalc/feynarts-mirror/archive/master.zip" target="_blank" rel="noopener">https://github.com/FeynCalc/feynarts-mirror/archive/master.zip</a></li>
 <li><a href="https://github.com/FeynCalc/feyncalc/raw/master/install.m" target="_blank" rel="noopener">https://github.com/FeynCalc/feyncalc/raw/master/install.m</a></li>
 </ul>
-<p>在Mathematica新建Notebook粘贴以下命令并执行：</p>
+<p>在Mathematica新建Notebook粘贴以下命令并执行（注意命令中的路径、文件名需与下载的路径、文件名一致）：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(*Change myPath accordingly! *)</span><br><span class="line">myPath = &quot;/home/vs/Downloads&quot;;</span><br><span class="line">$PathToFCArc = FileNameJoin[&#123;myPath,&quot;feyncalc-hotfix-stable.zip&quot;&#125;];</span><br><span class="line">$PathToFAArc = FileNameJoin[&#123;myPath,&quot;feynarts-mirror-master.zip&quot;&#125;];</span><br><span class="line">Get[FileNameJoin[&#123;myPath,&quot;install.m&quot;&#125;]]</span><br><span class="line">InstallFeynCalc[]</span><br></pre></td></tr></table></figure>
+<p><em>注意：用macOS Safari等浏览器下载可能会自动解压，影响安装，可以在偏好设置-通用-取消勾选“下载后打开安全的文件”，参考<a href="https://blog.csdn.net/qq_38936320/article/details/83053117" target="_blank" rel="noopener">简书-禁止Safari下载.zip后自动解压</a>。</em></p>
+<p>退出当前内核(或退出重开MMA)并执行以下命令，若正常载入FeynCalc并显示版本号，代表安装完成。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Get[&quot;FeynCalc`&quot;] 或 &lt;&lt;FeynCalc`</span><br></pre></td></tr></table></figure>
 <p><em>* 更多FeynCalc示例可以点击FeynCalc页面的<a href="https://feyncalc.github.io/examples" target="_blank" rel="noopener">Example gallery</a>查看。</em></p>
 
         </div>
