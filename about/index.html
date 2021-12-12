@@ -7,18 +7,18 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="Hitokoto一言(每日一句)test:             2020.11.1  注册了阿里云的企业域名邮箱，免费版支持50账号5GB空间，现在可以通过blog at regulus.cc来私信我了~   2020.10.03  借助GitHub Action解决LeanCloud定时唤醒的流控问题，Valine-Admin服务现在可以正常定时唤醒了(悄咪咪的继续白嫖😬)，参考">
+    <meta name="description" content="Hitokoto一言(每日一句)test:             2021.12.12  修复了Valine无法提交评论/评论不显示的bug：最近发现valine评论无法显示/无法提交（但手机移动网络仍正常，猜测可能手机运营商与宽带运营商DNS刷新不一致导致），经搜索查询，是使用的LeanCloud国际版原us.leancloud.cn域名最近解析异常，参考issues340与CSDN">
 <meta property="og:type" content="website">
 <meta property="og:title" content="关于我，我就是我">
 <meta property="og:url" content="regulus.online/about/index.html">
 <meta property="og:site_name" content="Blog of Regulus">
-<meta property="og:description" content="Hitokoto一言(每日一句)test:             2020.11.1  注册了阿里云的企业域名邮箱，免费版支持50账号5GB空间，现在可以通过blog at regulus.cc来私信我了~   2020.10.03  借助GitHub Action解决LeanCloud定时唤醒的流控问题，Valine-Admin服务现在可以正常定时唤醒了(悄咪咪的继续白嫖😬)，参考">
+<meta property="og:description" content="Hitokoto一言(每日一句)test:             2021.12.12  修复了Valine无法提交评论/评论不显示的bug：最近发现valine评论无法显示/无法提交（但手机移动网络仍正常，猜测可能手机运营商与宽带运营商DNS刷新不一致导致），经搜索查询，是使用的LeanCloud国际版原us.leancloud.cn域名最近解析异常，参考issues340与CSDN">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
-<meta property="og:updated_time" content="2021-03-07T11:24:55.478Z">
+<meta property="og:updated_time" content="2021-12-12T16:15:27.129Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于我，我就是我">
-<meta name="twitter:description" content="Hitokoto一言(每日一句)test:             2020.11.1  注册了阿里云的企业域名邮箱，免费版支持50账号5GB空间，现在可以通过blog at regulus.cc来私信我了~   2020.10.03  借助GitHub Action解决LeanCloud定时唤醒的流控问题，Valine-Admin服务现在可以正常定时唤醒了(悄咪咪的继续白嫖😬)，参考">
+<meta name="twitter:description" content="Hitokoto一言(每日一句)test:             2021.12.12  修复了Valine无法提交评论/评论不显示的bug：最近发现valine评论无法显示/无法提交（但手机移动网络仍正常，猜测可能手机运营商与宽带运营商DNS刷新不一致导致），经搜索查询，是使用的LeanCloud国际版原us.leancloud.cn域名最近解析异常，参考issues340与CSDN">
 <meta name="twitter:image" content="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png">
     
 
@@ -196,6 +196,13 @@
 <center>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=422977114&auto=0&height=66"></iframe>
 </center>
+<hr>
+<p>2021.12.12</p>
+<ul>
+<li>修复了Valine无法提交评论/评论不显示的bug：最近发现valine评论无法显示/无法提交（但手机移动网络仍正常，猜测可能手机运营商与宽带运营商DNS刷新不一致导致），经搜索查询，是使用的LeanCloud国际版原us.leancloud.cn域名最近解析异常，参考<a href="https://github.com/xCss/Valine/issues/340#issuecomment-698098446" target="_blank" rel="noopener">issues340</a>与<a href="https://blog.csdn.net/hubojing/article/details/121770387" target="_blank" rel="noopener">CSDN-解决Valine评论不显示</a>，通过手动添加serverURLs解决；</li>
+<li>更新了google-analytics scripts<a href="https://github.com/ppoffice/hexo-theme-hueman/pull/296" target="_blank" rel="noopener">issue296</a>；</li>
+<li>另外10月份评论遭到注入攻击，手动筛选清理了下（注入了160多条，ip是内网ip，还挺希望valine把验证码加回来的），<a href="https://res.cloudinary.com/regulus/image/upload/v1639325248/blog/Blog%E8%AF%84%E8%AE%BA%E6%94%BB%E5%87%BBiShot2021-10-20_18.12.20.jpg" target="_blank" rel="noopener">截图1</a>, <a href="https://res.cloudinary.com/regulus/image/upload/v1639325247/blog/Blog%E8%AF%84%E8%AE%BA%E6%94%BB%E5%87%BBiShot2021-10-20_18.11.43.jpg" target="_blank" rel="noopener">截图2</a>，<a href="https://res.cloudinary.com/regulus/image/upload/v1639325618/blog/Blog%E8%AF%84%E8%AE%BA%E6%94%BB%E5%87%BB-leancloud%E5%90%8E%E5%8F%B0-iShot2021-10-20_18.23.02copy.jpg" target="_blank" rel="noopener">截图3</a>。</li>
+</ul>
 <hr>
 <p>2020.11.1</p>
 <ul>
