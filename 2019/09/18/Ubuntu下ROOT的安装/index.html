@@ -18,7 +18,7 @@
 <meta property="og:description" content="2022.04.17更新 官网安装指南永远是最好的手册！ 官网安装指南永远是最好的手册！ 官网安装指南永远是最好的手册！ 简单来说，现在ROOT的预编译二进制包已经可以比较完美的覆盖各系统版本，个人学习使用无需自行编译源码，前往Installing ROOT页面，查看安装指南照做即可，这里作简单复述。  首先安装所需依赖包  对于Ubuntu，在终端输入： 12sudo apt-get insta">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://res.cloudinary.com/regulus/image/upload/v1493219202/blog/ROOT_Logo.png">
-<meta property="og:updated_time" content="2022-04-17T12:57:46.324Z">
+<meta property="og:updated_time" content="2022-04-17T13:08:04.599Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu下ROOT的安装及遇到的问题[190918更新]">
 <meta name="twitter:description" content="2022.04.17更新 官网安装指南永远是最好的手册！ 官网安装指南永远是最好的手册！ 官网安装指南永远是最好的手册！ 简单来说，现在ROOT的预编译二进制包已经可以比较完美的覆盖各系统版本，个人学习使用无需自行编译源码，前往Installing ROOT页面，查看安装指南照做即可，这里作简单复述。  首先安装所需依赖包  对于Ubuntu，在终端输入： 12sudo apt-get insta">
@@ -241,7 +241,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/Download/root/</span><br><span class="line">source root/bin/thisroot.sh</span><br></pre></td></tr></table></figure>
 <p>继续在终端运行<code>root</code>就可以进入root环境了，退出root环境命令为<code>.q</code>。</p>
 <p>上面<code>source</code>命令每次启动新的终端都需要执行一遍，如果不想每次都source环境变量，可以将该命令添加到系统环境变量中，这里展示手动添加系统环境变量，例如对于Ubuntu</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.profile</span><br><span class="line">#或vim ~/.bashrc </span><br><span class="line">#或vim ~/.zshrc #for macOS</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.profile</span><br><span class="line">#或vim ~/.bashrc #可以自行搜索.bashrc与.profile的不同</span><br><span class="line">#或vim ~/.zshrc #for macOS</span><br></pre></td></tr></table></figure>
 <p>（如果不会用vim，对于Ubuntu，在文件管理器按ctrl+H，显示隐藏文件，然后直接双击打开.profile文件即可，或者执行<code>sudo gedit ~./profile</code>用gedit来打开）。</p>
 <p>然后在系统环境变量文件最后添加：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/Download/root/bin/thisroot.sh #注意，这里的路径要对应你自己下载存放的root路径</span><br></pre></td></tr></table></figure>
