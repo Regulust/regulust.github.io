@@ -9,19 +9,19 @@
     
         <meta name="keywords" content="tips,技术">
     
-    <meta name="description" content="2022.04.17更新 官网安装指南永远是最好的手册！ 官网安装指南永远是最好的手册！ 官网安装指南永远是最好的手册！ 简单来说，现在ROOT的预编译二进制包已经可以比较完美的覆盖各系统版本，个人学习使用无需自行编译源码，前往Installing ROOT页面，查看安装指南照做即可，这里作简单复述。  首先安装所需依赖包  对于Ubuntu，在终端输入： 12sudo apt-get insta">
+    <meta name="description" content="[TOC] 2022.04.17更新 官网安装指南永远是最好的手册！ 官网安装指南永远是最好的手册！ 官网安装指南永远是最好的手册！ 简单来说，现在ROOT的预编译二进制包已经可以比较完美的覆盖各系统版本，个人学习使用无需自行编译源码，前往Installing ROOT页面，查看安装指南照做即可，这里作简单复述。 首先安装所需依赖包 对于Ubuntu，在终端输入： 12sudo apt-get i">
 <meta name="keywords" content="tips,技术">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu下ROOT的安装及遇到的问题[190918更新]">
 <meta property="og:url" content="regulus.online/2019/09/18/Ubuntu下ROOT的安装/index.html">
 <meta property="og:site_name" content="Blog of Regulus">
-<meta property="og:description" content="2022.04.17更新 官网安装指南永远是最好的手册！ 官网安装指南永远是最好的手册！ 官网安装指南永远是最好的手册！ 简单来说，现在ROOT的预编译二进制包已经可以比较完美的覆盖各系统版本，个人学习使用无需自行编译源码，前往Installing ROOT页面，查看安装指南照做即可，这里作简单复述。  首先安装所需依赖包  对于Ubuntu，在终端输入： 12sudo apt-get insta">
+<meta property="og:description" content="[TOC] 2022.04.17更新 官网安装指南永远是最好的手册！ 官网安装指南永远是最好的手册！ 官网安装指南永远是最好的手册！ 简单来说，现在ROOT的预编译二进制包已经可以比较完美的覆盖各系统版本，个人学习使用无需自行编译源码，前往Installing ROOT页面，查看安装指南照做即可，这里作简单复述。 首先安装所需依赖包 对于Ubuntu，在终端输入： 12sudo apt-get i">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://res.cloudinary.com/regulus/image/upload/v1493219202/blog/ROOT_Logo.png">
-<meta property="og:updated_time" content="2022-04-17T13:08:04.599Z">
+<meta property="og:updated_time" content="2022-04-17T14:29:52.821Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu下ROOT的安装及遇到的问题[190918更新]">
-<meta name="twitter:description" content="2022.04.17更新 官网安装指南永远是最好的手册！ 官网安装指南永远是最好的手册！ 官网安装指南永远是最好的手册！ 简单来说，现在ROOT的预编译二进制包已经可以比较完美的覆盖各系统版本，个人学习使用无需自行编译源码，前往Installing ROOT页面，查看安装指南照做即可，这里作简单复述。  首先安装所需依赖包  对于Ubuntu，在终端输入： 12sudo apt-get insta">
+<meta name="twitter:description" content="[TOC] 2022.04.17更新 官网安装指南永远是最好的手册！ 官网安装指南永远是最好的手册！ 官网安装指南永远是最好的手册！ 简单来说，现在ROOT的预编译二进制包已经可以比较完美的覆盖各系统版本，个人学习使用无需自行编译源码，前往Installing ROOT页面，查看安装指南照做即可，这里作简单复述。 首先安装所需依赖包 对于Ubuntu，在终端输入： 12sudo apt-get i">
 <meta name="twitter:image" content="https://res.cloudinary.com/regulus/image/upload/v1493219202/blog/ROOT_Logo.png">
     
 
@@ -200,10 +200,10 @@
    <div class="article-counter">
       <i class="fa fa-file-word-o"></i>
       <span class="post-count-item-text">本文字数: </span>
-      <span class="post-count">2.5k</span>
+      <span class="post-count">2.6k</span>
       <i class="fa fa-clock-o"></i>
       <span class="post-time-item-text">阅读时长: </span>
-      <span class="post-count">9 分钟 </span>
+      <span class="post-count">10 分钟 </span>
    </div>
 
 
@@ -211,42 +211,45 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            
-            <p><strong><em>2022.04.17更新</em></strong></p>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">2022.04.17更新</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text">首先安装所需依赖包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text">用命令联网下载、解压并添加环境变量（推荐）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text">手动下载、解压并添加环境变量（可选）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">以前的更新及原文</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text">2019.09.18更新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text">2017.10.25更新</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text">以下为 2017-04-26 21:13:15 原文：</span></a></li></ol></li></ol>
+            <p>[TOC]</p>
+<h2>2022.04.17更新</h2>
 <p><a href="https://root.cern/install/" target="_blank" rel="noopener">官网安装指南</a>永远是最好的手册！<br>
 <a href="https://root.cern/install/" target="_blank" rel="noopener">官网安装指南</a>永远是最好的手册！<br>
 <a href="https://root.cern/install/" target="_blank" rel="noopener">官网安装指南</a>永远是最好的手册！</p>
 <p>简单来说，现在ROOT的预编译二进制包已经可以比较完美的覆盖各系统版本，个人学习使用无需自行编译源码，前往<a href="https://root.cern/install/" target="_blank" rel="noopener">Installing ROOT页面</a>，查看安装指南照做即可，这里作简单复述。</p>
-<ul>
-<li><strong>首先安装所需依赖包</strong></li>
-</ul>
+<h3>首先安装所需依赖包</h3>
 <p>对于Ubuntu，在终端输入：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install dpkg-dev cmake g++ gcc binutils libx11-dev libxpm-dev \</span><br><span class="line">libxft-dev libxext-dev python libssl-dev</span><br></pre></td></tr></table></figure>
 <p>其它系统版本所需依赖，请查看<a href="https://root.cern/install/dependencies/" target="_blank" rel="noopener">ROOT-Dependencies</a></p>
-<ul>
-<li><strong>用命令联网下载、解压并添加系统环境变量（推荐）</strong></li>
-</ul>
-<p>在联网环境较好的情况下，可以直接运行以下命令来下载安装（默认应该是下载解压到了<code>~/root</code>路径，可以自行确认或者cd到自己想要的路径）：</p>
+<h3>用命令联网下载、解压并添加环境变量（推荐）</h3>
+<p>在联网环境较好的情况下，可以直接运行以下命令来下载安装（ubuntu终端默认是下载解压到了<code>~/root</code>路径，可以自行确认或者cd到自己想要的路径再下载解压）：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget https://root.cern/download/root_v6.26.00.Linux-ubuntu20-x86_64-gcc9.3.tar.gz</span><br><span class="line">tar -xzvf root_v6.26.00.Linux-ubuntu20-x86_64-gcc9.3.tar.gz</span><br><span class="line">source root/bin/thisroot.sh # also available: thisroot.&#123;csh,fish,bat&#125;</span><br></pre></td></tr></table></figure>
-<p>上面的版本号，可以参考<a href="https://root.cern/install/all_releases/" target="_blank" rel="noopener">Release页面</a>自行修改所需的版本。<br>
+<p>上面命令里的版本号为适用于Ubuntu20的root_v6.26.00，可以参考<a href="https://root.cern/install/all_releases/" target="_blank" rel="noopener">Release页面</a>，自行修改所需的版本名称（点击版本号例如Release 6.26/02，然后就可以看到对应各系统及gcc版本的具体名称）。<br>
 然后继续执行：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;source root/bin/thisroot.sh&quot;&gt;&gt; ~/.profile #注意 source 后的路径应与自己下载解压的路径一致，请自行确认</span><br><span class="line">source ~/.profile</span><br></pre></td></tr></table></figure>
-<p>直接添加root到系统环境变量，接下来在终端运行<code>root</code>就可以进入root环境了，退出root环境命令为<code>.q</code>。</p>
-<ul>
-<li><strong>手动下载、解压并添加系统环境变量（可选）</strong></li>
-</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;source root/bin/thisroot.sh&quot; &gt;&gt; ~/.bashrc #注意 source 后的路径应与自己下载解压的路径一致，请自行确认</span><br><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure>
+<p>直接添加root路径到bash的环境变量，接下来在终端运行<code>root</code>就可以进入root环境了，退出root环境命令为<code>.q</code>。</p>
+<blockquote>
+<p>*tips：*macOS系统下，把.bashrc换成.zshrc；<br>
+或者也可以直接把root添加到<code>~/.profile</code>系统环境变量，执行</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;export ROOTSYS=$HOME/root&quot; &gt;&gt; ~/.profile  #请注意$HOME/后为自己下载解压的root路径</span><br><span class="line">echo &quot;export PATH=$ROOTSYS/bin:$PATH&quot; &gt;&gt; ~/.profile</span><br><span class="line">echo &quot;export LD_LIBRARY_PATH=$ROOTSYS/lib:$LD_LIBRARY_PATH&quot; &gt;&gt; ~/.profile</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>可自行搜索.profile与.bashrc以及.zshrc的区别。</p>
+</blockquote>
+<h3>手动下载、解压并添加环境变量（可选）</h3>
 <p>如果上面联网下载有问题，可以手动下载解压并手动添加环境变量。</p>
 <p>首先还是需要执行第1步安装所需依赖包，然后前往<a href="https://root.cern/install/all_releases/" target="_blank" rel="noopener">ROOT-Release</a>页面，下载所需版本（一般选择最新/较新版本即可），然后在<a href="https://root.cern/releases/release-62602/#binary-distributions" target="_blank" rel="noopener">Binary distributions</a>，选择对应系统的版本并下载（例如Ubuntu 20的 root_v6.26.00.Linux-ubuntu20-x86_64-gcc9.3.tar.gz）。</p>
 <p>然后解压到自己指定的文件夹（Ubuntu解压 是右键-提取为，这里假设解压到了<code>~/Download/root/</code>），然后在终端里执行：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/Download/root/</span><br><span class="line">source root/bin/thisroot.sh</span><br></pre></td></tr></table></figure>
 <p>继续在终端运行<code>root</code>就可以进入root环境了，退出root环境命令为<code>.q</code>。</p>
 <p>上面<code>source</code>命令每次启动新的终端都需要执行一遍，如果不想每次都source环境变量，可以将该命令添加到系统环境变量中，这里展示手动添加系统环境变量，例如对于Ubuntu</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.profile</span><br><span class="line">#或vim ~/.bashrc #可以自行搜索.bashrc与.profile的不同</span><br><span class="line">#或vim ~/.zshrc #for macOS</span><br></pre></td></tr></table></figure>
-<p>（如果不会用vim，对于Ubuntu，在文件管理器按ctrl+H，显示隐藏文件，然后直接双击打开.profile文件即可，或者执行<code>sudo gedit ~./profile</code>用gedit来打开）。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bashrc</span><br><span class="line">#或vim ~/.zshrc #for macOS</span><br></pre></td></tr></table></figure>
+<p>（如果不会用vim，对于Ubuntu，在文件管理器按ctrl+H，显示隐藏文件，然后直接双击打开.bashrc文件即可，或者执行<code>sudo gedit ~/.bashrc</code>用gedit来打开）。</p>
 <p>然后在系统环境变量文件最后添加：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/Download/root/bin/thisroot.sh #注意，这里的路径要对应你自己下载存放的root路径</span><br></pre></td></tr></table></figure>
-<p>再进入终端source一下或重启系统：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/.profile</span><br></pre></td></tr></table></figure>
+<p>再source一下或重启系统：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>后记：<br>
 Linux、macOS、Windows系统下的安装使用，在官网都有非常详细的指南，请自行查看。<br>
@@ -257,7 +260,8 @@ Linux、macOS、Windows系统下的安装使用，在官网都有非常详细的
 <blockquote>
 <p>联网、双系统时间等问题可以参考<a href="https://regulus.cc/2019/10/05/Windows10+Ubuntu18.04%E5%8F%8C%E7%B3%BB%E7%BB%9F%E7%AE%80%E5%8D%95%E5%AE%89%E8%A3%85%E6%8C%87%E5%8C%97/#null" target="_blank" rel="noopener">Windows10+Ubuntu18.04双系统快速简单安装指北</a>。</p>
 </blockquote>
-<p><strong><em>2019.09.18更新</em></strong></p>
+<h2>以前的更新及原文</h2>
+<h3>2019.09.18更新</h3>
 <p>ROOT更新了cmake的安装方式，原来的<code>configure/make</code>方式仍然可以使用，但不支持某些新特性(详见<a href="https://root.cern.ch/building-root" target="_blank" rel="noopener">ROOT building-introduction</a>)。所以更新本贴，记录采用 “CMake编译源码的方式” 安装ROOT的过程，直接下载Binary distributions 的方式比较简单，可以自行摸索(前往ROOT官网下载对应系统版本的binary包解压即可)。</p>
 <ol>
 <li>
@@ -296,7 +300,7 @@ Linux、macOS、Windows系统下的安装使用，在官网都有非常详细的
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">source bin/thisroot.sh</span><br><span class="line">root </span><br><span class="line">.q [退出root]</span><br></pre></td></tr></table></figure>
 <p>若不想每次都在终端输入source环境变量，可以参照文末方法添加系统环境变量。</p>
 <hr>
-<p><strong><em>2017.10.25更新：</em></strong></p>
+<h3>2017.10.25更新</h3>
 <p>给小室长也新装了Ubuntu 17.10系统，同样也安装ROOT，从官网下载ROOT二进制包，直接运行会报错(缺这缺那的，iostream都缺…)，而下载源码编译，安装必要库之后，<code>make</code>编译进行1-2分钟后会报错如下：<br>
 <img src="https://res.cloudinary.com/regulus/image/upload/v1509035005/blog/root_lz4.png" alt="lz4报错"><br>
 提示和lz4压缩算法库有关，那个github页面已经打不开了…百度lz4-1.7.5，搜到关于lz4压缩算法的页面(<a href="https://fossies.org/linux/misc/legacy/lz4-1.7.5.tar.gz/" target="_blank" rel="noopener">https://fossies.org/linux/misc/legacy/lz4-1.7.5.tar.gz/</a>)， 下载，放到提示的<code>/root-6.10.08/core/lz4/src/</code>下，提取解压，然后cd到提出出的/lz4-1.7.5/这个文件夹，<code>make</code>一下…<br>
@@ -305,7 +309,7 @@ Linux、macOS、Windows系统下的安装使用，在官网都有非常详细的
 <p>然而后面还会出来 fPIC 动态库链接错误问题，虽然提示 recompile with -fPIC，但再makefile文件一堆命令，哪些需要添加这个参数呢阿…之前别的程序也出现，查了许多，一直不知道怎么解决(我并不是一个专业的程序员啊，为什么要我解决程序员的问题，他们别人用root难道没有这个问题么，出去会发现，他们都用苹果[掩面])…<br>
 <img src="https://res.cloudinary.com/regulus/image/upload/v1509035302/blog/root_fPIC.png" alt="最后的链结失败：错误的值 recompile with -fPIC"></p>
 <hr>
-<p><strong><em>以下为 2017-04-26 21:13:15 原文：</em></strong></p>
+<h3>以下为 2017-04-26 21:13:15 原文：</h3>
 <p><img src="https://res.cloudinary.com/regulus/image/upload/v1493214520/blog/root-6.png" alt="cern.root.ch"></p>
 <p>ROOT是CERN主导开发一个数据分析的环境框架，可以有效处理海量数据，并且现在搭配许多软件、插件也可以实现许多物理过程的模拟到结果输出。</p>
 <p>简单记录下在Linux系统下安装ROOT 6.0x的过程：</p>
