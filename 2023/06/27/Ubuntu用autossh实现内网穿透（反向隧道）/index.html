@@ -18,7 +18,7 @@
 <meta property="og:description" content="有一台内网ip的linux 工作机器A，想从外部互联网通过ssh连接，可以借助一台有公网ip的“跳板机B”（如vps等），使用autossh实现“反向代理”（autossh可以自动连接ssh，反向代理靠设置ssh端口转发），但该操作也使得内网机器有一定安全风险。 [TOC] 准备  内网主机A，默认ssh端口：22，用户名：UserA 公网ip主机B，假设ip为123:123:123:123，s">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://res.cloudinary.com/regulus/image/upload/v1687857377/blog/autossh.jpg">
-<meta property="og:updated_time" content="2023-06-27T09:33:58.039Z">
+<meta property="og:updated_time" content="2023-06-27T09:39:34.903Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu用autossh实现内网穿透（反向隧道）">
 <meta name="twitter:description" content="有一台内网ip的linux 工作机器A，想从外部互联网通过ssh连接，可以借助一台有公网ip的“跳板机B”（如vps等），使用autossh实现“反向代理”（autossh可以自动连接ssh，反向代理靠设置ssh端口转发），但该操作也使得内网机器有一定安全风险。 [TOC] 准备  内网主机A，默认ssh端口：22，用户名：UserA 公网ip主机B，假设ip为123:123:123:123，s">
@@ -200,10 +200,10 @@
    <div class="article-counter">
       <i class="fa fa-file-word-o"></i>
       <span class="post-count-item-text">本文字数: </span>
-      <span class="post-count">1.1k</span>
+      <span class="post-count">1.2k</span>
       <i class="fa fa-clock-o"></i>
       <span class="post-time-item-text">阅读时长: </span>
-      <span class="post-count">4 分钟 </span>
+      <span class="post-count">5 分钟 </span>
    </div>
 
 
@@ -259,7 +259,9 @@ WantedBy=multi-user.target</p>
 Err:1 <a href="https://esm.ubuntu.com/infra/ubuntu" target="_blank" rel="noopener">https://esm.ubuntu.com/infra/ubuntu</a> bionic-infra-security/main amd64 libzstd1 amd64 1.3.3+dfsg-2ubuntu1+esm1<br>
 401  Unauthorized<br>
 E: Failed to fetch <a href="https://esm.ubuntu.com/infra/ubuntu/pool/main/libz/libzstd/libzstd1_1.3.3+dfsg-2ubuntu1+esm1_amd64.deb" target="_blank" rel="noopener">https://esm.ubuntu.com/infra/ubuntu/pool/main/libz/libzstd/libzstd1_1.3.3+dfsg-2ubuntu1+esm1_amd64.deb</a>  401  Unauthorized</p>
-<pre><code>https://askubuntu.com/a/1471328/1707836</code></pre>
+<pre><code>https://askubuntu.com/a/1471328/1707836
+
+ps：好久没更博客了，之前师兄演示过autossh反向隧道连接内网主机，重装系统后，遂自行尝试一下，另吐个槽，京造麒麟ssd不到一年，炸0E掉盘略坑。</code></pre>
 
         </div>
         <footer class="article-footer">
