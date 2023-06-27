@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    
+    <title>Ubuntu用autossh实现内网穿透（反向隧道） | Blog of Regulus</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="tips,技术">
+    
+    <meta name="description" content="有一台内网ip的linux 工作机器A，想从外部互联网通过ssh连接，可以借助一台有公网ip的“跳板机B”（如vps等），使用autossh实现“反向代理”（autossh可以自动连接ssh，反向代理靠设置ssh端口转发），但该操作也使得内网机器有一定安全风险。 [TOC] 准备  内网主机A，默认ssh端口：22，用户名：UserA 公网ip主机B，假设ip为123:123:123:123，s">
+<meta name="keywords" content="tips,技术">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu用autossh实现内网穿透（反向隧道）">
+<meta property="og:url" content="regulus.online/2023/06/27/Ubuntu用autossh实现内网穿透（反向隧道）/index.html">
+<meta property="og:site_name" content="Blog of Regulus">
+<meta property="og:description" content="有一台内网ip的linux 工作机器A，想从外部互联网通过ssh连接，可以借助一台有公网ip的“跳板机B”（如vps等），使用autossh实现“反向代理”（autossh可以自动连接ssh，反向代理靠设置ssh端口转发），但该操作也使得内网机器有一定安全风险。 [TOC] 准备  内网主机A，默认ssh端口：22，用户名：UserA 公网ip主机B，假设ip为123:123:123:123，s">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://res.cloudinary.com/regulus/image/upload/v1687857377/blog/autossh.jpg">
+<meta property="og:updated_time" content="2023-06-27T09:33:58.039Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ubuntu用autossh实现内网穿透（反向隧道）">
+<meta name="twitter:description" content="有一台内网ip的linux 工作机器A，想从外部互联网通过ssh连接，可以借助一台有公网ip的“跳板机B”（如vps等），使用autossh实现“反向代理”（autossh可以自动连接ssh，反向代理靠设置ssh端口转发），但该操作也使得内网机器有一定安全风险。 [TOC] 准备  内网主机A，默认ssh端口：22，用户名：UserA 公网ip主机B，假设ip为123:123:123:123，s">
+<meta name="twitter:image" content="https://res.cloudinary.com/regulus/image/upload/v1687857377/blog/autossh.jpg">
+    
+
+    
+
+    
+        <link rel="icon" href="/favicon.jpg">
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.0.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-96178316-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-96178316-1');
+</script>
+<!-- End Google Analytics -->
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">极致源于梦想，追求源于热爱~</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/News/">News</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Tips/">Tips</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/">技术</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/Hexo/">Hexo</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/技术/ROOT/">ROOT</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/日常/">日常</a></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/转载/">转载</a></li></ul>
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/inbox/index.html">收集</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/about/index.html">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Tips/">Tips</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-Ubuntu用autossh实现内网穿透（反向隧道）" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Ubuntu用autossh实现内网穿透（反向隧道）
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+      <i class="fa fa-calendar"></i>
+      <a href="/2023/06/27/Ubuntu用autossh实现内网穿透（反向隧道）/" class="article-date">
+         <time datetime="2023-06-27T09:28:18.000Z" itemprop="datePublished">2023-06-27</time>
+      </a>
+    </div>
+
+
+                
+
+                
+    <div class="article-tag">
+      <span class="post-meta-divider">  | &nbsp; </span>
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/tips/">tips</a>, <a class="tag-link" href="/tags/技术/">技术</a>
+    </div>
+
+                
+   <span id="/2023/06/27/Ubuntu用autossh实现内网穿透（反向隧道）/" class="leancloud-visitors" data-flag-title="Ubuntu用autossh实现内网穿透（反向隧道）">
+   <i class="fa fa-eye"></i>
+   <span class="post-meta-item-text">阅读次数: </span>
+   <i class="leancloud-visitors-count">1000000</i>
+   </span>
+
+
+                
+   <div class="article-counter">
+      <i class="fa fa-file-word-o"></i>
+      <span class="post-count-item-text">本文字数: </span>
+      <span class="post-count">1.1k</span>
+      <i class="fa fa-clock-o"></i>
+      <span class="post-time-item-text">阅读时长: </span>
+      <span class="post-count">4 分钟 </span>
+   </div>
+
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text">准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text">配置密钥免密ssh登录</span></a></li></ol>
+            <p><img src="https://res.cloudinary.com/regulus/image/upload/v1687857377/blog/autossh.jpg" alt></p>
+<p>有一台内网ip的linux 工作机器A，想从外部互联网通过ssh连接，可以借助一台有公网ip的“跳板机B”（如vps等），使用autossh实现“反向代理”（autossh可以自动连接ssh，反向代理靠设置ssh端口转发），但该操作也使得内网机器有一定安全风险。</p>
+<p>[TOC]</p>
+<h3>准备</h3>
+<ul>
+<li><strong>内网主机A</strong>，默认ssh端口：22，用户名：UserA</li>
+<li><strong>公网ip主机B</strong>，假设ip为123:123:123:123，ssh端口为2000，用户名：UserB（一般默认ssh端口都为22，但为了公网vps机器安全，有时会<a href="https://blog.csdn.net/svy1995/article/details/125596862" target="_blank" rel="noopener">修改ssh端口</a>，公网vps主机用户名一般是root）。</li>
+</ul>
+<p>在内网主机A上先测试能否ping通公网主机B以及能否建立正常ssh连接。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ping 123.123.123.123</span><br><span class="line">ssh -p 2000 UserB@123.123.123.123</span><br></pre></td></tr></table></figure>
+<h3>配置密钥免密ssh登录</h3>
+<p>在内网主机A，生成一对公私钥</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen</span><br><span class="line">``` </span><br><span class="line">连续3次enter缺省配置即可（但需要注意如果之前配置过，会覆盖`~/.ssh/id_rsa`原有密钥，以前配置过也可以直接使用），</span><br><span class="line">`ls ~/.ssh` ，会有 `id_rsa  id_rsa.pub` 两个文件</span><br><span class="line"></span><br><span class="line">[SSH远程免密登录的两种方式](https://blog.csdn.net/m0_46897923/article/details/128306658)</span><br><span class="line">[Linux 命令（208）—— ssh-keygen 命令](https://blog.csdn.net/K346K346/article/details/128167442)</span><br><span class="line"></span><br><span class="line">将公钥拷贝到公网主机B</span><br></pre></td></tr></table></figure>
+<p>ssh-copy-id -i ~/.ssh/id_rsa.pub <a href="mailto:UserB@123.123.123.123" target="_blank" rel="noopener">UserB@123.123.123.123</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">接下来测试能否免密建立ssh连接</span><br></pre></td></tr></table></figure>
+<p>ssh -p 2000 <a href="mailto:UserB@123.123.123.123" target="_blank" rel="noopener">UserB@123.123.123.123</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在公网主机B `ls ~/.ssh/`也可以看到有文件`authorized_keys`，`cat ~/.ssh/authorized_keys`可以看到存储了刚才创建的公钥。</span><br><span class="line"></span><br><span class="line">接着修改公网主机B的SSH配置文件（vim的安装及常见命令自行百度即可）</span><br></pre></td></tr></table></figure>
+<p>vim /etc/ssh/sshd_config</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在最后一行添加并保存</span><br><span class="line">**GatewayPorts yes**</span><br><span class="line">可以将监听端口绑定到任意其他ip（默认openssh只允许从服务器主机连接远程转发端口，参考[ssh 端口转发工具 tunnel](https://blog.csdn.net/maizi1045/article/details/80702847)），然后重启ssdh服务</span><br></pre></td></tr></table></figure>
+<p>sudo service sshd restart</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 继续配置内网主机A（autossh配置端口转发）</span><br><span class="line"></span><br><span class="line">首先检查是否安装openssh，在内网主机A</span><br></pre></td></tr></table></figure>
+<p>ssh UserA@localhost</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">能正常登录，说明本机已经安装openssh-server端，否则先安装openssh-server</span><br></pre></td></tr></table></figure>
+<p>sudo apt install openssh-server</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">然后安装autossh</span><br></pre></td></tr></table></figure>
+<p>sudo apt install autossh</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">安装完成后，启动autossh并配置转发端口，</span><br></pre></td></tr></table></figure>
+<p>autossh -M 3001 -NfR 20001:localhost:22 <a href="mailto:root@123.123.123.123" target="_blank" rel="noopener">root@123.123.123.123</a> -p 2000</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">-M 表示内网主机A使用端口3001 监视SSH连接状态，断连自动重连</span><br><span class="line">-N 表示不执行远程指令</span><br><span class="line">-f 表示建立成功后在后台运行</span><br><span class="line">-R 表示指定端口映射</span><br><span class="line">-p 2000 是因为公网主机B的ssh登录端口为 2000，如果默认22则不需要</span><br><span class="line"></span><br><span class="line">这样设置后，就将内网主机A的22端口映射到公网主机B的20001，访问公网主机B的20001端口就自动转发到内网主机A的22端口，实现“内网穿透”。</span><br><span class="line"></span><br><span class="line">测试内网穿透连接</span><br></pre></td></tr></table></figure>
+<p>ssh -p20001 <a href="mailto:UserA@123.123.123.123" target="_blank" rel="noopener">UserA@123.123.123.123</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">顺利的话，应该可以以UserA用户的身份，连接并登录到内网主机A。</span><br><span class="line"></span><br><span class="line">## 设置开机自启动服务</span><br><span class="line"></span><br><span class="line">Ubuntu可以使用systemd管理autossh的开机自启动，创建一个.service文件</span><br></pre></td></tr></table></figure>
+<p>touch /etc/systemd/system/remote-autossh.service<br>
+sudo vim /etc/systemd/system/remote-autossh.service</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">编辑添加</span><br></pre></td></tr></table></figure>
+<p>[Unit]<br>
+Description=AutoSSH service for remote tunnel<br>
+After=network-online.target</p>
+<p>[Service]<br>
+User=tan<br>
+ExecStart=/usr/bin/autossh -M 3001 -NR 20001:localhost:22 <a href="mailto:root@123.123.123.123" target="_blank" rel="noopener">root@123.123.123.123</a> -p 2000</p>
+<p>[Install]<br>
+WantedBy=multi-user.target</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">这里按需设置自己的端口，并且去掉了-f flag（本身服务就是后台的，也可以不需要再设置后台运行）</span><br><span class="line"></span><br><span class="line">运行</span><br><span class="line">`systemctl daemon-reload &amp;&amp; systemctl start remote-autossh`启动服务</span><br><span class="line">`systemctl start remote-autossh`启动服务并设置开机自启动</span><br><span class="line">`systemctl status`查看服务状态。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## refs</span><br><span class="line">使用autossh前先在内网机器安装openssh服务-csdn：</span><br><span class="line">https://blog.csdn.net/mba1398/article/details/122829875</span><br><span class="line"></span><br><span class="line">Ubuntu实现SSH外网连接内网(反向隧道)-简书：</span><br><span class="line">https://www.jianshu.com/p/9a16b45f29f7</span><br><span class="line"></span><br><span class="line">Ubuntu下autossh 解决内网访问-csdn：</span><br><span class="line">https://blog.csdn.net/scwMason/article/details/111152300</span><br><span class="line"></span><br><span class="line">ssh: connect to host localhost port 22: Connection refused - csdn：</span><br><span class="line">https://blog.csdn.net/mba1398/article/details/122829875</span><br><span class="line"></span><br><span class="line">kex_exchange_identification: read: Connection reset by peer的报错解决:</span><br><span class="line">https://blog.csdn.net/Horizon_carry/article/details/121874753</span><br><span class="line"></span><br><span class="line">ESM 401 Unauthorized error on Ubuntu 16.04：</span><br><span class="line">`sudo apt install vim` 时遇到</span><br></pre></td></tr></table></figure>
+<p>…<br>
+Err:1 <a href="https://esm.ubuntu.com/infra/ubuntu" target="_blank" rel="noopener">https://esm.ubuntu.com/infra/ubuntu</a> bionic-infra-security/main amd64 libzstd1 amd64 1.3.3+dfsg-2ubuntu1+esm1<br>
+401  Unauthorized<br>
+E: Failed to fetch <a href="https://esm.ubuntu.com/infra/ubuntu/pool/main/libz/libzstd/libzstd1_1.3.3+dfsg-2ubuntu1+esm1_amd64.deb" target="_blank" rel="noopener">https://esm.ubuntu.com/infra/ubuntu/pool/main/libz/libzstd/libzstd1_1.3.3+dfsg-2ubuntu1+esm1_amd64.deb</a>  401  Unauthorized</p>
+<pre><code>https://askubuntu.com/a/1471328/1707836</code></pre>
+
+        </div>
+        <footer class="article-footer">
+            
+
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more">分享到：</a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a>
+    <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a>
+    <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网">人人网</a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a>
+</div>
+<script>
+window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+<style>
+    .bdshare_popup_box {
+        border-radius: 4px;
+        border: #e1e1e1 solid 1px;
+    }
+    .bdshare-button-style0-16 a,
+    .bdshare-button-style0-16 .bds_more {
+        padding-left: 20px;
+        margin: 6px 10px 6px 0;
+    }
+    .bdshare_dialog_list a,
+    .bdshare_popup_list a,
+    .bdshare_popup_bottom a {
+        font-family: 'Microsoft Yahei';
+    }
+    .bdshare_popup_top {
+        display: none;
+    }
+    .bdshare_popup_bottom {
+        height: auto;
+        padding: 5px;
+    }
+</style>
+
+
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+                    <!-- Valine -->
+                    <div class="vcomments"></div>
+                    <script src="//unpkg.com/valine"></script>
+                    <script>
+                        var GUEST = ['nick','mail','link'];
+                        var meta = '';
+                        meta = meta.split(',').filter(function (item) {
+                            return GUEST.indexOf(item)>-1;
+                        });
+                        var avatarcdn = 'https://gravatar.loli.net/avatar/' == true;
+                        new Valine({
+                            el: '.vcomments',
+                            notify: "false",
+                            verify: "true",
+                            app_id: "avFLVE5tXJ8kn7BJeMvrsJAu-MdYXbMMI",
+                            app_key: "K5rasnQoLn0rS8F0lLtF2TDr",
+                            placeholder: "Be happy~ （邮箱、个人网址非必填，也不会被公开展示，如果填写了邮箱，在评论收到回复时，会收到邮件提醒。期待填写个人博客哈，看到会回踩哒）",
+                            avatar:"identicon",
+                            recordIP:"true",
+                            visitor: "true",
+                            serverURLs:"https://api-lc.dreamytime.top"   //fix leancloud ip, check https://github.com/xCss/Valine/issues/340#issuecomment-698098446
+                        });
+                    </script>
+                
+
+    
+    </section>
+
+
+
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/regulust" target="_blank">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2021/09/29/FeynCalc安装指北/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">FeynCalc安装指北</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2023/06/27/Ubuntu用autossh实现内网穿透（反向隧道）/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://res.cloudinary.com/regulus/image/upload/v1687857377/blog/autossh.jpg)" alt="Ubuntu用autossh实现内网穿透（反向隧道）" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tips/">Tips</a></p>
+                            <p class="item-title"><a href="/2023/06/27/Ubuntu用autossh实现内网穿透（反向隧道）/" class="title">Ubuntu用autossh实现内网穿透（反向隧道）</a></p>
+                            <p class="item-date"><time datetime="2023-06-27T09:28:18.000Z" itemprop="datePublished">2023-06-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/09/29/FeynCalc安装指北/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://res.cloudinary.com/regulus/image/upload/s--qW5NZrYA--/v1632894190/blog/20210929134308_tf4smc.png)" alt="FeynCalc安装指北" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tips/">Tips</a></p>
+                            <p class="item-title"><a href="/2021/09/29/FeynCalc安装指北/" class="title">FeynCalc安装指北</a></p>
+                            <p class="item-date"><time datetime="2021-09-29T05:40:38.000Z" itemprop="datePublished">2021-09-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2021/09/17/Cloudinary图床上传配置MWeb:PicGo/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://res.cloudinary.com/regulus/image/upload/s--fKqCOzua--/v1631856516/blog/cloudinarylogo_avj9zo.jpg)" alt="Cloudinary 图床上传配置 MWeb/PicGo" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tips/">Tips</a></p>
+                            <p class="item-title"><a href="/2021/09/17/Cloudinary图床上传配置MWeb:PicGo/" class="title">Cloudinary 图床上传配置 MWeb/PicGo</a></p>
+                            <p class="item-date"><time datetime="2021-09-17T05:24:48.000Z" itemprop="datePublished">2021-09-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/11/01/解决阿里云域名邮箱与博客站点解析冲突/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://res.cloudinary.com/regulus/image/upload/v1604212403/blog/aliyunmail.jpg)" alt="解决阿里云域名邮箱与博客站点解析冲突" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tips/">Tips</a></p>
+                            <p class="item-title"><a href="/2020/11/01/解决阿里云域名邮箱与博客站点解析冲突/" class="title">解决阿里云域名邮箱与博客站点解析冲突</a></p>
+                            <p class="item-date"><time datetime="2020-10-31T17:24:20.000Z" itemprop="datePublished">2020-11-01</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2020/10/11/PDF页面打开空白问题/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://res.cloudinary.com/regulus/image/upload/v1602406987/blog/PDF_icon.jpg)" alt="PDF页面打开显示空白的问题" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tips/">Tips</a></p>
+                            <p class="item-title"><a href="/2020/10/11/PDF页面打开空白问题/" class="title">PDF页面打开显示空白的问题</a></p>
+                            <p class="item-date"><time datetime="2020-10-10T20:50:03.000Z" itemprop="datePublished">2020-10-11</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/News/">News</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tips/">Tips</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">10</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/技术/Hexo/">Hexo</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/ROOT/">ROOT</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/日常/">日常</a><span class="category-list-count">11</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/转载/">转载</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">六月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">九月 2021</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">十一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">十月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">三月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">六月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/12/">十二月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">六月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">一月 2017</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Github/">Github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/LaTex/">LaTex</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/News/">News</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tips/">Tips</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/object-Object/">[object Object]</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/tips/">tips</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/加密/">加密</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术/">技术</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日常/">日常</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂谈/">杂谈</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知识/">知识</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/转载/">转载</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a><span class="tag-list-count">5</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Github/" style="font-size: 10px;">Github</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/LaTex/" style="font-size: 12.5px;">LaTex</a> <a href="/tags/News/" style="font-size: 12.5px;">News</a> <a href="/tags/Tips/" style="font-size: 15px;">Tips</a> <a href="/tags/object-Object/" style="font-size: 10px;">[object Object]</a> <a href="/tags/hexo/" style="font-size: 16.25px;">hexo</a> <a href="/tags/tips/" style="font-size: 18.75px;">tips</a> <a href="/tags/加密/" style="font-size: 10px;">加密</a> <a href="/tags/技术/" style="font-size: 20px;">技术</a> <a href="/tags/日常/" style="font-size: 17.5px;">日常</a> <a href="/tags/杂谈/" style="font-size: 11.25px;">杂谈</a> <a href="/tags/知识/" style="font-size: 10px;">知识</a> <a href="/tags/转载/" style="font-size: 10px;">转载</a> <a href="/tags/随笔/" style="font-size: 13.75px;">随笔</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://hithep.science">HITHEP</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://valine.js.org">Valine</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://www.likelly.science">木子今明的blog</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://blog.csdn.net/kakakaco">赫师兄的CSDN</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://frams163com.github.io">建神的blog</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://yanshuo.name/cn/">石页大神的blog</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://dpcforever.cn/">dpcforever-blog</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2023 regulus  </p>
+                <p> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />本博客采用<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"> CC BY-NC-SA 4.0 International License </a>进行许可。</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+               <!-- 不蒜子 http://ibruce.info/2015/04/04/busuanzi/ -->
+                <!-- <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次,</span> 您是第<span id="busuanzi_value_site_uv"></span>个小伙伴 -->
+                <!-- 不蒜子 20181103 http://busuanzi.ibruce.info -->
+                <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次,</span> 您是第<span id="busuanzi_value_site_uv"></span>个小伙伴
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+        
+    
+    <script data-isso="//[object Object]"
+            src="//[object Object]/js/embed.min.js">
+    </script>
+
+
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+<!-- 网页背景添加跟随鼠标移动的动态线条 https://laod.cn/design/page/canvas-nest-min-js.html -->
+<script type="text/javascript" src="https://cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+<!--
+!function(){function n(n,e,t){return n.getAttribute(e)||t}function e(n){return document.getElementsByTagName(n)}function t(){var t=e("script"),o=t.length,i=t[o-1];return{l:o,z:n(i,"zIndex",-1),o:n(i,"opacity",.5),c:n(i,"color","0,0,0"),n:n(i,"count",99)}}function o(){a=m.width=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,c=m.height=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight}function i(){r.clearRect(0,0,a,c);var n,e,t,o,m,l;s.forEach(function(i,x){for(i.x+=i.xa,i.y+=i.ya,i.xa*=i.x>a||i.x<0?-1:1,i.ya*=i.y>c||i.y<0?-1:1,r.fillRect(i.x-.5,i.y-.5,1,1),e=x+1;e<u.length;e++)n=u[e],null!==n.x&&null!==n.y&&(o=i.x-n.x,m=i.y-n.y,l=o*o+m*m,l<n.max&&(n===y&&l>=n.max/2&&(i.x-=.03*o,i.y-=.03*m),t=(n.max-l)/n.max,r.beginPath(),r.lineWidth=t/2,r.strokeStyle="rgba("+d.c+","+(t+.2)+")",r.moveTo(i.x,i.y),r.lineTo(n.x,n.y),r.stroke()))}),x(i)}var a,c,u,m=document.createElement("canvas"),d=t(),l="c_n"+d.l,r=m.getContext("2d"),x=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(n){window.setTimeout(n,1e3/45)},w=Math.random,y={x:null,y:null,max:2e4};m.id=l,m.style.cssText="position:fixed;top:0;left:0;z-index:"+d.z+";opacity:"+d.o,e("body")[0].appendChild(m),o(),window.onresize=o,window.onmousemove=function(n){n=n||window.event,y.x=n.clientX,y.y=n.clientY},window.onmouseout=function(){y.x=null,y.y=null};for(var s=[],f=0;d.n>f;f++){var h=w()*a,g=w()*c,v=2*w()-1,p=2*w()-1;s.push({x:h,y:g,xa:v,ya:p,max:6e3})}u=s.concat([y]),setTimeout(function(){i()},100)}();
+-->
+
+
+    </div>
+</body>
+</html>
