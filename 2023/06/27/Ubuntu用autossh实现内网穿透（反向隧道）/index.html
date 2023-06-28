@@ -18,7 +18,7 @@
 <meta property="og:description" content="有一台内网ip的linux 工作机器A，想从外部互联网通过ssh连接，可以借助一台有公网ip的“跳板机B”（如vps等），使用autossh实现“反向代理”（autossh可以自动连接ssh，反向代理靠设置ssh端口转发），但该操作也使得内网机器有一定安全风险。 [TOC] 准备  内网主机A，默认ssh端口：22，用户名：UserA 公网ip主机B，假设ip为123:123:123:123，s">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://res.cloudinary.com/regulus/image/upload/v1687857377/blog/autossh.jpg">
-<meta property="og:updated_time" content="2023-06-28T08:24:43.262Z">
+<meta property="og:updated_time" content="2023-06-28T09:57:40.373Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu用autossh实现内网穿透（反向隧道）">
 <meta name="twitter:description" content="有一台内网ip的linux 工作机器A，想从外部互联网通过ssh连接，可以借助一台有公网ip的“跳板机B”（如vps等），使用autossh实现“反向代理”（autossh可以自动连接ssh，反向代理靠设置ssh端口转发），但该操作也使得内网机器有一定安全风险。 [TOC] 准备  内网主机A，默认ssh端口：22，用户名：UserA 公网ip主机B，假设ip为123:123:123:123，s">
@@ -266,8 +266,9 @@
 <p>这里按需设置自己的端口，并且去掉了-f flag（本身服务就是后台的，也可以不需要再设置后台运行）</p>
 <p>运行<br>
 <code>systemctl daemon-reload &amp;&amp; systemctl start remote-autossh</code>启动服务<br>
-<code>systemctl start remote-autossh</code>启动服务并设置开机自启动<br>
-<code>systemctl status</code>查看服务状态。</p>
+<code>systemctl enable remote-autossh</code>设置开机自启动<br>
+<code>systemctl status remote-autossh</code>查看服务状态。</p>
+<p>*<a href="https://www.cnblogs.com/jhxxb/p/10654554.html" target="_blank" rel="noopener">Systemd 常用命令</a></p>
 <h2>refs</h2>
 <p>使用autossh前先在内网机器安装openssh服务-csdn：<br>
 <a href="https://blog.csdn.net/mba1398/article/details/122829875" target="_blank" rel="noopener">https://blog.csdn.net/mba1398/article/details/122829875</a></p>
