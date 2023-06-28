@@ -18,7 +18,7 @@
 <meta property="og:description" content="有一台内网ip的linux 工作机器A，想从外部互联网通过ssh连接，可以借助一台有公网ip的“跳板机B”（如vps等），使用autossh实现“反向代理”（autossh可以自动连接ssh，反向代理靠设置ssh端口转发），但该操作也使得内网机器有一定安全风险。 [TOC] 准备  内网主机A，默认ssh端口：22，用户名：UserA 公网ip主机B，假设ip为123:123:123:123，s">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://res.cloudinary.com/regulus/image/upload/v1687857377/blog/autossh.jpg">
-<meta property="og:updated_time" content="2023-06-27T12:53:09.965Z">
+<meta property="og:updated_time" content="2023-06-28T08:11:40.215Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu用autossh实现内网穿透（反向隧道）">
 <meta name="twitter:description" content="有一台内网ip的linux 工作机器A，想从外部互联网通过ssh连接，可以借助一台有公网ip的“跳板机B”（如vps等），使用autossh实现“反向代理”（autossh可以自动连接ssh，反向代理靠设置ssh端口转发），但该操作也使得内网机器有一定安全风险。 [TOC] 准备  内网主机A，默认ssh端口：22，用户名：UserA 公网ip主机B，假设ip为123:123:123:123，s">
@@ -203,7 +203,7 @@
       <span class="post-count">1.4k</span>
       <i class="fa fa-clock-o"></i>
       <span class="post-time-item-text">阅读时长: </span>
-      <span class="post-count">6 分钟 </span>
+      <span class="post-count">5 分钟 </span>
    </div>
 
 
@@ -211,7 +211,7 @@
         
         
         <div class="article-entry" itemprop="articleBody">
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text">准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text">配置密钥免密ssh登录</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text">准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#null"><span class="toc-text">配置密钥免密ssh登录</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">继续配置内网主机A（autossh配置端口转发）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">设置开机自启动服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">refs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">PS</span></a>
             <p><img src="https://res.cloudinary.com/regulus/image/upload/v1687857377/blog/autossh.jpg" alt></p>
 <p>有一台内网ip的linux 工作机器A，想从外部互联网通过ssh连接，可以借助一台有公网ip的“跳板机B”（如vps等），使用autossh实现“反向代理”（autossh可以自动连接ssh，反向代理靠设置ssh端口转发），但该操作也使得内网机器有一定安全风险。</p>
 <p>[TOC]</p>
@@ -224,56 +224,73 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ping 123.123.123.123</span><br><span class="line">ssh -p 2000 UserB@123.123.123.123</span><br></pre></td></tr></table></figure>
 <h3>配置密钥免密ssh登录</h3>
 <p>在内网主机A，生成一对公私钥</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen</span><br><span class="line">``` </span><br><span class="line">连续3次enter缺省配置即可（但需要注意如果之前配置过，会覆盖`~/.ssh/id_rsa`原有密钥，以前配置过也可以直接使用），</span><br><span class="line">`ls ~/.ssh` ，会有 `id_rsa  id_rsa.pub` 两个文件</span><br><span class="line"></span><br><span class="line">[SSH远程免密登录的两种方式](https://blog.csdn.net/m0_46897923/article/details/128306658)</span><br><span class="line">[Linux 命令（208）—— ssh-keygen 命令](https://blog.csdn.net/K346K346/article/details/128167442)</span><br><span class="line"></span><br><span class="line">将公钥拷贝到公网主机B</span><br></pre></td></tr></table></figure>
-<p>ssh-copy-id -i ~/.ssh/id_rsa.pub <a href="mailto:UserB@123.123.123.123" target="_blank" rel="noopener">UserB@123.123.123.123</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">接下来测试能否免密建立ssh连接</span><br></pre></td></tr></table></figure>
-<p>ssh -p 2000 <a href="mailto:UserB@123.123.123.123" target="_blank" rel="noopener">UserB@123.123.123.123</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在公网主机B `ls ~/.ssh/`也可以看到有文件`authorized_keys`，`cat ~/.ssh/authorized_keys`可以看到存储了刚才创建的公钥。</span><br><span class="line"></span><br><span class="line">接着修改公网主机B的SSH配置文件（vim的安装及常见命令自行百度即可）</span><br></pre></td></tr></table></figure>
-<p>vim /etc/ssh/sshd_config</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在最后一行添加并保存</span><br><span class="line">**GatewayPorts yes**</span><br><span class="line">可以将监听端口绑定到任意其他ip（默认openssh只允许从服务器主机连接远程转发端口，参考[ssh 端口转发工具 tunnel](https://blog.csdn.net/maizi1045/article/details/80702847)），然后重启ssdh服务</span><br></pre></td></tr></table></figure>
-<p>sudo service sshd restart</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">## 继续配置内网主机A（autossh配置端口转发）</span><br><span class="line"></span><br><span class="line">首先检查是否安装openssh，在内网主机A</span><br></pre></td></tr></table></figure>
-<p>ssh UserA@localhost</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">能正常登录，说明本机已经安装openssh-server端，否则先安装openssh-server</span><br></pre></td></tr></table></figure>
-<p>sudo apt install openssh-server</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">然后安装autossh</span><br></pre></td></tr></table></figure>
-<p>sudo apt install autossh</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">安装完成后，启动autossh并配置转发端口，</span><br></pre></td></tr></table></figure>
-<p>autossh -M 3001 -NfR 20001:localhost:22 <a href="mailto:root@123.123.123.123" target="_blank" rel="noopener">root@123.123.123.123</a> -p 2000</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">-M 表示内网主机A使用端口3001 监视SSH连接状态，断连自动重连</span><br><span class="line">-N 表示不执行远程指令</span><br><span class="line">-f 表示建立成功后在后台运行</span><br><span class="line">-R 表示指定端口映射</span><br><span class="line">-p 2000 是因为公网主机B的ssh登录端口为 2000，如果默认22则不需要</span><br><span class="line"></span><br><span class="line">这样设置后，就将内网主机A的22端口映射到公网主机B的20001，访问公网主机B的20001端口就自动转发到内网主机A的22端口，实现“内网穿透”。</span><br><span class="line"></span><br><span class="line">测试内网穿透连接</span><br></pre></td></tr></table></figure>
-<p>ssh -p20001 <a href="mailto:UserA@123.123.123.123" target="_blank" rel="noopener">UserA@123.123.123.123</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">顺利的话，应该可以以UserA用户的身份，连接并登录到内网主机A。</span><br><span class="line"></span><br><span class="line">## 设置开机自启动服务</span><br><span class="line"></span><br><span class="line">Ubuntu可以使用systemd管理autossh的开机自启动，创建一个.service文件</span><br></pre></td></tr></table></figure>
-<p>touch /etc/systemd/system/remote-autossh.service<br>
-sudo vim /etc/systemd/system/remote-autossh.service</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">编辑添加</span><br></pre></td></tr></table></figure>
-<p>[Unit]<br>
-Description=AutoSSH service for remote tunnel<br>
-After=network-online.target</p>
-<p>[Service]<br>
-User=tan<br>
-ExecStart=/usr/bin/autossh -M 3001 -NR 20001:localhost:22 <a href="mailto:root@123.123.123.123" target="_blank" rel="noopener">root@123.123.123.123</a> -p 2000</p>
-<p>[Install]<br>
-WantedBy=multi-user.target</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">这里按需设置自己的端口，并且去掉了-f flag（本身服务就是后台的，也可以不需要再设置后台运行）</span><br><span class="line"></span><br><span class="line">运行</span><br><span class="line">`systemctl daemon-reload &amp;&amp; systemctl start remote-autossh`启动服务</span><br><span class="line">`systemctl start remote-autossh`启动服务并设置开机自启动</span><br><span class="line">`systemctl status`查看服务状态。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">## refs</span><br><span class="line">使用autossh前先在内网机器安装openssh服务-csdn：</span><br><span class="line">https://blog.csdn.net/mba1398/article/details/122829875</span><br><span class="line"></span><br><span class="line">Ubuntu实现SSH外网连接内网(反向隧道)-简书：</span><br><span class="line">https://www.jianshu.com/p/9a16b45f29f7</span><br><span class="line"></span><br><span class="line">Ubuntu下autossh 解决内网访问-csdn：</span><br><span class="line">https://blog.csdn.net/scwMason/article/details/111152300</span><br><span class="line"></span><br><span class="line">ssh: connect to host localhost port 22: Connection refused - csdn：</span><br><span class="line">https://blog.csdn.net/mba1398/article/details/122829875</span><br><span class="line"></span><br><span class="line">kex_exchange_identification: read: Connection reset by peer的报错解决:</span><br><span class="line">https://blog.csdn.net/Horizon_carry/article/details/121874753</span><br><span class="line"></span><br><span class="line">ESM 401 Unauthorized error on Ubuntu 16.04：</span><br><span class="line">`sudo apt install vim` 时遇到</span><br></pre></td></tr></table></figure>
-<p>…<br>
-Err:1 <a href="https://esm.ubuntu.com/infra/ubuntu" target="_blank" rel="noopener">https://esm.ubuntu.com/infra/ubuntu</a> bionic-infra-security/main amd64 libzstd1 amd64 1.3.3+dfsg-2ubuntu1+esm1<br>
-401  Unauthorized<br>
-E: Failed to fetch <a href="https://esm.ubuntu.com/infra/ubuntu/pool/main/libz/libzstd/libzstd1_1.3.3+dfsg-2ubuntu1+esm1_amd64.deb" target="_blank" rel="noopener">https://esm.ubuntu.com/infra/ubuntu/pool/main/libz/libzstd/libzstd1_1.3.3+dfsg-2ubuntu1+esm1_amd64.deb</a>  401  Unauthorized</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">https://askubuntu.com/a/1471328/1707836</span><br><span class="line"></span><br><span class="line">## PS</span><br><span class="line"></span><br><span class="line">**ps**：好久没更博客了，之前师兄演示过autossh反向隧道连接内网主机，重装系统后，遂自行尝试一下，另吐个槽，京造麒麟ssd不到一年，炸0E掉盘略坑。</span><br><span class="line"></span><br><span class="line">**pps**：太久没用hexo或git，这次hexo deploy出现报错：</span><br></pre></td></tr></table></figure>
-<p>Error: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>
-@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @<br>
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br>
-IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!<br>
-Someone could be eavesdropping on you right now (man-in-the-middle attack)!<br>
-It is also possible that a host key has just been changed.<br>
-The fingerprint for the RSA key sent by the remote host is<br>
-SHA256:uNiVztksCsDhcc0u9e8BujQXVUpKZIDTMczCvj3tD2s.<br>
-Please contact your system administrator.</p>
-<pre><code>搜了下才知道，GitHub今年3月份失误暴露了自己的私钥，所以替换了 用于Git 的 RSA SSH 主机密钥，所以之前本机存储的GitHub公钥失效了，只需要删除原有Github公钥`ssh-keygen -R github.com`（也可以手动`vim ~/.ssh/known_hosts`，删除GitHub所在行），然后再正常执行git或hexo deploy，像第一次执行git那样yes信任并重新添加公钥到known hosts即可。
-
-[GitHub blog - We updated our RSA SSH host key](https://github.blog/2023-03-23-we-updated-our-rsa-ssh-host-key/)
-[http://www.cbww.cn/news/38861.shtml](http://www.cbww.cn/news/38861.shtml)
-[Git出现&quot;WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED&quot;警告解决 - 简书](https://www.jianshu.com/p/059a86c22665)</code></pre>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure>
+<p>连续3次enter缺省配置即可（但需要注意如果之前配置过，会覆盖<code>~/.ssh/id_rsa</code>原有密钥，以前配置过也可以直接使用），<br>
+<code>ls ~/.ssh</code> ，会有 <code>id_rsa id_rsa.pub</code> 两个文件</p>
+<p><a href="https://blog.csdn.net/m0_46897923/article/details/128306658" target="_blank" rel="noopener">SSH远程免密登录的两种方式</a><br>
+<a href="https://blog.csdn.net/K346K346/article/details/128167442" target="_blank" rel="noopener">Linux 命令（208）—— ssh-keygen 命令</a></p>
+<p>将公钥拷贝到公网主机B</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-copy-id -i ~/.ssh/id_rsa.pub UserB@123.123.123.123</span><br></pre></td></tr></table></figure>
+<p>接下来测试能否免密建立ssh连接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -p 2000 UserB@123.123.123.123</span><br></pre></td></tr></table></figure>
+<p>在公网主机B <code>ls ~/.ssh/</code>也可以看到有文件<code>authorized_keys</code>，<code>cat ~/.ssh/authorized_keys</code>可以看到存储了刚才创建的公钥。</p>
+<p>接着修改公网主机B的SSH配置文件（vim的安装及常见命令自行百度即可）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
+<p>在最后一行添加并保存<br>
+<strong>GatewayPorts yes</strong><br>
+可以将监听端口绑定到任意其他ip（默认openssh只允许从服务器主机连接远程转发端口，参考<a href="https://blog.csdn.net/maizi1045/article/details/80702847" target="_blank" rel="noopener">ssh 端口转发工具 tunnel</a>），然后重启ssdh服务</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service sshd restart</span><br></pre></td></tr></table></figure>
+<h2>继续配置内网主机A（autossh配置端口转发）</h2>
+<p>首先检查是否安装openssh，在内网主机A</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh UserA@localhost</span><br></pre></td></tr></table></figure>
+<p>能正常登录，说明本机已经安装openssh-server端，否则先安装openssh-server</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install openssh-server</span><br></pre></td></tr></table></figure>
+<p>然后安装autossh</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install autossh</span><br></pre></td></tr></table></figure>
+<p>安装完成后，启动autossh并配置转发端口，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">autossh -M 3001 -NfR 20001:localhost:22 root@123.123.123.123 -p 2000</span><br></pre></td></tr></table></figure>
+<p>-M 表示内网主机A使用端口3001 监视SSH连接状态，断连自动重连<br>
+-N 表示不执行远程指令<br>
+-f 表示建立成功后在后台运行<br>
+-R 表示指定端口映射<br>
+-p 2000 是因为公网主机B的ssh登录端口为 2000，如果默认22则不需要</p>
+<p>这样设置后，就将内网主机A的22端口映射到公网主机B的20001，访问公网主机B的20001端口就自动转发到内网主机A的22端口，实现“内网穿透”。</p>
+<p>测试内网穿透连接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -p20001 UserA@123.123.123.123</span><br></pre></td></tr></table></figure>
+<p>顺利的话，应该可以以UserA用户的身份，连接并登录到内网主机A。</p>
+<h2>设置开机自启动服务</h2>
+<p>Ubuntu可以使用systemd管理autossh的开机自启动，创建一个.service文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">touch /etc/systemd/system/remote-autossh.service</span><br><span class="line">sudo vim /etc/systemd/system/remote-autossh.service</span><br></pre></td></tr></table></figure>
+<p>编辑添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=AutoSSH service for remote tunnel</span><br><span class="line">After=network-online.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">User=tan</span><br><span class="line">ExecStart=/usr/bin/autossh -M 3001 -NR 20001:localhost:22 root@123.123.123.123 -p 2000</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+<p>这里按需设置自己的端口，并且去掉了-f flag（本身服务就是后台的，也可以不需要再设置后台运行）</p>
+<p>运行<br>
+<code>systemctl daemon-reload &amp;&amp; systemctl start remote-autossh</code>启动服务<br>
+<code>systemctl start remote-autossh</code>启动服务并设置开机自启动<br>
+<code>systemctl status</code>查看服务状态。</p>
+<h2>refs</h2>
+<p>使用autossh前先在内网机器安装openssh服务-csdn：<br>
+<a href="https://blog.csdn.net/mba1398/article/details/122829875" target="_blank" rel="noopener">https://blog.csdn.net/mba1398/article/details/122829875</a></p>
+<p>Ubuntu实现SSH外网连接内网(反向隧道)-简书：<br>
+<a href="https://www.jianshu.com/p/9a16b45f29f7" target="_blank" rel="noopener">https://www.jianshu.com/p/9a16b45f29f7</a></p>
+<p>Ubuntu下autossh 解决内网访问-csdn：<br>
+<a href="https://blog.csdn.net/scwMason/article/details/111152300" target="_blank" rel="noopener">https://blog.csdn.net/scwMason/article/details/111152300</a></p>
+<p>ssh: connect to host localhost port 22: Connection refused - csdn：<br>
+<a href="https://blog.csdn.net/mba1398/article/details/122829875" target="_blank" rel="noopener">https://blog.csdn.net/mba1398/article/details/122829875</a></p>
+<p>kex_exchange_identification: read: Connection reset by peer的报错解决:<br>
+<a href="https://blog.csdn.net/Horizon_carry/article/details/121874753" target="_blank" rel="noopener">https://blog.csdn.net/Horizon_carry/article/details/121874753</a></p>
+<p>ESM 401 Unauthorized error on Ubuntu 16.04：<br>
+<code>sudo apt install vim</code> 时遇到</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">Err:1 https://esm.ubuntu.com/infra/ubuntu bionic-infra-security/main amd64 libzstd1 amd64 1.3.3+dfsg-2ubuntu1+esm1</span><br><span class="line">  401  Unauthorized</span><br><span class="line">E: Failed to fetch https://esm.ubuntu.com/infra/ubuntu/pool/main/libz/libzstd/libzstd1_1.3.3+dfsg-2ubuntu1+esm1_amd64.deb  401  Unauthorized</span><br></pre></td></tr></table></figure>
+<p><a href="https://askubuntu.com/a/1471328/1707836" target="_blank" rel="noopener">https://askubuntu.com/a/1471328/1707836</a></p>
+<h2>PS</h2>
+<p><strong>ps</strong>：好久没更博客了，之前师兄演示过autossh反向隧道连接内网主机，重装系统后，遂自行尝试一下，另吐个槽，京造麒麟ssd不到一年，炸0E掉盘略坑。</p>
+<p><strong>pps</strong>：太久没用hexo或git，这次hexo deploy出现报错：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Error: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="line">@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @</span><br><span class="line">@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@</span><br><span class="line">IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!</span><br><span class="line">Someone could be eavesdropping on you right now (man-in-the-middle attack)!</span><br><span class="line">It is also possible that a host key has just been changed.</span><br><span class="line">The fingerprint for the RSA key sent by the remote host is</span><br><span class="line">SHA256:uNiVztksCsDhcc0u9e8BujQXVUpKZIDTMczCvj3tD2s.</span><br><span class="line">Please contact your system administrator.</span><br></pre></td></tr></table></figure>
+<p>搜了下才知道，GitHub今年3月份失误暴露了自己的私钥，所以替换了 用于Git 的 RSA SSH 主机密钥，所以之前本机存储的GitHub公钥失效了，只需要删除原有Github公钥<code>ssh-keygen -R github.com</code>（也可以手动<code>vim ~/.ssh/known_hosts</code>，删除GitHub所在行），然后再正常执行git或hexo deploy，像第一次执行git那样yes信任并重新添加公钥到known hosts即可。</p>
+<p><a href="https://github.blog/2023-03-23-we-updated-our-rsa-ssh-host-key/" target="_blank" rel="noopener">GitHub blog - We updated our RSA SSH host key</a><br>
+<a href="http://www.cbww.cn/news/38861.shtml" target="_blank" rel="noopener">http://www.cbww.cn/news/38861.shtml</a><br>
+<a href="https://www.jianshu.com/p/059a86c22665" target="_blank" rel="noopener">Git出现&quot;WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED&quot;警告解决 - 简书</a></p>
 
         </div>
         <footer class="article-footer">
